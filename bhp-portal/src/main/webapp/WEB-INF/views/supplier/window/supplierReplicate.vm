@@ -1,0 +1,148 @@
+<header>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_inner_style">
+<h4>Replicate Offer</h4>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_inner_style">
+<div id="clock1">
+</div>
+</div>
+</div>
+</header>
+<div class="window" id="popup_add_new_offer">
+    <header class="addNew-head">
+        <h5>Enter Details</h5>
+    </header>
+    <form class="addNew-form" action="#springUrl("/supplier/supplierReplicate")" method="POST" enctype="application/x-www-form-urlencoded" id="add_new_offer">
+    <input type="hidden" name="offerTab" id="offerTab" >
+    <input type="hidden" name="offerId" id="offerId" value=$!offer.offerId></input>
+    <input type="hidden" name="id" id="id" value=$!offer.id></input>
+        <ul>        	
+           <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="metal" class="col-sm-6">Metal</label>
+	            <select name="metal" class="form-control col-sm-6" id="offerMetal">
+	            	#foreach ($metalIterator in $metal.entrySet())
+	            		#if($offer.offerMaster.commodity.metal.id == $typeIterator.key)
+							<option value = $metalIterator.key selected >$metalIterator.value</option>
+						#else
+							<option value = $metalIterator.key >$metalIterator.value</option>
+						#end
+					 #end
+                </select>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="inventory" class="col-sm-6">Inventory</label>
+	             <select name="inventory" class="form-control col-sm-6" id="offerInventory">
+	             <option value>SELECT</option>
+	            	#foreach ($inventoryIterator in $inventory.entrySet())
+	            	#if($offer.offerMaster.commodity.metal.inventory == $inventoryIterator.key)
+							<option value = $inventoryIterator.key selected>$inventoryIterator.value</option>
+						#else
+							<option value = $inventoryIterator.key >$inventoryIterator.value</option>
+							#end	
+					 #end
+                </select>
+            </li>
+            
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="brand" class="col-sm-6">Brand</label>
+	             <select name="brand" class="form-control col-sm-6">
+                  <option value>SELECT</option>
+					#foreach ($brandIterator in $brand.entrySet())
+					#if($offer.offerMaster.commodity.commodityBrand.id == $brandIterator.key)
+							<option value=$brandIterator.key selected>$brandIterator.value</option>
+						#else
+							<option value=$brandIterator.key>$brandIterator.value</option>	
+							#end	
+					 #end
+				 </select>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="type" class="col-sm-6">Type</label>
+                 <select name="type" class="form-control col-sm-6">
+                 <option value>SELECT</option>
+					#foreach ($typeIterator in $type.entrySet())
+					#if($offer.offerMaster.commodity.commodityType.id == $typeIterator.key)
+							<option value=$typeIterator.key selected>$typeIterator.value</option>
+						#else
+							<option value=$typeIterator.key>$typeIterator.value</option>
+							#end					
+					 #end
+				 </select>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="purity" class="col-sm-6">Purity</label>
+               <select name="purity" class="form-control col-sm-6" id="offerPurity">
+                <option value>SELECT</option>
+                	#foreach ($purityIterator in $purity.entrySet())
+                	#if($offer.offerMaster.commodity.metal.purity == $purityIterator.key)
+							<option value=$purityIterator.key selected>$purityIterator.value</option>
+					#else
+							<option value=$purityIterator.key>$purityIterator.value</option>	
+					#end
+					 #end
+                </select>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+				<label for="quantity" class="col-sm-6">Quantity</label>
+				<input type="text" name="quantity" class="number" class="form-control col-sm-6" maxlength="6" value= $MathTool.floor($offer.offerMaster.balanceQuantity)>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="premium" class="col-sm-6">Premium ($/ounce)</label>
+	            <input type="text" name="premium" class="number" class="form-control col-sm-6" maxlength="6" value= $offer.offerMaster.premium>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="sourceLocation" class="col-sm-6">Source Location</label>
+                <select name="sourceLocation" class="form-control col-sm-6">
+                <option value>SELECT</option>
+                	#foreach ($cityIterator in $city.entrySet())
+                	#if($offer.offerMaster.city.id == $cityIterator.key)
+							<option value=$cityIterator.key selected>$cityIterator.value</option>
+					#else
+							<option value=$cityIterator.key>$cityIterator.value</option>
+					 #end
+					 #end
+                </select>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="availability" class="col-sm-6">Availability</label>
+                <div class="input-group date col-xs-6 pull-right" id="bootstrap_datepicker">    
+                    <input name="availability" class="form-control col-sm-6" value="$DateUtil.toddMMyyyy($offer.offerMaster.availability)" autocomplete="off"></input>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </li>
+            <li class="expiry col-md-6 col-sm-6 col-xs-12">
+                <label for="expiry" class="col-sm-6">Expiry</label>
+                <div class="input-group date col-xs-6 pull-right" id="bootstrap_datetimepicker">    
+                    <input id="supplierReplicateExpiry" name="expiry" class="form-control col-sm-6 supplierExpiry" type="text" value="$DateUtil.toddMMyyyyHHmm($offer.offerMaster.expiry)" autocomplete="off"></input>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="timezone" class="col-sm-6">Time Zone</label>
+                <select disabled class="form-control col-sm-6">
+                	<option value="" >SELECT</option>
+                      	#foreach ($timezoneIterator in $timezone.entrySet())
+						#if($offer.offerMaster.timezone.id == $timezoneIterator.key)
+							<option value = $timezoneIterator.key selected >$timezoneIterator.value</option>
+						#else
+							<option value = $timezoneIterator.key >$timezoneIterator.value</option>
+						#end
+					 #end
+                </select>
+            </li>
+            <li class="footer-btn col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+                <button type="button" class="add_button yellow_button" id="cancel_button">CANCEL</button>
+            </li>
+            <li class="col-md-3 col-sm-4 col-xs-12">
+                <button type="submit" class="add_button blue_button" id="add_offer_button">REPLICATE</button>
+            </li>
+        </ul>
+        <input type ="hidden" name = "timezone" class = "instance-timezone" />
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"  id = "csrf_tkn" />
+    </form>
+</div>

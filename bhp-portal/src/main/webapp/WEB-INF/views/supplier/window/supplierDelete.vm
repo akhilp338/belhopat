@@ -1,0 +1,27 @@
+<div class="window" id="window-delete">
+<header>
+ <div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<h4>Delete Offers</h4>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<div id="clock1">
+</div>
+</div>
+</div>
+</header>
+<form class="addNew-form">
+	<input name="deleteOfferIds" id="delete_offer_id" type="hidden"/>
+	<input type="hidden" name ="deleteOfferType" id="delete_offer_type">
+		<div class="offer_wrapper"></div>
+		<footer class="post_form_footer">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			<span class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+				<input type="button" value="CANCEL" id="cancel_button" class="yellow_button">
+			</span>
+			<span class="col-md-3 col-sm-6 col-xs-12">
+				<input type="button" value="DELETE" id="delete_form_delete_button" class="blue_button">
+			</span>
+		</footer>
+	</form>
+</div>

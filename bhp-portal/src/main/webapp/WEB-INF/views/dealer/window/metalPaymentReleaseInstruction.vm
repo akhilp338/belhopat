@@ -1,0 +1,68 @@
+<div class="hidden_nav_tab_button">
+   <img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header window-checklist">
+   <div class="col-xs-8 col-md-8 col-sm-8 header_style">
+      <h4>Collection And Delivery Instruction</h4>
+  </div>
+   <div class="col-xs-4 col-md-4 col-sm-4 header_style">
+      <span id="clock1">
+      </span>
+   </div>
+</div>
+<input type="hidden" value="" id="dash_trade_id"/>
+<div class="window checklist-window" id="release-instruction">
+   <form class="addNew-form" action="#springUrl("/dealer/postRFQs")" method="POST">
+   <div class="offer_wrapper offer_inner_wrapper">
+      <span class="error-span"></span>
+      <ul class="clear-both populate-div">
+         <li class="col-md-12 col-sm-12 col-xs-12">Trade Details</li>
+         <li class="col-md-6 col-sm-12 col-xs-12">
+            <label style="color: #093A62; font-weight:bold;">Trade ID</label>
+            <p>0000121</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12">
+            <label style="color: #093A62; font-weight:bold;">Trade date</label>
+            <p>0000121</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Metal</label><p>$trade.tradeOffers[0].offer.offerMaster.commodity.metal.metal</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Quantity (quantity type)</label><p>$trade.quantity</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Purity</label><p>$trade.tradeOffers[0].offer.offerMaster.commodity.metal.purity</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Price</label><p>$trade.customerPremium</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Currency</label><p>USD</p></li>
+         #if(!$trade.etaDate)
+         	<li class="col-md-6 col-sm-12 col-xs-12"><label>ETA</label><p></p></li>
+         #else
+         	<li class="col-md-6 col-sm-12 col-xs-12"><label>ETA</label><p>$DateUtil.toddMMyyyy($trade.etaDate)</p></li>
+         #end
+            <li class="col-md-6 col-sm-12 col-xs-12 sl"><label>Source Location</label><p>$trade.tradeOffers[0].offer.offerMaster.city.description</p></li>
+          <li class="col-md-6 col-sm-12 col-xs-12 pcd">
+            <label>Physical Collection Date</label>
+            <div class="input-group date col-md-9 col-xs-6 pull-right" id="bootstrap_datepicker">    
+               <input id="" name="" class="form-control col-sm-6" type="text" value="" autocomplete="off"></input>
+               <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+            </div>
+         </li>
+         #if(!$trade.city.description)
+         	<li class="col-md-6 col-sm-12 col-xs-12 dA"><label>Destination Address</label><p></p></li>
+         #else
+         	<li class="col-md-6 col-sm-12 col-xs-12 dA"><label>Destination Address</label><p>$trade.city.deliveryAddress</p></li>
+         #end
+         <li class="col-md-6 col-sm-12 col-xs-12"><label style="margin-top:5%;">Insurance Requirements</label><textarea class="insuranceText"> </textarea></li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label style="margin-top:5%;">Service Required</label><textarea class="insuranceText"> </textarea></li>
+      </ul>
+      <span></span>
+   </div>
+   <footer class="post_form_footer">
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+      <span class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+      <input type="button" value="CANCEL" id="cancel_button" class="yellow_button">
+      </span>
+      <span class="col-md-3 col-sm-6 col-xs-12">
+      <input type="submit" value="APPROVE" id="post_form_post_button" class="blue_button">
+      </span>
+   </footer>
+   </form>
+</div>

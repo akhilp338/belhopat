@@ -1,0 +1,30 @@
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+<div class="col-sm-12 col-md-12 custom_header" style="margin-bottom:12px;">
+<div class="liner-div">
+</div>
+<div class="submenu-item">
+<div class="col-xs-6 col-md-6 col-sm-6 innerMenu innerMenu-selected premium-menu" id="groups">
+<a class="innerTab" href="javascript:void(0)">
+	          Groups
+</a>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 innerMenu premium-menu" id="cpm">
+<a class="innerTab" href="javascript:void(0)">
+	          Customer Pricing Matrix
+</a>
+</div>
+</div>
+</div>
+<div class="col-sm-12 col-md-12 custom_header inner-container">
+
+</div>

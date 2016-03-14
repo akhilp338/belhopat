@@ -1,0 +1,48 @@
+<div class="window" id="window_cpm">
+    <header class="addNew-head">
+        <h5>Edit CPM</h5>
+    </header>
+    <form class="addNew-form" id="manage_cpm">
+        <ul style="padding-top: 30px;">
+        	<li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="accId" class="col-sm-6">Account ID</label>
+                <input type="text" name="account" class="form-control col-sm-6" id="premium_account"
+                maxlength="6" readonly="true" value="${premiumCpm.accountCode}" 
+                 data-attr="${premiumCpm.accountCode}" data-premiumCpmId="${premiumCpm.id}">
+             </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="accId" class="col-sm-6">Description</label>
+	            <textarea class="col-sm-6" id="account_desc" readonly="true">$premiumCpm.accountDesc</textarea>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="accId" class="col-sm-6">Group ID</label>
+	            <select name="group" id="premium_group" class="form-control col-sm-6">
+	            #foreach ($eachGroup in $groups)
+       				 #if($premiumCpm.premiumGroup.id == $eachGroup.id)
+						<option value = $eachGroup.id selected>$eachGroup.groupId</option>
+					#else
+						<option value = $eachGroup.id >$eachGroup.groupId</option>
+					#end
+				#end
+                </select>
+            </li>
+           <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="metal" class="col-sm-6">Metal</label>
+                <input type="text" name="metal" class="form-control col-sm-6" id="premium_metal"
+                 maxlength="6" readonly="true" value="${premiumCpm.premiumGroup.metal.metal}" autocomplete="off">
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="accId" class="col-sm-6">Premium (%)</label>
+	            <input type="text" name="quantity" class="form-control col-sm-6" 
+	            id="group_premium" maxlength="6" readonly="true" value="${premiumCpm.premiumGroup.premium}" autocomplete="off">
+            </li>
+            <li class="footer-btn col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+               <button type="button" class="add_button yellow_button" id="cancel_button">CANCEL</button>
+            </li>
+            <li class="col-md-3 col-sm-4 col-xs-12">
+                <button type="button" class="add_button blue_button" id="add_cpm_button">SAVE EDIT</button>
+            </li>
+        </ul>
+        <input type="hidden" name="" value=""  id = "" />
+    </form>
+</div>

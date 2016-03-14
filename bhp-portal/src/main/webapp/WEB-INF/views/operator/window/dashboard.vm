@@ -1,0 +1,37 @@
+<div class="hidden_nav_tab_button">
+	<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+	<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+	Dashboard
+	</div>
+	<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+		<span id="clock1"></span>
+	</div>
+</div>
+<nav class="nav secondary-nav inactive" id="sub_megamenu" style="margin-bottom:30px;overflow:visible;">
+	<ul class="intl-wrapper sub_tab_wrap">
+	    <li class = "active dash_tab" id="TT">
+	        <a class="tab"  href="javascript:void(0)">
+	          Track Tasks
+	        </a>
+	        <span id="trackTaskNotify" class="custom-badge badge-notify"></span>
+	    </li>
+	   <li id="DA" class="dash_tab">
+	        <a class="tab"  href="javascript:void(0)">
+	          Document Approval
+	        </a>
+	         <span id="documentApprovalNotify" class="custom-badge badge-notify"></span>
+	    </li>
+	  	<li id="DU" class="dash_tab">
+	        <a class="tab"  href="javascript:void(0)">
+	          Document Upload
+	        </a>
+	        <span id="documentUploadNotify" class="custom-badge badge-notify"></span>
+	    </li>
+	</ul>
+	<div class="under_line_div"></div>
+</nav>
+<div class="inner_container">
+
+</div>

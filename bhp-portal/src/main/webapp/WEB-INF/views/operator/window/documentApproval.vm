@@ -1,0 +1,25 @@
+<div class="hidden_nav_tab_button">
+	<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+	<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+	Document Approval
+	</div>
+	<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+		<span id="clock1"></span>
+	</div>
+</div>
+<div class="window" id="document-approval-window">
+<div>
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="documentApproval">
+   <thead>
+    <tr>
+        <th class="dt-head-center">Trade ID</th>
+        <th class="dt-head-center">Pending Action</th>
+    </tr>
+    </thead>
+    <tbody></tbody>    
+   </table>
+</div>
+</div>

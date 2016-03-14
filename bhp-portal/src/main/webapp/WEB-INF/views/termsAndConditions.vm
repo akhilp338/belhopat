@@ -1,0 +1,42 @@
+#set( $layout = "/views/layout/notemplate.vm" )
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+	<link rel="shortcut icon" href="/bhp-back-office/assets/static/images/intl_icon.png" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/bootstrap.min.css")">
+	<link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/main.css")">
+	<link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/login.css")">
+    <title>Terms & Conditions</title>
+   
+</head>
+<body>
+<div class="intl-wrapper TC-wrapper" style="height: 80%;">
+	<h3 class="terms-head">
+	    Terms And Conditions
+	</h3>
+	<p>$tc.tc</p>
+	<form action="#" method="post" id="terms-form">
+	<span class="TC-check" ><input type="checkbox" class="termsConditions" name="termsConditions" value="y" style="float:left;"><span style="width:5px;display: inline-block;"></span> <span style="display: inline-block;float: right;">I agree to the Terms And Conditions</span></span>
+	</form>
+	<form action="/bhp-back-office/logout" method="post" class="col-md-offset-3  col-sm-offset-3 col-xs-offset-3 col-md-9 col-sm-9 col-xs-9">
+	
+	<div class="TC-buttons">
+	        <button type="submit" class="yellow_button col-md-3 col-sm-3 col-xs-3" >CANCEL</button>
+		    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		    <button type="button" class="blue_button col-md-3 col-sm-3 col-xs-3" id="proceed_btn">CONTINUE</button>
+	</div>
+	</form>  
+</div>
+#parse("/partials/footer.vm")
+ <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-1.11.3.min.js")"></script>
+<script type="text/javascript" src="#springUrl("/assets/static/lib/bootstrap.min.js")"></script>
+ <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.validate.min.js")"></script>
+ <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-validate.bootstrap-tooltip.min.js")"></script>
+ <script type="text/javascript" src="#springUrl("/assets/js/modules/login.js")"></script>
+</body>
+</html>

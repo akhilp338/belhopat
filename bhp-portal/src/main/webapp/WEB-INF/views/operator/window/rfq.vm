@@ -1,0 +1,42 @@
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+Request For Quote
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+</br></br>
+<input type="hidden" class="drfq-row" value="">
+<div class="dealerTable col-sm-12 col-md-12 custom_header" id = "dealerTable">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listSupplierRFQs" >
+    <thead>
+    <tr>
+        <th class="dt-head-center">ID</th>
+        <th class="dt-head-center">Customer </br>Account</th>
+        <th class="dt-head-center">RFQ / </br>DRFQ ID</th>
+        <th class="dt-head-center">Metal</th>
+        <th class="dt-head-center">Inventory</th>
+        <th class="dt-head-center">Brand</th>
+        <th class="dt-head-center">Type</th>
+        <th class="dt-head-center">Purity</th>
+         <th class="dt-head-center">Quantity Type</th>
+          <th class="dt-head-center">Ounce Equivalent</th>
+        <th class="dt-head-center">Quantity</th>
+        <th class="dt-head-center">Source / </br>Delivery Location</th>
+        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+        <th class="dt-head-center">Availability</th>
+        <th class="dt-head-center">Expiry</th>
+        <th>offer</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>

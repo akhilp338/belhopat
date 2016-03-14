@@ -1,0 +1,96 @@
+<div class="hidden_nav_tab_button">
+   <img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header window-checklist">
+   <div class="col-xs-8 col-md-8 col-sm-8 header_style">
+      <h3 id="page_header">Release Instruction to Supplier</h3>
+   </div>
+   <div class="col-xs-4 col-md-4 col-sm-4 header_style">
+      <span id="clock1">
+      </span>
+   </div>
+</div>
+<div class="window checklist-window" id="release-instruction">
+   <form class="addNew-form" id="release-instruction-form">
+   <div class="offer_wrapper offer_inner_wrapper">
+      <span class="error-span"></span>
+      <ul class="clear-both populate-div">
+         <li class="col-md-12 col-sm-12 col-xs-12">Details</li>
+         <li class="col-md-6 col-sm-12 col-xs-12">
+            <label>Trade ID</label>
+            <p>$trade.tradeId</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12">
+            <label>Trade Date</label>
+            <p style="display:inline-block;">$DateUtil.toMMMMddyyyy($trade.tradeMaster.tradeDate)</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12 release_inst">
+            <label>Offer ID</label>
+            <p>$instanceOfferTrade</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12 release_inst">
+	        <label>Physical Collection Date</label>
+	        	<p>$DateUtil.toddMMyyyy($trade.physicalCollectionDate)</p>
+         </li>
+          <li class="col-md-6 col-sm-12 col-xs-12 metal_paymnt"><label>Customer</label>
+         	<p>$trade.tradeMaster.createdBy.accountCode</p>
+     	</li>
+     	<li class="col-md-6 col-sm-12 col-xs-12 metal_paymnt"><label>Destination Location</label>
+         	<p>$trade.city.description</p>
+     	</li>
+     	<li class="col-md-6 col-sm-12 col-xs-12 metal_paymnt"><label>Destination Address</label>
+         	<p>$trade.deliveryAddress</p>
+     	</li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Metal</label>
+         	<p>$trade.offer.offerMaster.commodity.metal.metal</p>
+     	</li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Quantity(KG)</label>
+         	<p>$trade.tradeMaster.quantity</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Purity</label>
+         	<p>$trade.offer.offerMaster.commodity.metal.purity</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_paymnt"><label>Freight Cost($)</label>
+         <p class="price_val">$MathUtil.addCommasToNumber($trade.freightPremium)</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12 release_inst"><label>Premium($/Ounce)</label>
+         <p class="price_val">$MathUtil.addCommasToNumber($trade.supplierPremium)</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12 release_inst"><label>Net Premium($)</label>
+         #set( $physicalPremium = $trade.eqOzs * $trade.supplierPremium )
+         <p class="price_val">$MathUtil.addCommasToNumber($physicalPremium)</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Currency</label>
+         	<p>USD($)</p>
+         </li>
+         #if(!$trade.freightCompany.description)
+         <li class="col-md-6 col-sm-12 col-xs-12 release_inst"><label>Freight Company</label>
+         	<p>-</p>
+         </li>
+         #else
+         <li class="col-md-6 col-sm-12 col-xs-12 release_inst"><label>Freight Company</label>
+         	<p>$trade.freightCompany.description</p>
+         </li>
+         #end
+      </ul>
+      <span></span>
+      <textarea  class="ID_textarea col-md-12 col-sm-12 col-xs-12" readonly>
+      $trade.tradeTasks[$MathUtil.getLastElement($trade.tradeTasks)].releaseInstruction</textarea>
+      </div>
+   </div>
+   <span class="approve_check" ><input type="checkbox" class="reviewCheck" name="reviewCheck">Trade Details Ok</span>
+   <footer class="post_form_footer">
+   <input type="hidden" id="dash_main_trade_id" value=""/>
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+      <span class="col-md-4  col-sm-4 col-xs-12">
+      <input type="button" value="CANCEL" id="review_release_cancel" class="yellow_button">
+      </span>
+      <span class="col-md-4 col-sm-4 col-xs-12 common_fields">
+         <input type="button" value="ADD COMMENT" data-toggle="modal" data-target="#comment_popup" id="comment_button" class="yellow_button review" disabled>
+      </span>
+      <span class="col-md-4 col-sm-4 col-xs-12">
+      <input type="button" value="APPROVE" id="review_release_submit" class="blue_button review" disabled>
+      </span>
+   </footer>
+   </form>
+</div>

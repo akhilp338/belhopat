@@ -1,0 +1,24 @@
+<div class="popup-box" id="popup_post">
+	 <header class="addNew-head">
+        <h4></h4>
+        <span class="close-btn">
+        	<img src="assets/static/images/Close.png">
+        </span>
+    </header>
+<form class="addNew-form" action="postOffers" method="POST">
+	<input name="postOfferIds" id="post_offer_id" type="hidden"/>
+	 <input type="hidden" name ="postOfferType" id="post_offer_type">
+		<div class="post_form_sub_header">
+			<h1>Please confirm</h1>
+			<h3>you wish to post the selected Offer(s) on the Platform</h3>
+		</div>
+		<div class="offer_wrapper">
+			
+		</div>
+		<footer class="post_form_footer">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			<input type="submit" value="POST" id="post_form_post_button" class="blue_button">
+			<input type="button" value="CANCEL" id="post_form_cancel_button" class="yellow_button">
+		</footer>
+	</form>
+</div>

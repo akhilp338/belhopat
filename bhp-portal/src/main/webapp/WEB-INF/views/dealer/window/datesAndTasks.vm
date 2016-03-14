@@ -1,0 +1,174 @@
+<div class="window checklist-window" id="window-reject">
+  <form class="addNew-form">
+     <div class="offer_wrapper offer_inner_wrapper">
+        <span class="error-span"></span>
+        <ul class="clear-both populate-div" id="datepicker_ul">
+           <li class="col-md-12 col-sm-12 col-xs-12" id="setDateHeader" data-tradeId="$trade.tradeId">Set Dates</li>
+           <li class="col-md-12 col-sm-12 col-xs-12" style="padding: 20px 30px;">
+                 <div id="customerValuation" class="col-md-6 col-sm-12 col-xs-12">
+                  #if (!$trade.customerInvoiceValuationDate)
+                    #if($dealerFlag==0 || $dealerFlag==2)
+                    
+				  	  <label>
+				  	  ##<input type="checkbox" value="" id="civdCheck" />
+				  	  <span class="glyphicon glyphicon-unchecked" style="padding: 5px;"></span>
+	              		<p id="civdCheck" class="check_enabled">Customs Invoice Valuation Date</p>
+              		  </label>
+  	                  <div class="input-group date col-xs-4 pull-right bootstrap_datetpicker hidden" id="civd_picker_readonly_div">    
+                      <input name="bootstrap_CIVDPicker" class="form-control col-sm-6" id="civd_picker_readonly" autocomplete="off">
+                      <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+				  	#else
+				  	<label>
+				  	##<input type="checkbox" value="" id="civdCheck" disabled/>
+				  	<span class="glyphicon glyphicon-unchecked check_disabled" style="padding: 5px;"></span>
+	              		<p id="civdCheck" class="check_disabled">Customs Invoice Valuation Date</p>
+				  	</label>
+  	                  <div class="input-group date col-xs-4 pull-right bootstrap_datetpicker hidden" id="civd_picker_readonly_div">    
+                      <input name="bootstrap_CIVDPicker" class="form-control col-sm-6" id="civd_picker_readonly" autocomplete="off">
+                      <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+              		  </div>
+				  	#end
+				  #else
+				  <label>
+				  	##<input type="checkbox" value="" id="civdCheck" disabled/>
+				  	<span class="glyphicon glyphicon-check" style="padding: 5px;"></span>
+	              		<p id="civdCheck" class="check_disabled checked_list">Customs Invoice Valuation Date</p>
+				  	</label>
+				  
+				     <div class="input-group date col-xs-4 pull-right bootstrap_datetpicker" id="civd_picker_readonly_div">    
+                     <input name="bootstrap_CIVDPicker" id="civd_picker" class="form-control col-sm-6" autocomplete="off"
+                     value="$DateUtil.toddMMyyyy($trade.customerInvoiceValuationDate)" readonly>
+                     <span class="input-group-addon">
+                     <span class="glyphicon glyphicon-calendar"></span>
+                     </span>
+                  </div>
+				  #end
+               </div>
+               #if ($trade.amPmFix)
+	               <div style="margin-right:0px !important;" id="amFix" class="col-md-2 col-sm-6 col-xs-6 customs_Invoice">
+		                #foreach ($typeIterator in $tradeDropdown.get( "tradeTaskAmPmFix" ).entrySet())
+		                    #if($trade.amPmFix==$typeIterator.key)
+		            			<input type="text" name="" id="am_pm_readonly" maxlength="6" value="$typeIterator.value" disabled>
+		            		#end
+		                #end
+	               </div>
+               #else
+               	<input type="text" id="am_pm_readonly" maxlength="6" hidden readonly>
+               #end
+              	 #if ($trade.amPmFix)
+               		<div style="margin-right:0px !important;" id="amFix" class="col-md-2 col-sm-6 col-xs-6 customs_Invoice">
+                		#foreach ($typeIterator in $tradeDropdown.get( "tradeTaskInvoice" ).entrySet())
+                    		#if($trade.tradeInvoice==$typeIterator.key)
+            				<input type="text" name="" id="invoice_readonly" maxlength="6" value="$typeIterator.value" disabled style="width: 100%;">
+            				#end
+                		#end
+               		</div>
+               	#else
+               		<input type="text" id="invoice_readonly" maxlength="6" hidden readonly style="width: 100%;">
+               	#end
+            </li>
+         </ul>
+         <ul class="clear-both populate-div trackTracks">
+            <li class="col-md-12 col-sm-12 col-xs-12">Track Tasks </li>
+            <li style="border-bottom:none;" class="col-md-6 col-sm-12 col-xs-12 borderNone">
+             <ul class="clear-both">
+             #foreach($task in $taskLookUp)
+	             #if($task.taskOwner=="D")
+	              #if($task.id==$tradeTask.task.id)
+		              #if($loggedUser==$tradeTask.taskAssignedTo)
+		              	<li class="col-md-12 col-sm-12 col-xs-12"><label>
+		              	##<input type="checkbox" class="checklist_checkbox" value="$task.id" id="$task.checkboxId"/>
+		              	<span class="glyphicon glyphicon-unchecked" style="padding: 5px;"></span>
+		              	<p id="$task.checkboxId" data-value="$task.id" class="checklist_checkbox check_enabled">$task.taskKey</p></label></li>
+		              #else
+	              		<li class="col-md-12 col-sm-12 col-xs-12"><label>
+	              		##<input type="checkbox" class="checklist_checkbox" value="$task.id" id="$task.checkboxId" disabled/>
+	              		<span class="glyphicon glyphicon-unchecked check_disabled" style="padding: 5px;"></span>
+	              		<p id="$task.checkboxId" data-value="$task.id" class="checklist_checkbox check_disabled">$task.taskKey</p></label></li>
+	              #end
+		             #else
+			            <li class="col-md-12 col-sm-12 col-xs-12"><label>
+			            ##<input type="checkbox" class="checklist_checkbox" value="$task.id" id="$task.checkboxId" disabled/>
+			            <span class="glyphicon glyphicon-unchecked check_disabled" style="padding: 5px;"></span>
+	              		<p id="$task.checkboxId" data-value="$task.id" class="checklist_checkbox check_disabled">$task.taskKey</p></label></li>
+		             #end
+	             #end
+             #end
+            </ul>
+            </li>
+            <li class="col-md-6 col-sm-12 col-xs-12">
+             <ul class="clear-both">
+             #foreach($task in $taskLookUp)
+	             #if($task.taskOwner=="O")
+			         <li class="col-md-12 col-sm-12 col-xs-12"><label>
+			         ##<input type="checkbox" class="operator_only checklist_checkbox" value="$task.id" id="$task.checkboxId" disabled/>
+			         <span class="glyphicon glyphicon-unchecked check_disabled" style="padding: 5px;"></span>
+	                 <p id="$task.checkboxId" data-value="$task.id" class="checklist_checkbox check_disabled operator_only">$task.taskKey</p></label></li>
+	             #end
+             #end
+             </ul>
+             </li>
+         </ul>
+         <br><span></span>
+      </div>
+      <footer class="post_form_footer">
+         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+      </footer>
+   </form>
+</div>
+
+<div class="popup" data-popup="popup-3" id="popup-3">
+    <div class="popup-inner">
+       <div class="modal-header">
+	        <button class="btn btn-warning btn-circle close_modal_btn" type="button" data-dismiss="modal"><i class="fa fa-times"></i></button>
+	        <h3 class="modal-title" id="confirm_pop_id">Set Dates</h3>
+       </div>
+        <div class="modal-body" style="overflow:visible;">
+        <div class="window">
+        	<form class="addNew-form">
+        		<div class="offer_wrapper">
+        			<ul class="col-md-12 col-sm-12 col-xs-12" style="width:100%;">
+					 	<li class="col-md-12 col-sm-12 col-xs-12">
+					 		<div class="input-group date col-xs-4 bootstrap_datetpicker " id="bootstrap_CIVDPicker" style="float: left;">    
+							 <input name="bootstrap_CIVDPicker" id="civd_picker" class="form-control col-sm-6" autocomplete="off">
+							 <span class="input-group-addon">
+							 <span class="glyphicon glyphicon-calendar"></span>
+							 </span>
+			               	</div>
+			               <div style="margin-right:0px !important; float: right;" id="amFix" class="col-md-3 col-sm-3 customs_Invoice">
+			                  <select name="amPmFix" class="form-control col-sm-3 " id="am_pm_fix">
+			                     #foreach ($typeIterator in $tradeDropdown.get( "tradeTaskAmPmFix" ).entrySet())
+			                     #if($tradeEntity.getAmPmFix()==$typeIterator.key)
+			            			<option selected="selected" value=$typeIterator.key>$typeIterator.value</option>
+			            			#end
+			                     <option value=$typeIterator.key>$typeIterator.value</option>
+			                     #end
+			                  </select>
+			               </div>
+			               <div id="customs_Invoice" class="col-md-4 col-sm-6 customs_Invoice" style="float: right;">
+			                  <select name="tradeInvoice" id="invoice_type_ddl" class="form-control col-sm-6">
+			                     #foreach ($typeIterator in $tradeDropdown.get( "tradeTaskInvoice" ).entrySet())
+			            			#if($tradeEntity.getTradeInvoice()==$typeIterator.key)
+			            			<option selected="selected" value=$typeIterator.key>$typeIterator.value</option>
+			            			#end
+			                     <option value=$typeIterator.key>$typeIterator.value</option>
+			                     #end
+			                  </select>
+			               </div>
+			            </li>
+					</ul>
+				</div>
+			</form>
+		</div>
+        <div style="text-align:center;margin-bottom: 11px; width:70%; margin:auto;">
+                <button type="button" class="btn btn-default yellow_button" id="cancel_setDate_btn">CANCEL</button>
+                <button type="button" class="btn btn-primary blue_button" id="submit_date_and_invoice_type">SAVE</button>
+        </div>
+    </div>
+    </div>
+</div>
+

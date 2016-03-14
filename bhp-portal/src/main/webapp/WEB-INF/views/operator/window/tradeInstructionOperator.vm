@@ -1,0 +1,139 @@
+<div class="hidden_nav_tab_button">
+   <img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header window-checklist">
+   <div class="col-xs-8 col-md-8 col-sm-8 header_style">
+      <h3 id="page_header">Instruct Metal Release</h3>
+   </div>
+   <div class="col-xs-4 col-md-4 col-sm-4 header_style">
+      <span id="clock1">
+      </span>
+   </div>
+</div>
+<div class="window checklist-window" id="release-instruction">
+   <form class="addNew-form">
+   <div class="offer_wrapper offer_inner_wrapper">
+   <div class="col-md-12 col-sm-12 col-xs-12 menu_bar">
+   	<a class="dealer_comments" style="float:left;"><span id="cmnt_btn">Comments</span></a>
+   	<a class="dealer_edit"><span id="cmnt_edit_btn">Edit</span></a>
+   </div>
+      <span class="error-span"></span>
+      <ul class="clear-both populate-div">
+         <li class="col-md-12 col-sm-12 col-xs-12 common_fields">Details</li>
+         <li class="col-md-6 col-sm-12 col-xs-12 common_fields">
+            <label>Trade ID</label>
+            <p>$trade.tradeId</p>
+         </li>
+          <li class="col-md-6 col-sm-12 col-xs-12 common_fields">
+            <label>Trade Date</label>
+            <p>$DateUtil.toMMMMddyyyy($trade.tradeMaster.tradeDate)</p>
+         </li>
+         
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_payment"><label>Customer</label>
+         <p>$trade.tradeMaster.createdBy.accountCode</p></li>
+          
+         
+         #if(!$trade.physicalCollectionDate)
+         <li class="col-md-6 col-sm-12 col-xs-12 release_instr"><label>Release Date</label>
+         	<p>-</p>
+         </li>
+         #else
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_payment"><label>Release Date</label>
+         <p>-</p></li>
+         #end
+         
+         <li class="col-md-6 col-sm-12 col-xs-12 release_instr">
+            <label>Offers</label>
+            <p>$instanceOfferTrade</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12 pcd metal_collection release_instr">
+            <label>Physical Collection Date</label>
+            <div class="input-group date col-md-9 col-xs-6 pull-right bootstrap_datepicker"  id="bootstrap_PCDPicker">    
+               <input id="pcd_picker" name="bootstrap_PCDPicker" class="edit_field form-control col-sm-6" type="text" readonly 
+               value="$DateUtil.toddMMyyyy($trade.physicalCollectionDate)" autocomplete="off" ></input>
+               <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+            </div>
+         </li>
+  		   		  		 
+         <li class="col-md-6 col-sm-12 col-xs-12 common_fields"><label>Metal</label><p>$trade.offer.offerMaster.commodity.metal.metal</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12 common_fields"><label>Quantity(KG)</label><p>$trade.offer.offerMaster.quantity</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12 common_fields"><label>Purity</label><p>$trade.offer.offerMaster.commodity.metal.purity</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12 release_instr"><label>Premium($/Ounce)</label>
+         <p class="price_val">$MathUtil.addCommasToNumber($trade.supplierPremium)</p></li> 
+         <li class="col-md-6 col-sm-12 col-xs-12 release_instr"><label>Net Premium($)</label>
+         #set( $physicalPremium = $trade.eqOzs * $trade.supplierPremium )
+         <p class="price_val">$MathUtil.addCommasToNumber($physicalPremium)</p></li> 
+         <li class="col-md-6 col-sm-12 col-xs-12 common_fields"><label>Currency</label><p>USD($)</p></li>
+         #if(!$trade.freightCompany.description)
+         <li class="col-md-6 col-sm-12 col-xs-12 release_instr"><label>Freight Company</label>
+         	<p class="freight_company">-</p>
+         </li>
+         #else
+         <li class="col-md-6 col-sm-12 col-xs-12 release_instr"><label>Freight Company</label>
+         	<p class="freight_company">$trade.freightCompany.description</p>
+         </li>
+         #end
+          #if(!$trade.freightPremium)
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_collection"><label>Freight Premium</label>
+         	<p class="freight_company">-</p>
+         </li>
+         #else
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_collection"><label>Freight Premium</label>
+         	<p class="freight_company">$trade.freightPremium</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_payment"><label>Freight Cost($)</label>
+         	<p class="freight_company">$trade.freightPremium</p>
+         </li>
+         #end
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_collection"><label>Source Location</label>
+         <p>$trade.offer.offerMaster.city.description</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_collection metal_payment"><label>Delivery Location</label>
+         <p>$trade.city.description</p></li>
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_collection metal_payment"><label>Destination Address</label>
+  		 <textarea id="destination_addr" class="destination_address edit_field" readonly maxlength="150">$StringUtils.trim($trade.deliveryAddress)</textarea></li>
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_collection">
+         <label>Insurance Requirements</label>
+         <textarea id="ins_req"  class="edit_field" readonly maxlength="250">$trade.insRequirements</textarea></li>
+         
+         <li class="col-md-6 col-sm-12 col-xs-12 metal_collection" style="border-bottom: none;">
+         <label>Service Required</label>
+         <textarea id="service_req" class="edit_field" readonly maxlength="250">$trade.serviceRequired</textarea></li>
+      
+      
+      </ul>
+      <span></span>
+      
+      <textarea class="RID_textarea edit_field col-md-12 col-sm-12 col-xs-12" style="text-resize:none;"readonly maxlength="300">$trade.tradeTasks[$MathUtil.getLastElement($trade.tradeTasks)].releaseInstruction</textarea>
+  
+       </div>
+ </div>
+ <span class="approve_check" ><input type="checkbox" class="reviewCheck" name="reviewCheck">Trade Details Ok</span>
+ <footer class="post_form_footer common_fields">
+         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+         <span class="col-md-4 col-sm-4 col-xs-12 common_fields">
+         <input type="button" value="CANCEL" id="cancel_button" class="yellow_button">
+         </span>
+         <span class="col-md-4 col-sm-4 col-xs-12 common_fields">
+         <input type="button" value="ADD COMMENT" data-toggle="modal" data-target="#comment_popup" id="comment_button" class="yellow_button review" disabled>
+         </span>
+         <span class="col-md-4 col-sm-4 col-xs-12 common_fields">
+         <input type="button" value="APPROVE" id="operator_check_list_submit_button" class="blue_button review" disabled>
+         </span>
+      </footer>
+</div>
+
+
+<div class="popup" data-popup="popup-4" id="popup-4">
+    <div class="popup-inner">
+       <div class="modal-header">
+	        <button class="btn btn-warning btn-circle close_modal_btn" type="button" data-dismiss="modal"><i class="fa fa-times"></i></button>
+	        <h3 class="modal-title" id="confirm_pop_id">Comments</h3>
+       </div>
+        <div class="modal-body" id="dealer_comments">
+		</div>
+        
+    </div>
+    </div>
+</div>

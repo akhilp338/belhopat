@@ -1,0 +1,52 @@
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+Direct Offers
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+<div class="col-md-10 col-sm-12 col-xs-12 pull-right" style="margin-top:35px;padding-right: 0px;margin-bottom:15px">
+   <div class="form-inline">
+       <div class="form-group col-md-4 col-sm-6 col-xs-6 select_aligner">
+           <div class="input-group col-md-12 col-sm-12 col-xs-12">
+               <select id="statusFilter" class="form-control col-sm-12 slelct_style">
+                   	 #foreach ($offerFilter in $directOfferStatus.entrySet())
+					<option value = $offerFilter.key >$offerFilter.key</option>
+					 #end
+               </select>
+           </div>
+       </div>
+   </div>
+</div>
+<div class="supplierTable col-sm-12 col-md-12 custom_header" id = "supplierTable">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listDO" >
+    <thead>
+		<tr>
+		    <th class="dt-head-center">ID</th>
+	        <th class="dt-head-center">Direct Offer ID</th>
+	        <th class="dt-head-center">Metal</th>
+	        <th class="dt-head-center">Inventory</th>
+	        <th class="dt-head-center">Brand</th>
+	        <th class="dt-head-center">Type</th>
+	        <th class="dt-head-center">Purity</th>
+	         <th class="dt-head-center">Quantity Type</th>
+	          <th class="dt-head-center">Ounce Equivalent</th>
+	        <th class="dt-head-center">Quantity</th>
+	        <th class="dt-head-center">Source Location</th>
+	        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+	        <th class="dt-head-center">Availability</th>
+	        <th class="dt-head-center">Expiry</th>
+        	<th class="dt-head-center">Status</th>
+    	</tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>

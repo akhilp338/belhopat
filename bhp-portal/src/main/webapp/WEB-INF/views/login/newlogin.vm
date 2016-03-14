@@ -1,0 +1,35 @@
+#set( $layout = "/views/layout/loginLayout.vm" )
+<div class="middle-box text-center loginscreen animated fadeInDown" id="container">
+	<div class="login-container ">
+		<div class="login-wrap">
+			<div class="login-logo">
+				<img src="/bhp-back-office/assets/static/images/BelhopatLogo.gif" class="intl-logo">
+        	</div>
+        	<h3>Back Office Application</h3>
+			<form class="form-margin-top" action="/bhp-back-office/login" method="POST" id="login_form">
+				<div class="form-group">
+					<input type="email" class="form-control form-width" placeholder="Username" required="" name="username" autofocus/>
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control form-width" placeholder="Password" required="" name="password"/>
+				</div>
+				<div>
+            		<button type="submit" class="btn btn-primary block login-btn-width" id="login_btn">LOGIN</button>
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+				</div>
+			</form>
+			#if ($error)
+				<div class="error">$error</div>
+			#end
+		</div>
+	</div>
+</div>
+<div id="loading">
+	<div class="spiner-example">
+                                <div class="sk-spinner sk-spinner-three-bounce">
+                                    <div class="sk-bounce1"></div>
+                                    <div class="sk-bounce2"></div>
+                                    <div class="sk-bounce3"></div>
+                                </div>
+                            </div>
+</div>

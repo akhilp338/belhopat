@@ -1,0 +1,36 @@
+<div class="hidden_nav_tab_button">
+	<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+Employee List
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+#parse("/partials/supplierMenu.vm")
+<input type="hidden" name="offerTab" id="offerTab" value="">
+<div class="supplierTable col-sm-12 col-md-12 custom_header">
+	<table class="table table-bordered table-hover responsive no-wrap"
+	       id="listUsers"  width="100%">
+	    <tfoot class='header_search'>
+			<tr>
+			<th rowspan="1" colspan="1"><input type="text" placeholder="Search Id"></th>
+			<th rowspan="1" colspan="1"><input type="text" placeholder="Search Name"></th>
+			<th rowspan="1" colspan="1"><input type="text" placeholder="Search Role"></th>
+		</tfoot>
+	    <thead>
+	    <tr>
+	        <th class="dt-head-center">ID</th>
+	        <th class="dt-head-center">Employee Name</th>
+	        <th class="dt-head-center">Role</th>
+	    </tr>
+	    </thead>
+	    <tbody></tbody>
+	</table>
+	
+</div>
+
+

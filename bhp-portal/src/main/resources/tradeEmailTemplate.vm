@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+#if($userType=="C")
+<h2 style="width:70%; text-align: center;">ORDER CONFIRMATION</h2>
+<br />
+<br />
+<p>Thank you for trading with $instance. Your order has been received and will be processed once the payment has been confirmed.</p>
+<br />
+<br />
+#else
+<h2 style="width:70%; text-align: center;">ORDER PLACEMENT</h2>
+<br />	
+<p>Please find below the transaction details of your latest trade with $instance</p>
+<br />
+#end
+<h3>Trade Details</h3>
+<br />
+<div style="width:100%; margin:auto; overflow: auto; border: 1px solid #eee;">
+<div style="overflow: auto; clear: both;">
+	<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">Trade ID</div>
+	<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$tradeId</div>
+</div>
+<div style="overflow: auto; clear: both;">
+	<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em; ">Trade Date</div>
+	<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$tradeDate</div>
+</div>
+<div style="overflow: auto; clear: both;">
+	<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em; ">Metal</div>
+	<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$metal</div>
+</div>
+<div style="overflow: auto; clear: both;">
+	<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em; ">Quantity</div>
+	<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$quantity</div>
+</div>
+<div style="overflow: auto; clear: both;">
+	<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em; ">Purity</div>
+	<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$purity</div>
+</div>
+##<div style="overflow: auto; clear: both;">
+##	<div style="width:30%; display: inline-block; float: left; text-align: center; border: 1px solid #eee; padding:10px 0px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom:none;background:#DCDCDC;height:100%;">Offer ID</div>
+##	<div style="float:left; width: 68.2%;">
+## 		#foreach ($offersIterator in $offers)
+## 		<div style="text-align: center; border: 1px solid #eee; padding:10px 0px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;">$offersIterator</div>
+## 		#end
+##	</div>
+##</div>
+<div style="overflow: auto; clear: both;">
+	<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em; ">Premium ($/Ounce)</div>
+	<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$premium</div>
+</div>
+<div style="overflow: auto; clear: both;">
+	<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">Net Premium ($)</div>
+	<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none;  font-size: 1.17em;">$netPremium</div>
+</div>
+
+#if($userType=="C")
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Physical Collection date</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$physicalCollectionDate</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Delivery Address</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$deliveryAddress</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Delivery Location</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$deliveryLocation</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; font-size: 1.17em;">Payment Terms</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; font-size: 1.17em;">$paymentTerms</div>
+	</div>
+
+	<br />
+		
+#if($freightPremium)
+	<br />
+	<h3>SHIPPING DETAILS:</h3>
+	<br />
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Source Location</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$sourceLocation</div>
+	</div>	
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Delivery Location</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$deliveryLocation</div>
+	</div>	
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Delivery Address</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$deliveryAddress</div>
+	</div>	
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Freight Company Name</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$freightCompanyName</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; font-size: 1.17em;">Freight Premium</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; font-size: 1.17em;">$freightPremium</div>
+	</div>
+	#end
+#else
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  font-size: 1.17em;">Physical Availability date</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; font-size: 1.17em;">$physicalAvailabilityDate</div>
+	</div>
+#end
+</div>
+#if($userType=="C")
+	<br />
+	<br />
+	The following set of documents will be sent to you in due course.
+	<br /> 
+	- Certificate of Assay 
+	<br />
+	- Certificate of Origin 
+	<br />
+	- Packing List/ Bar List 
+	<br />
+	<br />
+	<div>Please make the payment of $netPremium USD to INTL, standing instructions as already supplied to you.</div>
+	<br />
+	<br />
+	<br />
+#else
+	<br />
+	<br />
+	Please upload the following set of documents for processing the trade <a href="https://202.88.237.179:8585/intl-fcstone/login">here</a>
+	<br /> 
+	- Certificate of Assay
+	<br />
+	- Certificate of Origin 
+	<br />
+	- Packing List/ Bar List 
+	<br />
+#end
+Thank you,
+<br />
+INTLFCStone
+</body>
+</html>

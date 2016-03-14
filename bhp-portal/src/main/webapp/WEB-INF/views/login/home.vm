@@ -1,0 +1,20 @@
+#set( $layout = "/views/layout/loginLayout.vm" )
+<div class="middle-box text-center loginscreen animated fadeInDown" id="container">
+    <div>
+        <div class="login-logo">
+			<img src="/bhp-back-office/assets/static/images/BelhopatLogo.gif" class="intl-logo">
+        </div>
+        <h3>Back Office Application</h3>
+        <button type="submit" class="btn btn-primary block login-btn-width m-t" onclick="window.location.href='login'" autofocus>LOGIN</button>
+    </div>
+</div>
+<div id="loading">
+	<div class="spiner-example">
+                                <div class="sk-spinner sk-spinner-three-bounce">
+                                    <div class="sk-bounce1"></div>
+                                    <div class="sk-bounce2"></div>
+                                    <div class="sk-bounce3"></div>
+                                </div>
+                            </div>
+</div>
+

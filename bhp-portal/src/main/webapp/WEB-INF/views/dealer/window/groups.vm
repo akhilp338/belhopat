@@ -1,0 +1,54 @@
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+<div class="col-md-12 col-sm-12 col-xs-12 zero-l-padder zero-r-padder">
+<div class="menu-icons">
+    <ul>
+        <li id="addNewBtn" class="dealer-menu col-xs-4 col-sm-3 col-md-3">
+            <span></span> 
+            <p>Add new</p>
+        </li>
+        <li id="edit_button" class="edit_disabled_button dealer-menu col-xs-4 col-sm-3 col-md-3">
+            <span></span>
+            <p>Edit</p>
+        </li>
+        <li  class="edit_enabled_button dealer-menu col-xs-4 col-sm-3 col-md-3">
+            <span></span>
+            <p>Edit</p>
+        </li>
+        <li id="deleteBtn" class="delete_disabled_button dealer-menu col-xs-4 col-md-3 col-sm-3">
+            <span></span> 
+            <p>Delete</p>
+        </li>
+        <li class="dealer-menu col-xs-4 col-sm-3 col-md-3 delete_enabled_button">
+            <span></span> 
+            <p>Delete</p>
+        </li>
+         <li class="export-btn_disabled_button dealer-menu col-xs-4 col-sm-3 col-md-3" id="export-btn">
+         <span></span> 
+         <p>Export</p>
+       	</li>
+       	 </li>
+         <li class="export-btn_enabled_button dealer-menu col-xs-4 col-sm-3 col-md-3">
+         <span></span> 
+         <p>Export</p>
+       	</li>
+       
+
+    </ul>
+</div>
+</div>
+<iframe id="exportIF" style="display:none;"></iframe>
+<div class="dealerTable dealer_group_table  custom_header">
+	<table class="table table-bordered table-hover  no-wrap"
+       id="listgroups">
+    <thead>
+    <tr>
+        <th class="dt-head-center"></th>
+        <th class="dt-head-center">Group ID</th>
+        <th class="dt-head-center">Metal</th>
+        <th class="dt-head-center">Premium (%)</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>

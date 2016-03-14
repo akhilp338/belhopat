@@ -1,0 +1,110 @@
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+Trades
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearchTrade.vm")
+<div class="col-md-4 col-sm-12 col-xs-12" style="padding-right:0px;">
+<div class="menu-icons">
+    <ul class="col-md-12">
+        <li id = "chcklist-btn" class="chcklist-btn_disabled_button col-md-4 col-sm-4 col-xs-4">
+            <span></span>
+            <p>Checklist</p>
+        </li>
+         <li class="col-md-4 col-sm-4 col-xs-4 chcklist-btn_enabled_button">
+            <span></span>
+            <p>Checklist</p>
+        </li>
+        <li id="upload-Btn" class="col-md-4 col-sm-4 col-xs-4 upload-Btn_disabled_button">
+            <span></span> 
+            <p>Upload</p>
+        </li>
+         <li class="col-md-4 col-sm-4 col-xs-4 upload-Btn_enabled_button">
+            <span></span> 
+            <p>Upload</p>
+        </li>
+                <li class="view-btn_disabled_button col-md-4 col-sm-4 col-xs-4" id="view-btn">
+	       <span></span>
+	       <p>View</p>
+        </li>
+        <li class="view-btn_enabled_button col-md-4 col-sm-4 col-xs-4">
+	       <span></span>
+	       <p>View</p>
+        </li>
+    </ul>
+</div>
+</div>
+<div class="col-md-8 col-sm-12 col-xs-12 pull-right" style="margin-top:25px;padding-right: 0px;">
+    <div class="form-inline">
+        <div class="form-group col-md-4 col-sm-12 col-xs-12 padding-limiter">
+            <label for="From" class="col-md-3 col-sm-2 col-xs-4 label_margin padding-limiter">From</label>
+            <div class="input-group date col-md-9 col-sm-8 col-xs-10" id="bootstrap_from_datetimepicker">    
+                <input id="from_datepicker" name="from" class="form-control col-sm-12" type="text" value="$DateUtil.getDateBeforeAMonth()"></input>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+    	        </span>
+    	    </div>
+        </div>
+        <div class="form-group col-md-4 col-sm-12 col-xs-12 padding-limiter">
+            <label for="To" class="col-md-2 col-sm-2 col-xs-4 label_margin padding-limiter">To</label>
+            <div class="input-group date col-md-9 col-sm-8 col-xs-10" id="bootstrap_to_datetimepicker">    
+    	        <input id="to_datepicker" name="to" class="form-control col-sm-12" type="text" value="$DateUtil.getCurrentDateddMMyyyy()"></input>
+    	        <span class="input-group-addon">
+    	            <span class="glyphicon glyphicon-calendar"></span>
+    	        </span>
+    	    </div>
+        </div>
+        <div class="form-group col-md-4 col-sm-12 col-xs-12 padding-limiter select_aligner">
+            <label for="" class="col-md-2 col-sm-2 col-xs-4 padding-limiter"></label>
+            <div class="input-group col-md-10 col-sm-8 col-xs-10">
+                <select id="tradeStatus" class="form-control col-sm-12 slelct_style">
+			#foreach ($tradeStatusIterator in $tradeStatus.entrySet())
+				<option value = $tradeStatusIterator.key >$tradeStatusIterator.value</option>
+			#end
+      </select>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="customerTable col-sm-12 col-md-12 custom_header" id = "customerTable">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listTrades" >
+    <thead>
+		<tr>
+		<th class="dt-head-center">ID</th>
+        <th class="dt-head-center">Trade ID</th>
+        <th class="dt-head-center">Metal</th>
+        <th class="dt-head-center">Brand</th>
+        <th class="dt-head-center">Inventory</th>
+        <th class="dt-head-center">Type</th>
+        <th class="dt-head-center">Purity</th>
+        <th class="dt-head-center">Quantity Type</th>
+        <th class="dt-head-center">Ounce Equivalent</th>
+        <th class="dt-head-center">Quantity</th>
+       	<th class="dt-head-center">Premium</th>
+        <th class="dt-head-center">Source Location</th>
+        <th class="dt-head-center">Delivery Location</th>
+        <th class="dt-head-center trade-date" style="min-width: 90px;">Trade Date</th>
+        <th class="dt-head-center">Completed / </br>ETA Date</th>
+        <th class="dt-head-center">Status</th>
+    	</tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<span class='trade-offer-popup' data-toggle='modal' data-target='#tradePopup'></span>
+#parse("/partials/tradeOfferIdPopup.vm")
+
+</div>
+<form method="POST" action="uploadFile" enctype="multipart/form-data">
+<div class="file-upload-override-div" id="files_container">  
+	<input type="file" id="hiddenDocUploadButton" name="file" style="display:none;">
+</div>
+</form>

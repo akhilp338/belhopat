@@ -1,0 +1,51 @@
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+Direct Offers
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+<div class="menu-icons">
+    <ul class="col-md-8">
+        <li id = "reject-btn" class="reject-btn_disabled_button col-md-2 col-sm-2 col-xs-4">
+            <span></span> 
+            <p>Reject</p>
+        </li>
+        <li class="col-md-2 col-sm-2 col-xs-4 reject-btn_enabled_button">
+            <span></span> 
+            <p>Reject</p>
+        </li>
+    </ul>
+</div>
+<div class="dealerTable col-sm-12 col-md-12 custom_header" id = "dealerTable">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listDO" >
+    <thead>
+		<tr>
+		    <th class="dt-head-center">ID</th>
+	        <th class="dt-head-center">Direct Offer ID</th>
+	        <th class="dt-head-center">Metal</th>
+	        <th class="dt-head-center">Inventory</th>
+	        <th class="dt-head-center">Brand</th>
+	        <th class="dt-head-center">Type</th>
+	        <th class="dt-head-center">Purity</th>
+	         <th class="dt-head-center">Quantity Type</th>
+	          <th class="dt-head-center">Ounce Equivalent</th>
+	        <th class="dt-head-center">Quantity</th>
+	        <th class="dt-head-center">Source Location</th>
+	        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+	        <th class="dt-head-center">Availability</th>
+	        <th class="dt-head-center">Expiry</th>
+        	
+    	</tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>

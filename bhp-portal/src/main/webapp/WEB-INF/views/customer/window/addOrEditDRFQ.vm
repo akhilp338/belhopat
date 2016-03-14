@@ -1,0 +1,125 @@
+<div class="window" id="window-drfq">
+    #set ($pageEditMode = $editPageMode)
+	#if($pageEditMode == true)  
+	<header>
+	#if($!offer.offerId) 
+      #set ($header = ": "+$offer.offerId )
+    #end
+    <div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<h4>Edit DRFQ $!header</h4>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_inner_style">
+<div id="clock1">
+</div>
+</div>
+</div>
+    </header>  
+		<form class="addNew-form" action="#springUrl("/customer/reSubmitDRFQ")" method="POST" enctype="application/x-www-form-urlencoded" id="add_new_drfq">
+	#else
+	<header>
+	    <div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<h4>DRFQ Details</h4>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_inner_style">
+<div id="clock1">
+</div>
+</div>
+</div>
+    </header>
+	<form class="addNew-form" action="#springUrl("/customer/addDRFQ")" method="POST" id="add_new_drfq">
+	#end
+	<input name="offerId" id="offerId" type="hidden"/>
+	<input type="hidden" name="id" id="id" value=$offer.id></input>
+	<input type="hidden" name ="postOfferType" id="post_offer_type">
+		<div class="offer_wrapper drfq_wrapper fill_wrapper_drfq_wrappe">
+			<ul>
+				<li>Offer </li>
+				<li class="col-md-4 col-sm-6 col-xs-12">
+				#if($pageEditMode == true)
+					<label>DRFQ ID</label><h3>$!offer.offerId</h3>
+				#else
+					<label>Offer ID</label><h3>$!offer.offerId</h3>
+				#end
+				</li>
+				<li class="col-md-4 col-sm-6 col-xs-12">
+					<label>Metal</label><h3>$offer.offerMaster.commodity.metal.metal</h3>
+				</li>
+				<li class="col-md-4 col-sm-6 col-xs-12">
+					<label>Inventory</label><h3>$offer.offerMaster.commodity.metal.inventory</h3>
+				</li>
+				<li class="col-md-4 col-sm-6 col-xs-12">
+					<label>Brand</label><h3>$offer.offerMaster.commodity.commodityBrand.code</h3>
+				</li>
+				<li class="col-md-4 col-sm-6 col-xs-12">
+					<label>Type</label><h3>$offer.offerMaster.commodity.commodityType.code</h3>
+				</li>
+				<li class="col-md-4 col-sm-6 col-xs-12">
+					<label>Purity</label><h3>$offer.offerMaster.commodity.metal.purity</h3>
+				</li>
+				<li class="src col-md-4 col-sm-6 col-xs-12 iesl">
+					<label>Source Location</label><h3>$offer.offerMaster.city.description</h3>
+				</li>
+				<li class="expr expiry col-md-4 col-sm-6 col-xs-12">
+					<label>Availability</label>
+					<div class="input-group date col-md-7 col-sm-7 col-xs-6 pull-right" id="bootstrap_datepicker">    
+                    <input type="text" name="availability" class="form-control col-sm-6" autocomplete="off" value="$DateUtil.toddMMyyyy($offer.offerMaster.availability)" autocomplete="off"></input>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                    </div>
+				</li>
+				<li class="expr expiry col-md-4 col-sm-6 col-xs-12">
+	                <label >Expiry</label>
+	                <div class="input-group date col-md-7 col-sm-7 col-xs-6 pull-right" id="bootstrap_datetimepicker">    
+	                    <input id="customerEditExpiry" name="expiry" class="form-control col-sm-6" type="text" value="$DateUtil.toddMMyyyyHHmm($offer.offerMaster.expiry)" autocomplete="off"></input>
+	                    <span class="input-group-addon">
+	                        <span class="glyphicon glyphicon-calendar"></span>
+	                    </span>
+	                </div>
+	            </li>	
+	            <li class="col-md-4 col-sm-6 col-xs-12 tz-pad-limiter">
+	                <label>Timezone</label>
+	                	<select class="form-control col-sm-6" disabled>
+	                	<option value="" >SELECT</option>
+						#foreach ($timezoneIterator in $timezone.entrySet())
+							#if($pageEditMode == true)
+								#if($offer.offerMaster.timezone.id == $timezoneIterator.key)
+									<option value = $timezoneIterator.key selected >$timezoneIterator.value</option>
+								#else
+									<option value = $timezoneIterator.key >$timezoneIterator.value</option>
+								#end
+							#else
+								<option value = $timezoneIterator.key >$timezoneIterator.value</option>
+							#end
+						#end
+	                </select>
+            	</li>	
+				#if($pageEditMode == true)
+					<li class="premium col-md-4 col-sm-6 col-xs-12"><label>Premium ($/Ounce)</label><h3>$offer.offerMaster.parentPreOfferAction.premium</h3></li>
+					<li class="number drfq-input-enabled col-md-4 col-sm-6 col-xs-12"><label>Quantity</label><h3>$MathTool.floor($offer.offerMaster.balanceQuantity)</h3></li>
+				   <li class="number src drfq-input-enabled col-md-4 col-sm-6 col-xs-12"><label>Max Premium ($/Ounce)</label><h3>$offer.offerMaster.premium</h3></li>				   
+				#else
+					<li class="premium col-md-4 col-sm-6 col-xs-12" id="drfq_premium" data-attr="$offer.offerMaster.premium"><label>Premium ($/Ounce)</label><h3>$offer.offerMaster.premium</h3></li>
+					<li class="expr drfq-input col-md-4 col-sm-6 col-xs-12"><label><b>Quantity</b></label><input type="text" name="quantity" maxlength="6" value = $MathTool.floor($offer.offerMaster.balanceQuantity)></li>
+				    <li class="expr src drfq-input col-md-4 col-sm-6 col-xs-12"><label><b>Max Premium($/Ounce)</b>(Optional)</label><input type="text" name="maxPremium" maxlength="6" placeholder="$/Ounce"></li>
+				#end
+				<li class="col-md-4 col-sm-6 col-xs-12 drfq-input empty-li"><label></label></li>
+				<li class="col-md-4 col-sm-6 col-xs-12 drfq-input empty-li"><label></label></li>
+			</ul>
+			<input id="unconfimedOfferExpiry" type="hidden" value="$DateUtil.toddMMyyyyHHmm($offer.offerMaster.expiry)"></input>
+		</div>
+		<footer class="post_form_footer">
+			<input type ="hidden" name = "timezone" class = "instance-timezone" />
+		    <input type="hidden" id="quantity_prev_val" value="$MathTool.floor($offer.offerMaster.quantity)"/>
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			<span class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+          		<button type="button" class="add_button yellow_button" id="cancel_button">CANCEL</button>
+           	</span>
+           	<span class="col-md-3 col-sm-4 col-xs-12">
+               	<button type="submit" class="add_button blue_button" id="drfq_confirm_button">CONFIRM</button>
+           	</span>
+		</footer>
+	</form>
+</div>

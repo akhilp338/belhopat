@@ -1,0 +1,190 @@
+<header role="nav" class="header-container">
+    <div class="intl-wrapper">
+		<input type="hidden" name="userType" id="userType" value="$!{page}">
+		<input type="hidden" name="user" id="loggedInuser"  data-attr="${userId}">
+		<input type="hidden" name="user" id="loggedInInstanceId"  data-attr="${instanceId}">
+        <a class="logo">
+            <img src="#springUrl("/assets/static/images/BelhopatLogo.gif")" alt="BHP Back Office">
+        </a>
+        <a href="#megamenu" class="nav-toggle nav-toggle-menu icon-menu">
+            <span class="is-vishidden">Menu</span>
+        </a>
+        <a href="#search" class="nav-toggle nav-toggle-search icon-search">
+            <span class="is-vishidden">Search</span>
+        </a>
+		<form action="/bhp-back-office/logout" method="post" class="logout-link">
+            <input type="submit" class="logout-button" value="Log out" />
+  		    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+		</form>
+        <nav class="nav secondary-nav">
+            #if($page == 'supplier')
+                <div class="account-wrap">               
+                    <span class="account-id-header">Account ID</span>
+                    <span class="account-id" id="accountId" data-toggle="modal" data-target="#margin-status" data-attr="${accountId}">$accountId</span>
+                    <span class="user-id" id="userId" data-attr="${userId}"></span>
+                </div>
+                <div class="modal inmodal" id="margin-status" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content animated fadeIn">
+                        	<div id="margin-loading" class="col-md-12 col-sm-12 col-xs-12">
+								<div class="spiner-example">
+								    <div class="sk-spinner sk-spinner-three-bounce">
+								        <div class="sk-bounce1"></div>
+								        <div class="sk-bounce2"></div>
+								        <div class="sk-bounce3"></div>
+								    </div>
+								</div>
+							</div>
+                            <div class="modal-header">
+                                <button class="btn btn-warning btn-circle" type="button" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                                <h3 class="modal-title">Margin Status</h3>
+                            </div>
+                            <div class="modal-body">
+                            	<div class="status-content">
+	                                <ul class="list-group">
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Total Funds</span>
+	                                        <span class="margin-value " id="totalFund">-</span>
+	                                    </li>
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Revaluation</span>
+	                                        <span class="margin-value " id="revaluation">-</span>
+	                                    </li>
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Margin</span>
+	                                        <span class="margin-value " id="marginVal">-</span>
+	                                    </li>
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Free Equity</span>
+	                                        <span class="margin-value margin-value" id="freeEquity">-</span>
+	                                    </li>
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Margin</span>
+	                                        <span class="margin-value margin-value" id="marginPercentage">-</span>
+	                                    </li>
+	                                </ul>
+	                                <div class="account-status">
+	                                	##<p>Insufficiant Margin on your Account.</p>
+	                                	##<p>Please amend quantity of fund in your account accordingly.</p>
+	                                </div>
+	                                <div class="modal-footer">
+	                                    <button type="button" class="btn btn-primary block" data-dismiss="modal">OK</button>
+	                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>       
+             
+            #elseif($page == 'customer')
+                <div class="metal-wrap">               
+                    <span class="account-id-header">Dollar Position</span>
+                    <span class="metal-posn">$positions.metalPosition</span>
+                </div>
+                <div class="dollar-wrap">               
+                    <span class="account-id-header">Metal Position</span>
+                    <span class="dollar-posn">$positions.dollarPosition</span>
+                </div>
+                <div class="account-wrap">               
+                    <span class="account-id-header">Account ID</span>
+                    <span class="account-id" id="accountId" data-toggle="modal" data-target="#margin-status" data-attr="${accountId}">$accountId</span>
+                </div>
+                <div class="modal inmodal" id="margin-status" tabindex="-1" role="dialog"  aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content animated fadeIn">
+	                    	<div id="margin-loading" class="col-md-12 col-sm-12 col-xs-12">
+								<div class="spiner-example">
+								    <div class="sk-spinner sk-spinner-three-bounce">
+								        <div class="sk-bounce1"></div>
+								        <div class="sk-bounce2"></div>
+								        <div class="sk-bounce3"></div>
+								    </div>
+								</div>
+							</div>
+                            <div class="modal-header">
+                                <button class="btn btn-warning btn-circle" type="button" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                                <h3 class="modal-title">Margin Status</h3>
+                            </div>
+                            <div class="modal-body">
+                            	<div class="status-content">
+	                                <ul class="list-group">
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Total Funds</span>
+	                                        <span class="margin-value " id="totalFund">-</span>
+	                                    </li>
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Revaluation</span>
+	                                        <span class="margin-value " id="revaluation">-</span>
+	                                    </li>
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Margin</span>
+	                                        <span class="margin-value " id="marginVal">-</span>
+	                                    </li>
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Free Equity</span>
+	                                        <span class="margin-value margin-value" id="freeEquity">-</span>
+	                                    </li>
+	                                    <li class="list-group-item">
+	                                        <span class="margin-title">Margin</span>
+	                                        <span class="margin-value margin-value" id="marginPercentage">-</span>
+	                                    </li>
+	                                </ul>
+	                                <div class="modal-footer">
+	                                    <button type="button" class="btn btn-primary block" data-dismiss="modal">OK</button>
+	                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            #else 
+                <div class="account-wrap">               
+                    <span class="account-id-header">Legal Entitiy Name</span>
+                    <span class="account-id">$accountId</span>
+                </div>                
+            #end
+        </nav>
+    </div>
+    #parse("/partials/supplierNavTab.vm")
+</header>
+<iframe id="exportIF" style="display:none;"></iframe>
+   <div class="popup" data-popup="popup-1">
+    <div class="popup-inner">
+       <div class="modal-header">
+                                <button class="btn btn-warning btn-circle" type="button" data-dismiss="modal" id="close_modal_btn"><i class="fa fa-times"></i></button>
+                                <h3 class="modal-title">Match Field</h3>
+       </div>
+        <div class="modal-body">
+        <div class="col-xs-12 col-md-12 col-sm-12 populateArea">
+        </div>
+        <div style="float:right;margin-bottom: 11px;">
+                <button type="button" class="btn btn-danger" id="reset_modal">RESET</button>
+               <button type="button" class="btn btn-warning" style="background-color: #F2AC26;" id="cancel_modal">CANCEL</button>
+               <button type="button" class="btn btn-primary"  id="bar_upload">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup" data-popup="comment_popup" id="comment_popup">
+    <div class="popup-inner">
+       <div class="modal-header">
+	        <button class="btn btn-warning btn-circle close_modal_btn" type="button" data-dismiss="modal"><i class="fa fa-times"></i></button>
+	        <h3 class="modal-title" id="confirm_pop_id">Add Comment</h3>
+       </div>
+        <div class="modal-body">
+        	<textarea class="col-md-12 col-sm-12 col-xs-12" placeholder="Comments" id="rel_inst_comments" maxlength="250"></textarea>
+		</div>
+		<div class="modal-footer">
+	        <button type="button" class="col-md-4 btn btn-primary block" data-dismiss="modal">ADD</button>
+	    </div>
+    </div>
+</div>
+<input type="hidden" id="dashBard_current_chart" value=""/>
+<input type="hidden" id="dashBard_inner_tab" value=""/>
+<input type="hidden" id="dash_trade_id" value=""/>
+<form method="POST" action="uploadFile" enctype="multipart/form-data">
+<div class="file-upload-override-div" id="files_container_div">  
+	<input type="file" id="hiddenDashDocUploadButton" name="file" style="display:none;">
+</div>
+</form>

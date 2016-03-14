@@ -1,0 +1,166 @@
+.login-container h3{
+	font-family: 'Bitter-Regular';
+	font-weight: 400;
+	font-size: 28px;
+	color: #003861;
+	margin: 51% 0% 10% 0%;
+}
+.login-container {
+	text-align: center;
+	background-image: url("../images/LogoLoginpage.png");
+	height: 100%;
+	width: 100%;
+	background-size: 100%;
+	background-position: center;
+	display: table;
+}
+
+.page-wrap {
+	background-image: url(../images/mapLoginBg.png);
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	background-size: 77%;
+	background-position: center;
+}
+.login-wrap{
+	width: 300px;
+	vertical-align: middle;
+	max-width: 400px;
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 10%;
+}
+.login-btn {
+	margin-top: 16px;
+	padding: 12px 10%;
+	font-family: 'Bitter-Regular';
+}
+.login_label{
+	display: inline-block;
+    width: 85px;
+    text-align: left;    
+}
+@-moz-document url-prefix() {
+   .login_label{   
+	    margin-right: 20px;
+	}
+}
+.login_input {
+	height:30px;
+	margin-bottom:10px;
+	width: 200px;
+	padding: 0 10px;
+}
+#login_top_div {padding-top: 60px;}
+.error{
+	position: absolute;
+	color: red;
+	font-size: larger;
+	margin: 16% auto;
+}
+.m-b {
+    margin-bottom: 15px;
+}
+.form-margin-top {
+    margin-top: 55%;
+}
+.btn {
+    border-radius: 3px;
+}
+.btn-success {
+  	background-color: #1c84c6;
+  	border-color: #1c84c6;
+  	color: #FFFFFF;
+}
+.block {
+    display: block;
+}
+.full-width {
+    margin: 0 auto;
+    width: 100%;
+    padding: 3%;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.btn-success:active:focus,
+.btn-success:active:hover,
+.btn-success.active:hover,
+.btn-success.active:focus {
+  background-color: #1a7bb9;
+  border-color: #1a7bb9;
+  color: #FFFFFF;
+}
+.btn-success:active,
+.btn-success.active,
+  background-image: none;
+}
+.btn-success.disabled,
+.btn-success.disabled:hover,
+.btn-success.disabled:focus,
+.btn-success.disabled:active,
+.btn-success.disabled.active,
+.btn-success[disabled],
+.btn-success[disabled]:hover,
+.btn-success[disabled]:focus,
+.btn-success[disabled]:active,
+.btn-success.active[disabled] {
+  background-color: #1f90d8;
+  border-color: #1f90d8;
+}
+/*T&C*/
+.header-container {
+	position: relative;
+	width: 100%;
+	display: inline-block;
+	border-bottom: 4px solid #f2ac25;
+}
+.logo img {
+	margin: 10% 0 10% 0%;
+}
+.TC-wrapper p{
+	margin-bottom: 10px;
+	font-family: 'RobotoSlab-regular';
+	font-size: 12px;
+}
+.terms-sub-head, .terms-head{
+	font-family: 'RobotoSlab-Bold';
+	color: #003861;
+}
+.terms-sub-head{
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.terms-head{
+	font-size: 22px;
+	padding: 10px 0;
+}
+.TC-buttons{
+	text-align: center;
+}
+.TC-buttons button {
+	margin: 20px;
+}
+.TC-buttons form {
+	display: inline-block;
+	float: none;
+	padding: 0px;
+}
+.TC-check{
+	font-size: 14px;
+	margin: 0px;
+	display: inline-block;
+	float: left;
+	width: 95%;
+}
+
+#terms-form{
+	overflow: hidden;
+	width: 260px;
+}
+@media (max-width: 690px)
+.logo {
+	margin-left: 0 !important; 
+}

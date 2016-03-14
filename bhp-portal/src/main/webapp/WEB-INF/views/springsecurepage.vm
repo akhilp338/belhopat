@@ -1,0 +1,74 @@
+#set ($page = "supplier")
+<div class="menu-icons">
+    <ul>
+        <li>
+            <img src="#springUrl("/assets/static/images/Edit.png")">
+            <p>Edit</p>
+        </li>
+        <li>
+            <img src="#springUrl("/assets/static/images/Replicate.png")"> 
+            <p>Replicate</p>
+        </li>
+        <li>
+            <img src="#springUrl("/assets/static/images/Delete.png")"> 
+            <p>Delete</p>
+        </li>
+        <li>
+            <img src="#springUrl("/assets/static/images/Post.png")"> 
+            <p>Post</p>
+        </li>
+        <li>
+            <img src="#springUrl("/assets/static/images/Upload.png")"> 
+            <p>Upload</p>
+        </li>
+        <li id="addNewBtn">
+            <img src="#springUrl("/assets/static/images/Add new.png")"> 
+            <p>Add new</p>
+        </li>
+    </ul>
+</div>
+<table class="table table-striped table-bordered table-hover"
+       id="listConfirmedOffers">
+    <thead>
+    <tr>
+        <th>offer ID</th>
+        <th>Metal</th>
+        <th>Inventory</th>
+        <th>Brand</th>
+        <th>Type</th>
+        <th>Purity</th>
+        <th>Quality</th>
+        <th>offer ID</th>
+        <th>offer ID</th>
+        <th>offer ID</th>
+        <th>offer ID</th>
+        <th>offer ID</th>
+        <th>offer ID</th>
+
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<div class="popup-window"></div>
+<div class="popup-box">
+    <header class="addNew-head">
+        <h4>Add New Offer</h4>
+        <span class="close-btn"></span>
+    </header>
+    <form class="addNew-form">
+        <ul class="">
+            <li>
+                <label for="offerId">Offer Id</label>
+                <select></select>
+            </li>
+            <li>
+                <label for="metal">Metal</label>
+                <select></select>
+            </li>
+            <li>
+                <label for="brand">Brand</label>
+                <select></select>
+            </li>
+        </ul>
+    </form>
+</div>

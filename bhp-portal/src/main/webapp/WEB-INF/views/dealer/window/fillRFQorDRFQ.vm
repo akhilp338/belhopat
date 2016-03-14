@@ -1,0 +1,65 @@
+<div class="window" id="window-drfq">
+	<header>
+	 	 <div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<h4>Respond to RFQ/DRFQ Details</h4>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+</div>
+</div>
+    </header>
+	<form class="addNew-form" action="#springUrl("/dealer/fillRFQorDRFQ")" method="POST" id="add_new_drfq">
+	<input name="offerId" id="offerId" type="hidden"/>
+	<input type="hidden" name="id" id="id" value=$offer.id></input>
+	<input type="hidden" name ="postOfferType" id="post_offer_type">
+					#if($offer.offerMaster.offerType.id == 4)
+							#set ($labelHeader = "Source Location" )
+				    #else
+                            #set ($labelHeader = "Delivery Location" )
+					#end
+		<div class="offer_wrapper drfq_wrapper fill_wrapper_drfq_wrappe">
+			<ul>
+				<li>Details </li>
+				<li class="col-md-3 col-sm-6 col-xs-12">
+					<label>Metal</label><h3>$offer.offerMaster.commodity.metal.metal</h3>
+				</li>
+				<li class="col-md-3 col-sm-6 col-xs-12">
+					<label>Inventory</label><h3>$offer.offerMaster.commodity.metal.inventory</h3>
+				</li>
+				<li class="col-md-3 col-sm-6 col-xs-12">
+					<label>Brand</label><h3>$offer.offerMaster.commodity.commodityBrand.code</h3>
+				</li>
+				<li class="col-md-3 col-sm-6 col-xs-12">
+					<label>Type</label><h3>$offer.offerMaster.commodity.commodityType.code</h3>
+				</li>
+				<li class="col-md-3 col-sm-6 col-xs-12">
+					<label>Purity</label><h3>$offer.offerMaster.commodity.metal.purity</h3>
+				</li>
+				<li class="src col-md-3 col-sm-6 col-xs-12">
+					<label>$labelHeader</label><h3>$offer.offerMaster.city.description</h3>
+				</li>
+
+				<li class="col-md-3 col-sm-6 col-xs-12">
+					<label>Availability</label><h3>$DateUtil.toddMMyyyy($offer.offerMaster.availability)</h3>
+				</li>
+				<li class="fill_expr col-md-3 col-sm-6 col-xs-12">
+	                <label style="width:40%;">Expiry</label><h3 style="width:60%;">$DateUtil.toddMMyyyyHHmm($offer.offerMaster.expiry)</h3>
+	            </li>
+                <li class="fill-drfq-input col-md-3 col-sm-6 col-xs-12"><label><b>Quantity</b></label><input type="text" name="quantity" maxlength="6" value = $MathTool.floor($offer.offerMaster.quantity)></li>
+				<li class="fill-drfq-input col-md-3 col-sm-6 col-xs-12"><label><b>Premium ($)</b></label><input type="text" name="premium" maxlength="6" value = $offer.offerMaster.premium></li>
+		        <li class="post_hidden fill_drfq-hidden-input col-md-3 col-sm-6 col-xs-12"><label></label><h3></h3></li>
+			</ul>
+		</div>
+		<footer class="post_form_footer">
+			<input type ="hidden" name = "timezone" class = "instance-timezone" />
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			<input type="hidden" id="prev_quantity" value = $MathTool.floor($offer.offerMaster.quantity) >
+			<span class="col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+          		<button type="button" class="add_button yellow_button" id="cancel_button">CANCEL</button>
+           	</span>
+           	<span class="col-md-3 col-sm-4 col-xs-12">
+               	<button type="submit" class="add_button blue_button" id="drfq_confirm_button">CONFIRM</button>
+           	</span>
+		</footer>
+	</form>
+</div>

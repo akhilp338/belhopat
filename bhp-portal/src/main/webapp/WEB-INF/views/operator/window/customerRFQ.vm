@@ -1,0 +1,30 @@
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+<input type="hidden" class="drfq-row" value="">
+<div class="dealerTable col-sm-12 col-md-12 custom_header" id = "dealerTable">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listCustomerRFQs" >
+    <thead>
+    <tr>
+        <th class="dt-head-center">ID</th>
+        <th class="dt-head-center">Customer </br>Account</th>
+        <th class="dt-head-center">RFQ / </br>DRFQ ID</th>
+        <th class="dt-head-center">Metal</th>
+        <th class="dt-head-center">Inventory</th>
+        <th class="dt-head-center">Brand</th>
+        <th class="dt-head-center">Type</th>
+        <th class="dt-head-center">Purity</th>
+         <th class="dt-head-center">Quantity Type</th>
+          <th class="dt-head-center">Ounce Equivalent</th>
+        <th class="dt-head-center">Quantity</th>
+        <th class="dt-head-center">Source / </br>Delivery Location</th>
+        <th class="dt-head-center">Delivery Address</th>
+        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+        <th class="dt-head-center">Availability</th>
+        <th class="dt-head-center">Expiry</th>
+        <th>offer</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>

@@ -1,0 +1,2 @@
+<input type="hidden" id = "currentTab" value="$!{currentTab}">
+##<input type="hidden" id = "timeOutError" value=$!{timeOutError}>

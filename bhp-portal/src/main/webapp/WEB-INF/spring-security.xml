@@ -1,0 +1,30 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<http auto-config="true">
+		<intercept-url pattern="/supplier**" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/customer**" access="hasRole('ROLE_C')" />
+		<intercept-url pattern="/dealer**" access="hasRole('ROLE_D')" />
+		<intercept-url pattern="/operator**" access="hasRole('ROLE_O')" />
+		<access-denied-handler error-page="/login" />
+		<form-login login-page="/login"  
+			always-use-default-target="true" authentication-failure-url="/login?error"
+			default-target-url="/loginSuccess" />
+
+		<logout logout-success-url="/"
+			delete-cookies="JSESSIONID" />
+			<csrf/>
+	</http>
+
+	<authentication-manager>
+		 <authentication-provider user-service-ref="loginService" /> 
+	</authentication-manager>
+</beans:beans>

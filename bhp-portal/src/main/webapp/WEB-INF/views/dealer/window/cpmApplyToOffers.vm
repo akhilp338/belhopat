@@ -1,0 +1,136 @@
+<input type="hidden" id="customized_selected_offer_ids" value/>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header" style="margin-bottom:10px;">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<h5>Premiums >> Customer Pricing Matrix >> Customize CPM >> Apply to offer</h5>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+<nav class="nav secondary-nav inactive" id="sub_megamenu" style="margin-bottom:30px;">
+	<ul class="intl-wrapper sub_tab_wrap">
+	    <li class = "active" id="confirmedOffers">
+	        <a class="tab"  href="javascript:void(0)">
+	            CONFIRMED OFFERS
+	        </a>
+	    </li>
+	    <li id="unConfirmedOffers">
+	        <a class="tab"  href="javascript:void(0)">
+	            UNCONFIRMED OFFERS
+	        </a>
+	    </li>
+	    <li id="DO">
+	        <a class="tab"  href="javascript:void(0)">
+	            DIRECT OFFERS
+	        </a>
+	    </li>
+	</ul>
+	<div class="under_line_div"></div>
+</nav>
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+<div class="window window_apply_offer">
+<div class="datatable_wrap">
+
+</div>
+<input name="premiumParams" id="premium_params" type="hidden" data-premiumCpmId="${premiumCpm.id}" 
+	data-premiumAmount="${premiumCpm.premiumGroup.premium}">
+	<input type="hidden" id="offer_selected_id" value/>
+<div class="inner_container">	
+<div class="innerTable activeTable confirmedOffers col-sm-12 col-md-12 custom_header">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="list_confirmedOffers">
+    <thead>
+    <tr>
+        <th class="dt-head-center">ID</th>
+        <th class="dt-head-center">Supplier </br>Account ID</th>
+        <th class="dt-head-center">Offer ID</th>
+        <th class="dt-head-center">Metal</th>
+        <th class="dt-head-center">Inventory</th>
+        <th class="dt-head-center">Brand</th>
+        <th class="dt-head-center">Type</th>
+        <th class="dt-head-center">Purity</th>
+        <th class="dt-head-center">Quantity Type</th>
+        <th class="dt-head-center">Ounce Equivalent</th>
+        <th class="dt-head-center">Quantity</th>
+        <th class="dt-head-center">Source Location</th>
+        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+        <th class="dt-head-center">Availability</th>
+        <th class="dt-head-center">Expiry</th>
+        <th class="dt-head-center">Status</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>
+<div class="innerTable unConfirmedOffers col-sm-12 col-md-12 custom_header">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="list_unConfirmedOffers">
+    <thead>
+    <tr>
+        <th class="dt-head-center">UUID</th>
+        <th class="dt-head-center">Supplier </br>Account ID</th>
+        <th class="dt-head-center">Offer ID</th>
+        <th class="dt-head-center">Metal</th>
+        <th class="dt-head-center">Inventory</th>
+        <th class="dt-head-center">Brand</th>
+        <th class="dt-head-center">Type</th>
+        <th class="dt-head-center">Purity</th>
+        <th class="dt-head-center">Quantity Type</th>
+        <th class="dt-head-center">Ounce Equivalent</th>
+        <th class="dt-head-center">Quantity</th>
+        <th class="dt-head-center">Source Location</th>
+        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+        <th class="dt-head-center">Availability</th>
+        <th class="dt-head-center">Expiry</th>
+        <th class="dt-head-center">Status</th>
+
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>
+<div class="innerTable DO col-sm-12 col-md-12 custom_header">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="list_DO">
+    <thead>
+		<tr>
+		    <th class="dt-head-center">ID</th>
+	        <th class="dt-head-center">Direct Offer ID</th>
+	        <th class="dt-head-center">Metal</th>
+	        <th class="dt-head-center">Inventory</th>
+	        <th class="dt-head-center">Brand</th>
+	        <th class="dt-head-center">Type</th>
+	        <th class="dt-head-center">Purity</th>
+	        <th class="dt-head-center">Quantity Type</th>
+	        <th class="dt-head-center">Ounce Equivalent</th>
+	        <th class="dt-head-center">Quantity</th>
+	        <th class="dt-head-center">Source Location</th>
+	        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+	        <th class="dt-head-center">Availability</th>
+	        <th class="dt-head-center">Expiry</th>
+        	
+    	</tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>
+</div>
+<div class="col-sm-12 col-md-12" style="background:#eee;margin-top: 14px;">
+<span class="col-sm-6 col-md-6" style="margin-top: 5px;padding-left: 0px;padding-top:6px;">
+<h5 id="offer_count" style="color: #003861;">0 Offer(s) selected</h5>
+</span>
+<div class="col-sm-12 col-md-12 offer-row" id="offer-block">
+
+</div>
+</div>
+<div class="col-sm-12 col-md-12" style="height:auto;margin-top: 14px;">
+<span class="footer-btn col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+   <button type="button" class="add_button yellow_button" id="cancel_button">CANCEL</button>
+</span>
+<span class="col-md-3 col-sm-4 col-xs-12">
+    <button type="button" class="add_button blue_button" id="apply_to_offers_submit">SAVE</button>
+</span>
+</div>
+

@@ -1,0 +1,280 @@
+<html>
+<body>
+<h3>Welcome to our web site</h3>
+<p>
+    Thank you for your registration. Your login details are:<br />
+    username:<b>${username}</b><br />
+    password:<b>${password}</b>
+</p>
+
+
+
+
+<div>
+    <table style="width:6.25in" border="0" cellpadding="0" cellspacing="0" width="600">
+        <tbody>
+        <tr style="height:30pt">
+            <td style="width:225pt;border-style:none none solid;border-bottom-color:rgb(34,30,31);border-bottom-width:1pt;padding:0in;height:30pt" width="300">
+                <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                    <b>
+                        <span style="font-size:15pt;font-family:&#39;Helvetica Neue&#39;;color:rgb(126,186,220)">INTL FCStone</span>
+                    </b>
+                    <u>
+                    </u>
+                    <u>
+                    </u>
+                </div>
+            </td>
+            <td style="width:225pt;border-style:none none solid;border-bottom-color:rgb(34,30,31);border-bottom-width:1pt;padding:0in;height:30pt" width="300">
+                <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif;text-align:right">
+                    <b>
+                        <span style="font-size:15pt;font-family:&#39;Helvetica Neue&#39;">Official Trade Tax Receipt</span>
+                    </b>
+                    <u>
+                    </u>
+                    <u>
+                    </u>
+                </div>
+            </td>
+            <td style="width:24pt;padding:0in;height:30pt" width="32">
+                <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif"> <u>
+                </u>
+                    <u>
+                    </u>
+                </div>
+            </td>
+        </tr>
+        <tr style="height:63.75pt">
+            <td style="width:6.25in;padding:0in;height:63.75pt" width="600">
+                <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                    <b>
+                                <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">INTL FCStone<span> </span>
+                                    <br>
+                                    <a href="mailto:william@interactivedonor.com" style="color:purple" target="_blank">
+                                        <span style="color:rgb(149,79,114)">INTL@fcstone.com</span>
+                                    </a>
+                                </span>
+                    </b>
+                    <u>
+                    </u>
+                    <u>
+                    </u>
+                </div>
+            </td>
+            <td colspan="2" style="width:6.25in;padding:0in;height:63.75pt" width="600">
+                <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif;text-align:right">
+                    <b>
+                        <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">October 20, 2014</span>
+                    </b>
+                    <u>
+                    </u>
+                    <u>
+                    </u>
+                </div>
+            </td>
+        </tr>
+        <tr style="height:63.75pt">
+            <td colspan="3" style="width:6.25in;padding:0in;height:63.75pt" width="600">
+                <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                            <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">Thank you for your trade with INTL FCStone.<span> </span>
+                                <br>
+                                <br>The details of your trade are:</span>
+                    <u>
+                    </u>
+                    <u>
+                    </u>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="width:6.25in;padding:0in" width="600">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr style="height:22.5pt">
+                        <td style="width:78.75pt;border-style:solid none none solid;border-top-color:rgb(34,30,31);border-top-width:1pt;border-left-color:rgb(34,30,31);border-left-width:1pt;background-color:rgb(189,190,192);padding:0in 0in 0in 3.75pt;height:22.5pt;background-repeat:initial initial" width="105">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <b>
+                                    <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">TRADE ID</span>
+                                </b>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:56.25pt;border-style:solid none none;border-top-color:rgb(34,30,31);border-top-width:1pt;background-color:rgb(189,190,192);padding:0in;height:22.5pt;background-repeat:initial initial" width="75">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <b>
+                                    <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">Amount</span>
+                                </b>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:93.75pt;border-style:solid none none;border-top-color:rgb(34,30,31);border-top-width:1pt;background-color:rgb(189,190,192);padding:0in;height:22.5pt;background-repeat:initial initial" width="125">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <b>
+                                    <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">Directed To</span>
+                                </b>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:116.25pt;border-style:solid none none;border-top-color:rgb(34,30,31);border-top-width:1pt;background-color:rgb(189,190,192);padding:0in;height:22.5pt;background-repeat:initial initial" width="155">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <b>
+                                    <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">State and Zip Code</span>
+                                </b>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:101.25pt;border-style:solid solid none none;border-top-color:rgb(34,30,31);border-top-width:1pt;border-right-color:rgb(34,30,31);border-right-width:1pt;background-color:rgb(189,190,192);padding:0in;height:22.5pt;background-repeat:initial initial" width="135">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <b>
+                                    <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">For the Purpose Of</span>
+                                </b>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height:22.5pt">
+                        <td style="width:78.75pt;border-style:none none none solid;border-left-color:rgb(34,30,31);border-left-width:1pt;background-color:rgb(242,242,242);padding:0in 0in 0in 3.75pt;height:22.5pt;background-repeat:initial initial" width="105">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">48-88621</span>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:56.25pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="75">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">$10</span>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:93.75pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="125">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">Assistance League of Southern California</span>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:116.25pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="155">
+                        </td>
+                        <td style="width:101.25pt;border-style:none solid none none;border-right-color:rgb(34,30,31);border-right-width:1pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="135">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">Trade</span>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height:3.75pt">
+                        <td colspan="5" style="border-style:none solid;border-left-color:rgb(34,30,31);border-left-width:1pt;border-right-color:rgb(34,30,31);border-right-width:1pt;padding:0in;height:3.75pt">
+                        </td>
+                    </tr>
+                    <tr style="height:22.5pt">
+                        <td style="width:78.75pt;border-style:none none none solid;border-left-color:rgb(34,30,31);border-left-width:1pt;background-color:rgb(242,242,242);padding:0in 0in 0in 3.75pt;height:22.5pt;background-repeat:initial initial" width="105">
+                        </td>
+                        <td style="width:56.25pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="75">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">$0.65</span>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:93.75pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="125">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">iDonor</span>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:116.25pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="155">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">New York 10901</span>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td style="width:101.25pt;border-style:none solid none none;border-right-color:rgb(34,30,31);border-right-width:1pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="135">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">6.50% Processing Fee</span>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr style="height:3.75pt">
+                        <td colspan="5" style="background-color:black;padding:0in;height:3.75pt;background-repeat:initial initial">
+                        </td>
+                    </tr>
+                    <tr style="height:22.5pt">
+                        <td style="width:78.75pt;border-style:none none solid solid;border-left-color:rgb(34,30,31);border-left-width:1pt;border-bottom-color:rgb(34,30,31);border-bottom-width:1pt;background-color:rgb(242,242,242);padding:0in 0in 0in 3.75pt;height:22.5pt;background-repeat:initial initial" width="105">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <b>
+                                    <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">TOTAL</span>
+                                </b>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                        <td colspan="4" style="width:56.25pt;border-style:none solid solid none;border-bottom-color:rgb(34,30,31);border-bottom-width:1pt;border-right-color:rgb(34,30,31);border-right-width:1pt;background-color:rgb(242,242,242);padding:0in;height:22.5pt;background-repeat:initial initial" width="75">
+                            <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                                <b>
+                                    <span style="font-size:9pt;font-family:&#39;Helvetica Neue&#39;">$10.65</span>
+                                </b>
+                                <u>
+                                </u>
+                                <u>
+                                </u>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr style="height:82.5pt">
+            <td colspan="3" style="width:6.25in;border-style:none none solid;border-bottom-color:rgb(34,30,31);border-bottom-width:1pt;padding:0in;height:82.5pt" width="600">
+                <div style="margin:0in 0in 0.0001pt;font-size:12pt;font-family:&#39;Times New Roman&#39;,serif">
+                            <span style="font-size:10.5pt;font-family:&#39;Helvetica Neue&#39;">We confirm that no goods or services were provided that exceed 2% of the amount traded.<span> </span>
+                                <br>
+                                <br>The INTL FCStone trade is a program operated for the benefit of the nonprofit sector by The Giving Back Fund, a 501(c)(3) Public Charity (Federal Tax ID: 04-3367888)</span>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

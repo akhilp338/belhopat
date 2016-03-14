@@ -1,0 +1,26 @@
+<div class="window" id="window-post">
+<header class="innerheader">
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<h4>Post RFQ</h4>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+</div>
+</div>
+    </header>
+<form class="addNew-form" action="#springUrl("/dealer/postRFQs")" method="POST">
+    <input type="hidden" id="drfq_check" value="proceed">
+	<input name="offerIds" id="post_offer_id" type="hidden"/>
+	<input type="hidden" name ="offerType" id="post_offer_type">
+		<div class="offer_wrapper offer_inner_wrapper"></div>
+		<footer class="post_form_footer">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+			<span class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+				<input type="button" value="CANCEL" id="cancel_button" class="yellow_button">
+			</span>
+			<span class="col-md-3 col-sm-6 col-xs-12">
+				<input type="submit" value="POST" id="post_form_post_button" class="blue_button">
+			</span>
+		</footer>
+	</form>
+</div>

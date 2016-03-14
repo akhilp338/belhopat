@@ -1,0 +1,8 @@
+#set( $layout = "/views/layout/loginLayout.vm" )
+<div class="page-wrap">
+	<div class="login-container ">
+		<div class="error-wrap">
+			<h3>Error !</h3>
+		</div>
+	</div>
+</div>

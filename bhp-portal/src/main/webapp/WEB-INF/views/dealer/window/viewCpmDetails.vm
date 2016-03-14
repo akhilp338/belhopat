@@ -1,0 +1,108 @@
+<div class="cpm_details_wrap">
+	<h3>CPM Details</h3>
+	<ul class="col-md-8 col-sm-12">
+		<li class="col-md-6 col-sm-6"><label>Account Id</label><h3>${premiumCpm.accountCode}</h3></li>
+		<li class="col-md-6 col-sm-6"><label>Group Id</label><h3>${premiumCpm.premiumGroup.groupId}</h3></li>
+		<li class="col-md-6 col-sm-6"><label>Metal</label><h3>${premiumCpm.premiumGroup.metal.metal}</h3></li>
+		<li class="col-md-6 col-sm-6"><label>Premium(%)</label><h3>${premiumCpm.premiumGroup.premium}</h3></li>
+	</ul>
+</div>
+<div class="cpm_offer_details_wrap">
+	<h3>Offer Details</h3>
+	<nav class="nav secondary-nav inactive" id="sub_megamenu">
+		<ul class="intl-wrapper sub_tab_wrap">
+		    <li class = "active">
+		        <a class="tab" id="confirmedOffers" href="javascript:void(0)">
+		            CONFIRMED OFFERS
+		        </a>
+		    </li>
+		    <li>
+		        <a class="tab" id="unConfirmedOffers" href="javascript:void(0)">
+		            UNCONFIRMED OFFERS
+		        </a>
+		    </li>
+		    <li>
+		        <a class="tab" id="DO" href="javascript:void(0)">
+		            DIRECT OFFERS
+		        </a>
+		    </li>
+		</ul>
+		<div class="under_line_div"></div>
+	</nav>
+	
+	<div class="inner_container">
+		<div class="innerTable activeTable confirmedOffers  col-sm-12 col-md-12 custom_header">
+			<table class="table table-bordered table-hover responsive no-wrap"
+		       id="listConfirmedOffers">
+		    <thead>
+		    <tr>
+		        <th class="dt-head-center">Offer ID</th>
+		        <th class="dt-head-center">Metal</th>
+		        <th class="dt-head-center">Inventory</th>
+		        <th class="dt-head-center">Brand</th>
+		        <th class="dt-head-center">Type</th>
+		        <th class="dt-head-center">Purity</th>
+		        <th class="dt-head-center">Quantity Type</th>
+		        <th class="dt-head-center">Ounce Equivalent</th>
+		        <th class="dt-head-center">Quantity</th>
+		        <th class="dt-head-center">Source Location</th>
+		        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+		        <th class="dt-head-center">Availability</th>
+		        <th class="dt-head-center">Expiry</th>
+		    </tr>
+		    </thead>
+		    <tbody></tbody>
+			</table>
+		</div>
+		
+		<div class="innerTable  unConfirmedOffers col-sm-12 col-md-12 custom_header" >
+			<table class="table table-bordered table-hover responsive no-wrap"
+			       id="listUnConfirmedOffers">
+			    <thead>
+			    <tr>
+			        <th class="dt-head-center">Offer ID</th>
+			        <th class="dt-head-center">Metal</th>
+			        <th class="dt-head-center">Inventory</th>
+			        <th class="dt-head-center">Brand</th>
+			        <th class="dt-head-center">Type</th>
+			        <th class="dt-head-center">Purity</th>
+	    	        <th class="dt-head-center">Quantity Type</th>
+		        	<th class="dt-head-center">Ounce Equivalent</th>
+			        <th class="dt-head-center">Quantity</th>
+			        <th class="dt-head-center">Source Location</th>
+			        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+			        <th class="dt-head-center">Availability</th>
+			        <th class="dt-head-center">Expiry</th>
+			    </tr>
+			    </thead>
+			    <tbody></tbody>
+			</table>
+		</div>
+		
+		<div class="innerTable  DO col-sm-12 col-md-12 custom_header">
+			<table class="table table-bordered table-hover responsive no-wrap"
+		       id="listDO" >
+			    <thead>
+					<tr>
+				        <th class="dt-head-center">Direct Offer ID</th>
+				        <th class="dt-head-center">Metal</th>
+				        <th class="dt-head-center">Inventory</th>
+				        <th class="dt-head-center">Brand</th>
+				        <th class="dt-head-center">Type</th>
+				        <th class="dt-head-center">Purity</th>
+	        	        <th class="dt-head-center">Quantity Type</th>
+		        		<th class="dt-head-center">Ounce Equivalent</th>
+				        <th class="dt-head-center">Quantity</th>
+				        <th class="dt-head-center">Source Location</th>
+				        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+				        <th class="dt-head-center">Availability</th>
+				        <th class="dt-head-center">Expiry</th>
+			        	
+			    	</tr>
+			    </thead>
+			    <tbody></tbody>
+			</table>
+		</div>
+		<button type="button" class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4  yellow_button" id="cancel_button">BACK</button>
+	</div>
+</div>

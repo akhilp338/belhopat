@@ -1,0 +1,171 @@
+#container {
+	display: none;
+}
+#loading {
+	width: 80%;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.sk-spinner-three-bounce.sk-spinner {
+  margin: 0 auto;
+  width: 70px;
+  text-align: center;
+}
+.sk-spinner-three-bounce div {
+  width: 18px;
+  height: 18px;
+  background-color: rgb(045, 087, 141);
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+  animation: sk-threeBounceDelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.sk-spinner-three-bounce .sk-bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.sk-spinner-three-bounce .sk-bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+@-webkit-keyframes sk-threeBounceDelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes sk-threeBounceDelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.intl_bg {
+	background: url('../images/mapLoginBg.png') no-repeat center 30% fixed; 
+  	-webkit-background-size: 80%;
+  	-moz-background-size: 80%;
+  	-o-background-size: 80%;
+  	background-size: 80%;
+  	font-family: 'Asap-Regular';
+  	overflow: hidden;
+}
+.loginscreen.middle-box {
+    width: 600px;
+}
+.loginscreen h3 {
+    font-family: 'RobotoSlab-Bold';
+    color: rgb(045, 087, 141);
+    margin-top: 3%;
+}
+.middle-box {
+    max-width: 600px;
+    z-index: 100;
+    margin: 0 auto;
+    margin-top: 10%; 
+}
+.login-logo {
+	margin: 0 auto;
+}
+.intl-logo {
+	width: 90%;	
+}
+.login-btn-width {
+  	width: 50%;
+    padding: 2%;
+}
+.m-t {
+    margin-top: 3%;
+}
+.form-control.form-width {
+	width: 50%;
+	margin: 0 auto;
+}
+.form-margin-top {
+    margin-top: 3%;
+}
+.modal-dialog{
+	width: 65%;
+}
+
+.modal-header {
+	background: rgb(096,124,141);
+	text-align: left;
+	font-family: 'RobotoSlab-Bold';
+	color: #ffffff;
+}
+/*move to main*/
+.btn-circle {
+	width: 30px;
+	height: 30px;
+	padding: 4px 0px 6px 0;
+	border-radius: 15px;
+	text-align: center;
+	float: right;
+	font-size: 16px;
+	line-height: 1.428571429;
+	background: rgb(53,85,106);
+}
+.btn-circle:hover {
+	background: rgb(170, 179, 187);
+}
+/**/
+/* @media only screen and (min-device-height: 700px) and (max-device-height: 900px) {
+     .middle-box {
+		margin-top: 15% !important;
+	}
+   }
+
+@media (min-device-height: 901px) {
+	.middle-box {
+		margin-top: 25% !important;
+	}
+}
+@media (max-device-height: 699px) {
+	.middle-box {
+		margin-top: 15% !important;
+	}
+}
+ */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) { 
+	.middle-box {
+		margin-top: 17% !important;
+	}
+}
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) { 
+	.middle-box {
+/* 		margin-top: 0 !important; */
+	}
+	.intl_bg{
+		padding-top:25%;
+	}
+}
+@media (min-device-width: 1025px) {
+	.middle-box {
+		margin-top: 15% !important;
+	}
+}
+ 

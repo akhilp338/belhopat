@@ -1,0 +1,175 @@
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+Queries
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+<input type="hidden" name="offerTab" id="offerTab" value="">
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<input type="hidden" name="userRole" id="userRole" value=${userRole}></input>
+<div>
+<ul class="queries_side_wrap">
+<li class="id_credentials">
+	<label id = "accId"> Account ID</label>
+	<p id = "showAccId"> </p>
+</li>
+<li class="sign_out_btn_wrap">
+	<button class="sign_out_btn">Exit</button>
+</li>
+</ul>
+</div>
+<center class="validation_fail_msg"></center>
+<nav class="nav secondary-nav inactive" id="sub_megamenu">
+	<ul class="intl-wrapper sub_tab_wrap">
+	    <li class = "active">
+	        <a class="tab" id="confirmedOffers" href="javascript:void(0)">
+	            CONFIRMED OFFERS
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="unConfirmedOffers" href="javascript:void(0)">
+	            UNCONFIRMED OFFERS
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="rfq" href="javascript:void(0)">
+	            REQUEST FOR QUOTE
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="DO" href="javascript:void(0)">
+	            DIRECT OFFERS
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="trade" href="javascript:void(0)">
+	            TRADES
+	        </a>
+	    </li>
+	</ul>
+	<div class="under_line_div"></div>
+</nav>
+
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+
+<div class="inner_container">
+	<div class="innerTable activeTable confirmedOffers  col-sm-12 col-md-12 custom_header">
+		<table class="table table-bordered table-hover responsive no-wrap"
+	       id="listConfirmedOffers">
+	    <thead>
+	    <tr>
+	        <th class="dt-head-center">cID</th>
+	        <th class="dt-head-center">Offer ID</th>
+	        <th class="dt-head-center">Metal</th>
+	        <th class="dt-head-center">Inventory</th>
+	        <th class="dt-head-center">Brand</th>
+	        <th class="dt-head-center">Type</th>
+	        <th class="dt-head-center">Purity</th>
+	        <th class="dt-head-center">Quantity Type</th>
+	        <th class="dt-head-center">Ounce Equivalent</th>
+	        <th class="dt-head-center">Quantity</th>
+	        <th class="dt-head-center">Source Location</th>
+	        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+	        <th class="dt-head-center">Availability</th>
+	        <th class="dt-head-center">Expiry</th>
+	    </tr>
+	    </thead>
+	    <tbody></tbody>
+		</table>
+	</div>
+	
+	<div class="innerTable  unConfirmedOffers col-sm-12 col-md-12 custom_header" >
+		<table class="table table-bordered table-hover responsive no-wrap"
+		       id="listUnConfirmedOffers">
+		    <thead>
+		    <tr>
+		        <th class="dt-head-center">ID</th>
+		        <th class="dt-head-center">Offer ID</th>
+		        <th class="dt-head-center">Metal</th>
+		        <th class="dt-head-center">Inventory</th>
+		        <th class="dt-head-center">Brand</th>
+		        <th class="dt-head-center">Type</th>
+		        <th class="dt-head-center">Purity</th>
+    	        <th class="dt-head-center">Quantity Type</th>
+	        	<th class="dt-head-center">Ounce Equivalent</th>
+		        <th class="dt-head-center">Quantity</th>
+		        <th class="dt-head-center">Source Location</th>
+		        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+		        <th class="dt-head-center">Availability</th>
+		        <th class="dt-head-center">Expiry</th>
+		    </tr>
+		    </thead>
+		    <tbody></tbody>
+		</table>
+	</div>
+	
+	<div class="innerTable  rfq col-sm-12 col-md-12 custom_header" >
+		<table class="table table-bordered table-hover responsive no-wrap"
+	       id="listRFQs" >
+		</table>
+	</div>
+	
+	<div class="innerTable  trade col-sm-12 col-md-12 custom_header" >
+		<table class="table table-bordered table-hover responsive no-wrap"
+	       id="listTrades" >
+		    <thead>
+		    <tr>
+		    	<th class="dt-head-center">ID</th>
+		        <th class="dt-head-center">Trade ID</th>
+		        <th class="dt-head-center">Metal</th>
+		        <th class="dt-head-center">Brand</th>
+		        <th class="dt-head-center">Inventory</th>
+		        <th class="dt-head-center">Type</th>
+		        <th class="dt-head-center">Purity</th>
+                <th class="dt-head-center">Quantity Type</th>
+          		<th class="dt-head-center">Ounce Equivalent</th>
+		        <th class="dt-head-center">Quantity</th>
+		        <th class="dt-head-center">Source Location</th>
+		        <th class="dt-head-center">Delivery Location</th>
+		        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+		        <th class="dt-head-center" style="width:130px !important">Trade Date</th>
+		        <th class="dt-head-center">Completed / </br>ETA Date</th>
+		        <th class="dt-head-center">Status</th>
+		    </tr>
+		    </thead>
+		    <tbody></tbody>
+		</table>
+		<span class='trade-offer-popup' data-toggle='modal' data-target='#tradePopup'></span>
+		#parse("/partials/tradeOfferIdPopup.vm")
+	</div>
+	
+	<div class="innerTable  DO col-sm-12 col-md-12 custom_header">
+		<table class="table table-bordered table-hover responsive no-wrap"
+	       id="listDO" >
+		    <thead>
+				<tr>
+				    <th class="dt-head-center">ID</th>
+			        <th class="dt-head-center">Direct Offer ID</th>
+			        <th class="dt-head-center">Metal</th>
+			        <th class="dt-head-center">Inventory</th>
+			        <th class="dt-head-center">Brand</th>
+			        <th class="dt-head-center">Type</th>
+			        <th class="dt-head-center">Purity</th>
+        	        <th class="dt-head-center">Quantity Type</th>
+	        		<th class="dt-head-center">Ounce Equivalent</th>
+			        <th class="dt-head-center">Quantity</th>
+			        <th class="dt-head-center">Source Location</th>
+			        <th class="dt-head-center">Premium </br>($/Ounce)</th>
+			        <th class="dt-head-center">Availability</th>
+			        <th class="dt-head-center">Expiry</th>
+		        	
+		    	</tr>
+		    </thead>
+		    <tbody></tbody>
+		</table>
+	</div>
+</div>

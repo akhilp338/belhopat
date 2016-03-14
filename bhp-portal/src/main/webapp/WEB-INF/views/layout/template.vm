@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- default header name is X-CSRF-TOKEN -->
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+
+    <title>BHP Back Office</title>
+    <link rel="shortcut icon" href="/bhp-back-office/assets/static/images/intl_icon.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/bootstrap.min.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/bootstrap-datetimepicker.min.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/font-awesome.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/animate.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/jquery.dataTables.min.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/jquery-ui.min.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/main.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/sweetalert.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/supplier.css")">
+</head>
+<body>
+    #parse("/partials/header.vm")
+    <input name="baseUrl" id="root_base_url" type="hidden" value="#springUrl('')"/>
+    <input name="baseUrlSupplier" id="supplier_base_url" type="hidden" value="#springUrl('/supplier')"/>
+    <input name="baseUrlCustomer" id="customer_base_url" type="hidden" value="#springUrl('/customer')"/>
+    <input name="baseUrlDealer" id="dealer_base_url" type="hidden" value="#springUrl('/dealer')"/>
+    <input name="baseUrlOperator" id="operator_base_url" type="hidden" value="#springUrl('/operator')"/>
+    
+    <input name="selectedOfferIds" id="selected_offer_id" type="hidden"/>
+    <input name="selectedOffers" id="selected_offers" type="hidden">
+    <div id="loading" class="col-md-12 col-sm-12 col-xs-12">
+		<div class="spiner-example">
+		    <div class="sk-spinner sk-spinner-three-bounce">
+		        <div class="sk-bounce1"></div>
+		        <div class="sk-bounce2"></div>
+		        <div class="sk-bounce3"></div>
+		    </div>
+		</div>
+	</div>
+    <div class="container intl-wrapper">
+        $screen_content
+    </div>
+    #parse("/partials/footer.vm")
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-1.11.3.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-ui.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/moment.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/bootstrap-datetimepicker.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.plugin.min.js")"></script> 
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.countdown.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/sweetalert.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-validate.bootstrap-tooltip.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.MyDigitClock.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.table2excel.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/xls.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/Chart.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/js/main.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/js/modules/common.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/js/modules/supplier/supplier.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/js/modules/supplier/supplierTable.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/dataTables.buttons.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jszip.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/buttons.html5.min.js")"></script>
+    #if($page=='dealer')
+    	<script type="text/javascript" src="#springUrl("/assets/js/modules/supplier/dealerTrade.js")"></script>
+    	<script type="text/javascript" src="#springUrl("/assets/js/modules/supplier/dealerQueriesTable.js")"></script>
+    	<script type="text/javascript" src="#springUrl("/assets/js/modules/supplier/dealerPremium.js")"></script>
+    	<script type="text/javascript" src="#springUrl("/assets/js/modules/supplier/dealerPremiumTable.js")"></script>
+    #end
+    <script type="text/javascript">
+           var page = 'supplier';
+    </script>
+
+</body>
+</html>

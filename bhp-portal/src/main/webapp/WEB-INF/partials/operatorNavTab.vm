@@ -1,0 +1,112 @@
+<nav class="nav primary-nav inactive" id="megamenu">
+	<ul class="intl-wrapper">
+		<li class="active_li menu-li">
+	        <a class="active tab" id="dashboard" href="javascript:void(0)">
+	            DASHBOARD
+	            <span id="dashboardNotify" class="custom-badge badge-notify"></span>
+	        </a>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="confirmedOffers" href="javascript:void(0)">
+	            CONFIRMED OFFERS
+	             <span  id="confirmedOffersNotify" class="custom-badge badge-notify"></span>
+	        </a>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="unConfirmedOffers" href="javascript:void(0)">
+	            UNCONFIRMED OFFERS
+	            <span id="unConfirmedOffersNotify" class="custom-badge badge-notify"></span>
+	        </a>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="rfq" href="javascript:void(0)">
+	            REQUEST FOR QUOTE
+	            <span id="rfqNotify" class="custom-badge badge-notify"></span>
+	        </a>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="DO" href="javascript:void(0)">
+	            DIRECT OFFERS
+	            <span id="DONotify" class="custom-badge badge-notify"></span>
+	        </a>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="RO" href="javascript:void(0)">
+	            REJECTED OFFERS
+	            <span id="RONotify" class="custom-badge badge-notify"></span>
+	        </a>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="trade" href="javascript:void(0)">
+	            TRADES
+	            <span id="tradeNotify" class="custom-badge badge-notify"></span>
+	        </a>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="premiums" href="javascript:void(0)">
+	            PREMIUMS
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab disabled_buttons" id="operator" href="javascript:void(0)">
+	            OPERATOR
+	        </a>
+	    </li>
+	</ul>
+</nav>
+<nav class="hidden_nav_tabs hidden_nav_hide">
+	<ul>
+		<li class="active_li menu-li">
+	        <a class="tab active" id="dashboard" href="javascript:void(0)">
+	            DASHBOARD
+	        </a>
+	         <span  id="dashboardMobNotify" class="mobile-badge"></span>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="confirmedOffers" href="javascript:void(0)">
+	            CONFIRMED OFFERS
+	        </a>
+	        <span  id="confirmedMobOffersNotify" class="mobile-badge"></span>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="unConfirmedOffers" href="javascript:void(0)">
+	            UNCONFIRMED OFFERS
+	        </a>
+	        <span id="unConfirmedMobOffersNotify" class="mobile-badge"></span>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="rfq" href="javascript:void(0)">
+	            REQUEST FOR QUOTE
+	        </a>
+	        <span id="rfqMobNotify" class="mobile-badge"></span>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="DO" href="javascript:void(0)">
+	            DIRECT OFFERS
+	        </a>
+	        <span id="DOMobNotify" class="mobile-badge"></span>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="RO" href="javascript:void(0)">
+	            REJECTED OFFERS
+	        </a>
+	        <span id="ROMobNotify" class="mobile-badge"></span>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="trade" href="javascript:void(0)">
+	            TRADES
+	        </a>
+	        <span id="tradeMobNotify" class="mobile-badge"></span>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="premiums" href="javascript:void(0)">
+	            PREMIUMS
+	        </a>
+	    </li>
+	    <li class="menu-li">
+	        <a class="tab" id="operator" href="javascript:void(0)">
+	            OPERATOR
+	        </a>
+	    </li>
+	</ul>
+</nav>

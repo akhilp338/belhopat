@@ -1,0 +1,533 @@
+.trade-btn {
+	position: absolute;
+	top: 10px;
+	padding: 7px 18px;
+}
+.trade-btn p{
+	color: #30991F;
+}
+#drfq-btn p {
+	color: #B7B7B7;
+}
+.terms-head, .terms-sub-head {
+	color: #182D44;
+}
+.terms-head {
+	font-size: 19px;
+}
+.terms-sub-head {
+	font-size: 13px;
+}
+.account-id{
+	cursor: pointer;
+}
+.modal-header {
+    background: rgb(096,124,141);
+    text-align: left;
+    font-family: 'RobotoSlab-Bold';
+    color: #ffffff;
+}
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 4px 0px 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    float: right;
+    font-size: 16px;
+    line-height: 1.428571429;
+    background: rgb(53,85,106);
+}
+.btn-circle:hover {
+	background: rgb(170, 179, 187);
+}
+.btn-circle:active,
+.btn-circle:focus {
+	background: rgb(53,85,106) !important;
+}
+.margin-title {
+	font-family: 'Asap-Bold';
+	float: left;
+}
+.margin-value {
+	font-family: 'Asap-Bold';
+}
+.margin-value-large {
+	font-size: 19px;
+}
+.modal-footer .btn {
+	width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+.trade-btn, .drfq-btn{
+	position: static;
+	margin: 20px 27px 10px;
+	font-family: Helvetica;
+    font-weight: 700;
+    font-size: 13px;
+}
+#drfq-btn {
+	margin: 25px 27px 20px;
+}
+
+.trade-btn span{
+	background-image: url(../images/Trade.png);    
+}
+.drfq_enabled_button span{
+	background-image: url(../images/CreateDRFQ.png)!important;   
+	margin-left: 20px;
+	cursor: pointer!important; 
+}
+.drfq_enabled_button p{
+	color:#259480!important;
+}
+.drfq_enabled_button {
+	display:none;
+}
+#drfq-btn span{
+	background-image: url(../images/CreateDRFQdisabled.png);   
+	margin-left: 20px;
+}
+#drfq-btn span, .trade-btn span {
+	background-repeat: no-repeat;
+	display: inline-block;
+	height: 35px;
+    width: 45px;
+    cursor: pointer; 
+}
+#drfq-btn span{
+	cursor: default;
+}
+/* .window .addNew-form .offer_wrapper ul .drfq-input {
+	line-height: 1.9;
+} */
+.window .addNew-form .offer_wrapper ul .drfq-input label {
+	width: 70%;
+	color: #003861;
+}
+.drfq-input-enabled input{
+	width: 70%;
+}
+.drfq_disabled_button{
+	pointer-events: none;
+}
+.window .addNew-form .offer_wrapper ul .drfq-input input, .drfq-input-enabled input {
+	width: 25%;
+	border: 1px solid rgb(223, 213, 213);
+	border-radius: 4px;
+	padding: 2px;
+}
+/* .expiry {
+	margin-bottom: 5%;
+} */
+.window .addNew-form .offer_wrapper ul .expr{
+	padding: 6px 11px;
+}
+#drfq_action_form .offer_wrapper ul .expr{
+	padding: 7px 11px;
+}
+#window-post .offer_wrapper ul .expr{
+	padding: 7px 11px;
+}
+#trade-form .offer_wrapper ul .expr{
+	padding: 7px 11px;
+}
+#trade-form .offer_wrapper ul .qty {
+	/* padding: 6px 11px; */
+	padding: 4px 11px;
+}
+.window .addNew-form .offer_wrapper ul .premium  {
+	height:44px;
+	padding: 10px;
+}
+.window .addNew-form .offer_wrapper ul .number{
+	padding: 7px; 
+ }
+.window .addNew-form .offer_wrapper ul .qty {
+	padding: 5px;
+}
+ .tradeFlow_offerDetails,.tradeFlow_shippingDetails,.tradeFlow_orderSummary{
+ 	position: relative;
+ 	margin: 0 auto;
+ 	width: 60%;
+ 	margin-top: 5px;
+	margin-bottom: 25px;
+ }
+.tradeFlow_offerDetails .tradeIcons, 
+.tradeFlow_shippingDetails .tradeIcons,
+.tradeFlow_orderSummary .tradeIcons  {
+	display: inline-block;
+	width :32%;
+	text-align :center;
+}
+.tradeFlow_offerDetails .tradeIcons:nth-child(3),
+.tradeFlow_shippingDetails .tradeIcons:nth-child(3),
+.tradeFlow_orderSummary .tradeIcons:nth-child(3){
+	margin-right: 0;
+}
+.offerDetails .img_icon{
+	height:55px;
+}
+/*  .tradeFlow_offerDetails .offerIcon{
+ 	background-image: url(../images/offerDetails.png);   
+ 	background-repeat: no-repeat;
+ 	background-size: 18%;
+	background-position: 15px;
+ }
+  .tradeFlow_offerDetails .shippingIcon{
+ 	background-image: url(../images/shippingDetailsDisabled.png);   
+ 	background-repeat: no-repeat;
+ 	background-size: 19%;
+	background-position: 15px;
+ }
+  .tradeFlow_offerDetails .orderIcon{
+ 	background-image: url(../images/OrderSummaryDisabled.png);  
+ 	background-repeat: no-repeat;
+	background-size: 41%;
+	background-position: 10px;
+ } */
+.tradeIcons:nth-child(1) h5 {
+	color: rgb(6, 57, 97);
+}
+#trade-windows .tradeIcons h5 {
+	padding: 5px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14px;
+}
+#trade-windows .start_arrow{
+ 	position: absolute;
+	top: 25%;
+	background-repeat: no-repeat;
+	left: 20.5%;
+	width: 23.5%;;
+	background-size: 100% 100%;
+	height: 20%; 
+ }
+#trade-windows .end_arrow{
+	position: absolute;
+	top: 25%;
+	background-repeat: no-repeat;
+	right: 23.5%;
+	width: 23.5%;
+	background-size: 100% 100%;
+	height: 20%;
+ }
+.offerDetails .start_arrow,.shippingDetails .end_arrow{
+	background-image: url(../images/arrowProgress.png);
+}
+.offerDetails .end_arrow{
+	background-image: url(../images/arrowNormal.png);
+}
+.shippingDetails .start_arrow,
+.orderSummary .start_arrow,
+.orderSummary .end_arrow{
+	background-image: url(../images/arrowCompleted.png);
+}
+.shipping_checkbox {
+	text-align: left;
+	color: #003861;
+}
+.shippingDetails ul {
+	border: 1px solid #eee;
+	display: inline-block;
+	margin: 0px 20px;
+}
+.shipping-head h5 {
+	border: 1px solid #eee;
+}
+.shippingDetails {
+	padding: 10px 20px;
+}
+.orderSummary,.shippingDetails{
+	display: none;
+}
+#trade-windows header h5{
+	margin-top :0px;
+}
+#trade-windows header{
+	padding-top:0px;
+}
+.offerDetails .tradeIcons:nth-child(2) h5,
+.offerDetails .tradeIcons:nth-child(3) h5 ,
+.shippingDetails .tradeIcons:nth-child(3) h5{
+	color: #B7B7B7;
+}
+.shippingDetails .tradeIcons:nth-child(1) h5,
+.orderSummary .tradeIcons:nth-child(1) h5,
+.orderSummary .tradeIcons:nth-child(2) h5{
+	color :#30991f;
+}
+.shippingDetails .tradeIcons:nth-child(2) h5,
+.orderSummary .tradeIcons:nth-child(3) h5{
+	color :#003861;
+}
+.tick {
+	background-image: url(../images/greenTick.png);
+	background-size: 16px 13px;
+	background-repeat: no-repeat;
+}
+.cross_error{
+	background-image: url(../images/Close.png);
+	background-size: 13px 13px;
+	background-repeat: no-repeat;
+}
+.ship_failr{
+	display:none !important;
+}
+.account-status {
+	padding: 30px 0;
+	text-align: center;
+	line-height: 2;
+	font-weight: bold;
+}
+#tradeMarginPopup .modal-footer .btn {
+	width: 50%;
+}
+#trade-windows textarea{
+	width: 50%!important;
+}
+#trade-windows .shipping-details-wrap li h3{
+	float:right;
+}
+@media (max-width: 1070px) {
+	.expiry {
+		margin-bottom: 7%;
+	}
+	#window-drfq .expiry {
+		margin-bottom: 0px;
+	}
+}
+.premium_field label, .orderSummary .FP label{
+	width:60%!important;
+}
+.premium_field h3, .orderSummary .FP h3{
+	width:40%!important;
+}
+#exprt-btn {
+    margin: 35px -10px 18px;
+}
+.export_disabled_button span {
+	padding: 22px 40px 0px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+	background-image: url('../images/export_disabled.png');
+	padding-left: 20px;
+}
+.export_disabled_button  p {
+	font-family: Helvetica;
+    font-weight: 700;
+    font-size: 13px;
+}
+.export_disabled_button {
+    text-align: center;
+    width: 120px;
+    margin: 40px 0 20px;
+    cursor: default;
+    color: #B7B7B7;
+}
+.export_enabled_button {
+    text-align: center;
+    width: 120px;
+    margin: 40px 0 20px;
+    display:none;
+    cursor: pointer;
+    color: #B7B7B7;
+}
+.export_enabled_button span {
+    padding: 22px 40px 0px 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(../images/Export.png)!important;
+    padding-left: 20px;
+    cursor: pointer!important;
+}
+#trade-btn {
+   margin: 25px 27px 20px;
+}
+.trade-btn_disabled_button span {
+padding: 21px 40px 0px 0;
+   background-repeat: no-repeat;
+   background-position: center;
+background-image: url('../images/CreateDRFQdisabled.png');
+padding-left: 20px;
+}
+.trade-btn_disabled_button  p {
+font-family: Helvetica;
+   font-weight: 700;
+   font-size: 13px;
+}
+.trade-btn_disabled_button {
+   text-align: center;
+   width: 120px;
+   margin: 40px 0 20px;
+   cursor: default;
+   color: #B7B7B7;
+}
+.trade-btn_enabled_button {
+   text-align: center;
+   width: 120px;
+   margin: 40px 0 20px;
+   display:none;
+   cursor: pointer;
+   color: #B7B7B7;
+}
+.trade-btn_enabled_button span {
+   padding: 21px 40px 0px 0;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url(../images/CreateDRFQ.png)!important;
+   padding-left: 20px;
+   cursor: pointer!important;
+}
+.trade-btn_enabled_button p, .export_enabled_button p  {
+   color: #259480!important;
+   font-family: Helvetica;
+   font-weight: 700;
+   font-size: 13px;
+}
+.export_enabled_button p  {
+   color: #259480!important;
+   font-family: Helvetica;
+   font-weight: 700;
+   font-size: 13px;
+}
+.trade-qty{
+	padding: 10px;
+}
+.DA textarea {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14px;
+	color: rgb(58, 59, 60);
+	text-align: right;
+}
+.addNew-form > .offer_wrapper > ul li.DA {
+	padding: 3.5px;
+}
+#trade-windows .offer_wrapper > ul li.DA {
+	padding: 11px 11px 0px;
+}
+.addNew-form > .offer_wrapper > ul li.DA textarea{
+	background-color: #fff ;
+}
+html[data-useragent*='MSIE 10.0'] .iesl {
+  padding-bottom: 10.5px !important;
+}
+.offerDetails .qty input{
+	width: 50%!important;
+	margin: 0;
+}
+.offerDetails .qty{
+	padding: 8px 11px!important;
+}
+.box_id p{
+	display:inline-block;
+	padding-left: 10px;
+}
+.addDetails{
+	display: inline-block;
+}
+.summaryWrap{
+	border: 1px solid #eee;
+	padding: 8px;
+	margin-bottom: 25px;
+}
+.summaryWrap .DA{
+	padding:6px !important;
+}
+@-moz-document url-prefix() {
+	#window-drfq .addNew-form ul li:nth-child(10){
+		padding: 6.4px 10px;
+	}
+}
+@media (max-width: 930px) {
+	.expiry {
+		margin-bottom: 8%;
+	}
+}
+@media (max-width: 880px) {
+	.intl-wrapper {
+		width: 93%;
+	}
+}
+@media ( max-width : 1224px) {
+	#trade-windows .start_arrow, #trade-windows .end_arrow{
+	    width: 21.5%;
+	}
+	#trade-windows .end_arrow{
+	   left: 54.5%; 
+	}
+	#trade-windows .start_arrow{
+	   left: 21.5%; 
+	}
+}
+@media ( max-width : 1024px) {
+	#trade-windows .tradeIcons h5{
+		font-size: 12px;
+	}
+	.offerDetails .qty{
+		padding: 9px 11px!important;
+	}
+	/* #trade-windows .start_arrow {
+		left: 23%;
+	}
+	#trade-windows .end_arrow {
+		left: 56%;
+	}
+	#trade-windows .start_arrow, #trade-windows .end_arrow{
+	    width  :19%;
+	} */
+}
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) {
+	#trade-windows .start_arrow {
+		left: 23%;
+	}
+	#trade-windows .end_arrow {
+		left: 56%;
+	}
+	#trade-windows .start_arrow, #trade-windows .end_arrow{
+	    width  :19%;
+	}   
+
+}
+@media (max-width: 960px) and (orientation:landscape) {
+	.window#trade-windows>.addNew-form>.offer_wrapper>ul>li:nth-child(9) label{
+		width: 55%;
+	}
+	.window#trade-windows>.addNew-form>.offer_wrapper>ul>li:nth-child(9) h3{
+		width: 45%;
+	}
+	#trade-form .offer_wrapper ul .qty{
+		padding: 5.5px 11px;
+	}
+}
+@media (max-width: 700px) {
+	.tradeIcons img {
+    	width: 40%;
+	}
+	.tradeFlow_offerDetails, .tradeFlow_shippingDetails, .tradeFlow_orderSummary{
+	    width: 100%;
+	}
+	.trade_flow_wrap {
+		display: table-cell;
+		float: left;
+		position: relative;
+		width: 100%;
+	}
+	#trade-windows .tradeIcons h5 {
+		font-size: 11px;
+	}
+	#trade-windows .start_arrow, #trade-windows .end_arrow {
+		width: 21%;
+	}
+}
+@media (max-width: 1024px) and (orientation:landscape) {
+	.offerDetails .qty{
+		padding: 10px 11px!important;
+	}
+}

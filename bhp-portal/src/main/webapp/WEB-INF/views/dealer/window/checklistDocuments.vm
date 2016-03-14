@@ -1,0 +1,70 @@
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<h5 id="header_notification_page" data-tradeId="$trade.id">Documents</h5>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+<div class="dealerTable col-sm-12 col-md-12 custom_header" id = "dealerTable">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listDocuments" >
+    <thead>
+		<tr>
+		    <th class="dt-head-center">Document</th>
+	        <th class="dt-head-center" id="table_header">Status</th>
+	        <th class="dt-head-center">Last Edited</th>
+	        <th class="dt-head-center">Version</th>
+    	</tr>
+    </thead>
+</table>
+#if($isSupplierOps=="true")
+<div class="documents_footer_main">
+	#if (!$checkCustoms && $checkCustoms == "false")
+	<div class="col-xs-12 col-md-12 col-sm-12 documents_footer">
+	<h5>Customs Invoice</h5>
+	<ul>
+		<li class="col-xs-12 col-md-4 col-sm-12">
+			<p class="col-xs-6 col-md-6 col-sm-6">Document:</p>
+			<p class="col-xs-6 col-md-6 col-sm-6 docz_link" id="custom_invoice_link"><u>Customs invoice</u></p>
+		</li>
+		<li class="col-xs-12 col-md-4 col-sm-12">
+			<p class="col-xs-4 col-md-4 col-sm-4">Last Edited:</p>
+			<p class="col-xs-8 col-md-8 col-sm-8">$customsDate</p>
+		</li>
+		<li class="col-xs-12 col-md-4 col-sm-12">
+			<a class="col-xs-6 col-md-6 col-sm-6" style="color:#858788!important;">Version history</a>
+			<p class="col-xs-6 col-md-6 col-sm-6"></p>
+		</li>
+	</ul>
+</div>
+	 #end
+	 #if (!$checkAirway && $checkAirway == "false")
+	<div class="col-xs-12 col-md-12 col-sm-12 documents_footer">
+	<h5>Air Way Bill</h5>
+	<ul>
+		<li class="col-xs-12 col-md-4 col-sm-12">
+			<p class="col-xs-6 col-md-6 col-sm-6">Document:</p>
+			<p class="col-xs-6 col-md-6 col-sm-6 docz_link" id="air_way_link"><u>Air Way Bill</u></p>
+		</li>
+		<li class="col-xs-12 col-md-4 col-sm-12">
+			<p class="col-xs-4 col-md-4 col-sm-4">Last Edited:</p>
+			<p class="col-xs-8 col-md-8 col-sm-8">$airwayDate</p>
+		</li>
+		<li class="col-xs-12 col-md-4 col-sm-12">
+			<a class="col-xs-6 col-md-6 col-sm-6" style="color:#858788!important;">Version history</a>
+			<p class="col-xs-6 col-md-6 col-sm-6"></p>
+		</li>
+	</ul>
+	</div>
+	 #end
+	 #end
+<div id="back_menu">
+#if($loggedUser)
+		<button type="button" class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4  yellow_button" id="close_documents_view">BACK</button>
+#end
+</div>

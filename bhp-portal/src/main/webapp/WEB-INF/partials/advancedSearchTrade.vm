@@ -1,0 +1,154 @@
+<ul class="hide_advance_search advanced_search_wrap pull_left width_100">
+	<li class="advanced_search_element trade_field display_none col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="tradeId">Trade ID</label>
+		<input id ="advancedSearchTradeId" class="form-control col-md-6 col-xs-7" type="text" name="tradeId">
+	</li>
+	
+	<li class="advanced_search_element  col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="typeId" id="offerIdLabel">Type</label>
+        <select name="typeId" id="advancedSearchTypeId" class="form-control col-sm-6">
+        <option value>SELECT</option>
+	 		#foreach ($typeIterator in $type.entrySet())
+				<option value = $typeIterator.key >$typeIterator.value</option>
+			#end
+		</select>
+	</li>
+		<li class="advanced_search_element  col-md-4 col-sm-6 col-xs-12" style="display:none;">
+		<label class="col-xs-5 col-md-6" name="offerId" id="offerIdLabel">Offer ID</label>
+		<input id ="advancedSearchOfferId" class="form-control col-md-6 col-xs-7" type="text" name="offerId">
+	</li>
+	<li class="advanced_search_element premium_cpm display_none col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="premium">Account Id</label>
+		<input id ="advancedSearchAccountId" class="form-control col-md-6 col-xs-7" type="text" name="accountId">
+	</li>
+	<li class="advanced_search_element premium_cpm display_none col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="premium">Account Description</label>
+		<input id ="advancedSearchAccountDescription" class="form-control col-md-6 col-xs-7" type="text" name="accountDescription">
+	</li>
+	<li class="advanced_search_element premium_groups display_none col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="groupId">Group Id</label>
+		<input id ="advancedSearchGroups" class="form-control col-md-6 col-xs-7" type="text" name="groupId">
+	</li>
+	
+	<li class="advanced_search_element col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="metal">Metal</label>
+		<select id ="advancedSearchMetal" class="form-control col-md-6 col-xs-7">
+			#foreach ($metalIterator in $metal.entrySet())
+				<option value = $metalIterator.key >$metalIterator.value</option>
+			#end
+		</select>
+	</li>
+	  <li class="col-md-4 col-sm-6 col-xs-12 advanced_search_element premium_groups display_none">
+                <label for="metal" class="col-sm-6 col-md-6">Metal</label>
+	            <select name="metal" id="advancedSearchPremiumMetal" class="form-control col-sm-6">
+	            	#foreach ($metalIterator in $metal)
+					<option value = $metalIterator >$metalIterator</option>
+					 #end
+             	</select>
+       </li>
+	<li class="advanced_search_element col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="inventory">Inventory</label>
+		<select id ="advancedSearchInventory" class="form-control col-md-6 col-xs-7">
+			<option value>SELECT</option>
+			#foreach ($inventoryIterator in $inventory.entrySet())
+				<option value = $inventoryIterator.key >$inventoryIterator.value</option>
+			#end
+		</select>
+	</li>
+	<li class="advanced_search_element col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="brand">Brand</label>
+		<select id ="advancedSearchBrand" class="form-control col-md-6 col-xs-7">
+			<option value="0">SELECT</option>
+			#foreach ($brandIterator in $brand.entrySet())
+				<option value = $brandIterator.key >$brandIterator.value</option>
+			#end
+		</select>
+	</li>
+	<li class="advanced_search_element col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="purity">Purity</label>
+		<select id ="advancedSearchPurity" class="form-control col-md-6 col-xs-7">
+			<option value>SELECT</option>
+			#foreach ($purityIterator in $purity.entrySet())
+				<option value = $purityIterator.key >$purityIterator.value</option>
+			#end
+		</select>
+	</li>
+	<li class="advanced_search_element col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6 no-pad" name="sourceLocation">Source Location</label>
+		<select id ="advancedSearchSourceLocation" class="form-control col-md-6 col-xs-7">
+			<option value="0">SELECT</option>
+			#foreach ($locationIterator in $city.entrySet())
+				<option value = $locationIterator.key >$locationIterator.value</option>
+			#end
+		</select>
+	</li>
+	<li class="advanced_search_element col-md-4 col-sm-6 col-xs-12">
+        <label class="col-xs-5 col-md-6" name="availability">Availability</label>
+        <div class="input-group date col-xs-6" id="bootstrap_datepicker">    
+            <input id="advancedSearchAvailability" name="availability" class="form-control col-sm-6" autocomplete="off"></input>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+    </li>
+	<li class="advanced_search_element col-md-4 col-sm-6 col-xs-12">
+	    <label class="col-xs-5 col-md-6" name="expiry">Expiry</label>
+	    <div class="input-group date col-xs-6" id="bootstrap_datetimepicker">    
+	        <input id="advancedSearchExpiry" class="form-control col-sm-6" type="text" name="expiry" autocomplete="off"></input>
+	        <span class="input-group-addon">
+	            <span class="glyphicon glyphicon-calendar"></span>
+	        </span>
+	    </div>
+	</li>
+	
+	<li class="advanced_search_element premium_groups display_none col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="premium">Premium</label>
+		<input id ="advancedSearchPremiumGroup" class="form-control col-md-6 col-xs-7" type="text" name="premium">
+	</li>
+	
+	<li class="advanced_search_element col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6" name="premium">Premium</label>
+		<input id ="advancedSearchPremium" class="form-control col-md-6 col-xs-7" type="text" name="premium">
+	</li>
+	<li class="advanced_search_element trade_field display_none col-md-4 col-sm-6 col-xs-12">
+	    <label class="col-xs-5 col-md-6" name="tradeDate">Trade Date</label>
+	    <div class="input-group date col-sm-6 col-xs-6" id="bootstrap_trade_datepicker">    
+	        <input id="advancedSearchTradeDate" class="form-control" type="text" style="width:100%;" name="advancedSearchTradeDate" autocomplete="off"></input>
+	        <span class="input-group-addon">
+	            <span class="glyphicon glyphicon-calendar"></span>
+	        </span>
+	    </div>
+	</li>
+	<li class="advanced_search_element trade_field display_none col-md-4 col-sm-6 col-xs-12">
+	    <label class="col-xs-5 col-md-6" name="completedDate">ETA/Completed Date</label>
+	    <div class="input-group date col-sm-6 col-xs-6" id="bootstrap_eta_datepicker">    
+	        <input id="advancedSearchCompletedDate" class="form-control" type="text" style="width:100%;" name="advancedSearchCompletedDate" autocomplete="off"></input>
+	        <span class="input-group-addon">
+	            <span class="glyphicon glyphicon-calendar"></span>
+	        </span>
+	    </div>
+	</li>
+	<li class="advanced_search_element trade_field display_none col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6 no-pad" name="tradeStatus">Trade Status</label>
+		<select id ="advancedSearchTradeStatus" class="form-control col-md-6 col-xs-7">
+			<option value="0">SELECT</option>
+			#foreach ($tradeStatusIterator in $tradeStatus.entrySet())
+				<option value = $tradeStatusIterator.key >$tradeStatusIterator.value</option>
+			#end
+		</select>
+	</li>
+	<li class="advanced_search_element trade_field col-md-4 col-sm-6 col-xs-12">
+		<label class="col-xs-5 col-md-6 no-pad" name="weight">Weight Range</label>
+		<select id ="advancedSearchWeight" class="form-control col-md-6 col-xs-7">
+			<option value="0">SELECT</option>		
+				<option value = '*0-49'>0-49</option>
+				<option value = '*49-99'>49-99</option>		
+		</select>
+	</li>
+	<li class="advanced_search_element col-md-12 col-sm-12 col-xs-12" style="display:block">
+		<div class="divider"></div>
+	</li>
+	<li class="advanced_search_element trade_field premium_groups col-md-4 col-md-offset-8 col-sm-4 col-sm-offset-4 col-xs-12">
+		<input id="advancedSearchSubmitButton" type="submit" value="SEARCH" class="search_button blue_button pull_right" readonly>
+	</li>
+</ul>

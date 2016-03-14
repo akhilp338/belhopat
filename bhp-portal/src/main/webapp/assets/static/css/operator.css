@@ -1,0 +1,151 @@
+#releaseInstructionReject, #releaseInstructionSubmit{
+	width:100%;
+}
+.primary-nav>ul>li>a{
+	font-size: 11px;
+}
+.window#dashboard-window ul li{
+	border: 1px solid #ccc;
+    padding: 12px;
+    text-align:center;
+    color: #003861;
+    background-color: #E1E3E2;
+    cursor: pointer;
+}
+.window#dashboard-window ul li.selectedTab{
+	background-color: #fff;
+}
+#sub_megamenu{
+ 	margin-top: 20px;
+ }
+#sub_megamenu ul li{
+	background-color:#E1E3E2; 
+	border: 1px solid #eee;
+	cursor:pointer;
+}
+#sub_megamenu ul li.active{
+	background-color: white;
+	border-bottom: 1px solid #FFF;
+	cursor:pointer;
+}
+#sub_megamenu ul li.active a{
+	color: #003a63;
+}
+.secondary-nav .sub_tab_wrap{
+    margin: 0;
+    width:70%;
+}
+.secondary-nav .sub_tab_wrap li{
+	vertical-align: middle;
+}
+.secondary-nav .sub_tab_wrap li a:focus{
+	text-decoration: none;
+}
+#sub_megamenu{
+    overflow: auto;
+    clear: both;
+    margin-bottom:50px;
+    border-bottom: 1px solid #eee;	
+}
+ul.trackTracks ul li{
+	float: left;
+	clear: left;
+}
+ul.trackTracks ul li:first-child, ul.trackTracks ul li:nth-child(2){
+	float: right;
+	clear: right;
+}
+#bootstrap_PCDPicker {
+    width: 50%;
+}
+#pcd_picker {
+    width: 100%!important;
+}
+.checklist-window>.addNew-form>.offer_wrapper>ul>li.pcd{
+    padding: 10px 18px 10px 12px;
+}
+.release_instruction_details{
+	width: 100%;
+    resize: none;
+    min-height: 200px;
+    margin: 20px 0px;
+    padding: 12px;
+    border: 2px solid #eee;
+}
+table#listTrades.dataTable tbody tr td:nth-child(12){
+	max-width: 160px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+.modal-header {
+    background: rgb(096,124,141);
+    text-align: left;
+    font-family: 'RobotoSlab-Bold';
+    color: #ffffff;
+}
+#release-instruction .menu_bar{
+    padding: 15px;
+}
+.dealer_comments, .dealer_edit{
+	font-weight: bold;
+	cursor: pointer;
+}
+.popup #DATextArea{
+	min-height: 0px;
+	margin-bottom: 0px;
+}
+#cmnt_btn{
+    background-image: url('../images/comment.png') !important;
+    padding: 52px 20px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}    
+.dealer_comments{
+	color: #23527c;
+}
+#cmnt_edit_btn{
+    background-image: url('../images/Edit.png') !important;
+    padding: 56px 30px 0px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    color: #566C21;
+}  
+.RID_textarea{
+	min-height:200px;
+	padding: 12px;
+	margin: 20px 0;
+}  
+/* .commentsbox{
+	min-height: 55px;
+	max-height:105px;
+} */
+.comment_pop_wrap{
+	padding: 10px;
+    border: 1px solid #eee;
+    margin-bottom:10px;
+    border-radius: 10px;
+}
+.trackTracks li label p{
+	margin: 0px;
+}
+#dealer_comments .commentsbox{
+	padding: 5px 0px;
+}
+/* .btn-circle{
+	float: right;
+} */
+
+@media (max-width: 1020px) {
+      .primary-nav>ul>li>a{
+              font-size: 9px;
+     }
+ }
+.docz_link{
+    color:#0D4365;
+    cursor:pointer;
+    font-weight: bold;
+ }

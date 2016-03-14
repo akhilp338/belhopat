@@ -1,0 +1,58 @@
+<div class="menu-icons">
+   	<ul>
+        <li id="edit_button" class="edit_disabled_button dealer-menu col-xs-3">
+            <span></span>
+            <p>Edit</p>
+        </li>
+        <li class="dealer-menu col-xs-3 edit_enabled_button">
+            <span></span>
+            <p>Edit</p>
+        </li>
+        <li id="replicateBtn" class="replicate_disabled_button dealer-menu col-xs-3">
+            <span></span> 
+            <p>Replicate</p>
+        </li>
+        <li class="dealer-menu col-xs-3 replicate_enabled_button">
+            <span></span> 
+            <p>Replicate</p>
+        </li>
+        <li id="deleteBtn" class="delete_disabled_button dealer-menu col-xs-3">
+            <span></span> 
+            <p>Delete</p>
+        </li>
+        <li class="dealer-menu col-xs-3 delete_enabled_button">
+            <span></span> 
+            <p>Delete</p>
+        </li>
+        <li id="post_button" class="post_disabled_button dealer-menu col-xs-3">
+            <span></span> 
+            <p>Post</p>
+        </li>
+        <li class="dealer-menu col-xs-3 post_enabled_button">
+            <span></span> 
+            <p>Post</p>
+        </li>
+        <li id="uploadBtn" class="dealer-menu col-xs-3">
+            <span></span> 
+            <p>Upload</p>
+        </li>
+        <li id="addNewBtn" class="dealer-menu col-xs-3">
+            <span></span> 
+            <p>Add new</p>
+        </li>
+        <li id="removeBtn" class="remove_disabled_button dealer-menu col-xs-3">
+            <span></span> 
+            <p>Remove</p>
+        </li>
+        <li  class="remove_enabled_button dealer-menu col-xs-3">
+            <span></span> 
+            <p>Remove</p>
+        </li>
+    </ul>
+</div>
+
+<form method="POST" class="uploadRfq" action="uploadFile" enctype="multipart/form-data">
+<div class="file-upload-override-div" id="files_container">  
+	<input type="file" id="hiddenUploadButton" name="file" style="display:none;">
+</div>
+</form>

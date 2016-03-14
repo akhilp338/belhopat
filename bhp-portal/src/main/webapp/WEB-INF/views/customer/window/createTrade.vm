@@ -1,0 +1,226 @@
+<div class = "window" id="trade-windows">
+	<form class="addNew-form" action="/bhp-back-office/customer/postRFQs" method="POST" id="trade-form">
+		<input name="lockInterval" id="lockInterval" type="hidden" value=$!{lockIntervalVal} >
+		<input name="tradeOfferIds" id="post_offer_id" type="hidden" >
+		<div class="offer_wrapper offerDetails">
+		    ##trade flow diagram
+    		<div class="tradeFlow_offerDetails">
+    			<div class="trade_flow_wrap">
+	        		<div class="tradeIcons">
+	        			##<div class= "offerIcon img_icon"></div>
+	        	  		<img src="#springUrl("/assets/static/images/offerDetails.png")" alt="BHP Back Office">
+	        			<h5>Offer Details</h5>
+	        		</div>
+	       			 <div class="tradeIcons">
+	        			##<div class= "shippingIcon img_icon"></div>
+	              		<img src="#springUrl("/assets/static/images/shippingDetailsDisabled.png")" alt="BHP Back Office">
+	        			<h5>Shipping Details</h5>
+	        		</div>
+	        		<div class="tradeIcons">
+	        			##<div class= "orderIcon img_icon"></div>
+	              		<img src="#springUrl("/assets/static/images/orderSummaryDisabled.png")" alt="BHP Back Office">
+	        			<h5>Order Summary</h5>
+	        		</div>
+			        <span class="start_arrow"></span>
+			        <span class="end_arrow"></span>
+		        </div>
+    		</div>
+    		#set ($count = 0)
+		    #foreach ($offer in $offerList)
+		    	<ul>
+		    		#set($count = $count+1 )
+					<li class="col-md-12 col-sm-12 col-xs-12">Offer ${count}</li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Offer ID</label><h3 class="offerId">$!offer.offerId</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Metal</label><h3>$offer.offerMaster.commodity.metal.metal</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Inventory</label><h3>$offer.offerMaster.commodity.metal.inventory</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Brand</label><h3>$offer.offerMaster.commodity.commodityBrand.code</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Type</label><h3>$offer.offerMaster.commodity.commodityType.code</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Purity</label><h3>$offer.offerMaster.commodity.metal.purity</h3></li>
+					<li class="src col-md-4 col-sm-4 col-xs-12"><label>Source Location</label><h3>$offer.offerMaster.city.description</h3></li>
+					<li class="premium_field col-md-4 col-sm-4 col-xs-12"><label>Premium ($/Ounce)</label><h3>$MathUtil.addCommasToNumber($offer.offerMaster.premium)</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Availability</label><h3>$DateUtil.toddMMyyyy($offer.offerMaster.availability)</h3></li>
+					<li class="expr col-md-4 col-sm-4 col-xs-12"><label>Expiry</label><h3>$DateUtil.toddMMyyyyHHmm($offer.offerMaster.expiry)</h3></li>
+					#if($isCO==true)
+						<li class="qty col-md-4 col-sm-4 col-xs-12"><label><b>Quantity</b></label><input type="number" name="quantity[${count}]" 
+						data-attr="${offer.offerMaster.balanceQuantity}" class="qtyInput" maxlength="6" value="${offer.offerMaster.balanceQuantity}" disabled/></li>
+					#else
+			    		<li class="qty col-md-4 col-sm-4 col-xs-12"><label><b>Quantity</b></label><input type="text" name="quantity[${count}]" 
+			    		data-attr="${offer.offerMaster.balanceQuantity}" class="qtyInput" maxlength="6" value="${offer.offerMaster.balanceQuantity}" disabled/></li>
+					#end
+					<li class="post_hidden col-md-4 col-sm-4 col-xs-12"><label></label><h3></h3></li>
+				</ul>
+		    #end
+		    <div class="shipping_checkbox">
+		    	<input type="checkbox" class="shipping_details_check" name="ship_check" value="1"><b> Add Shipping Details</b>
+	    	</div>
+		    <footer class="trade_footer">
+				<input type="hidden" name="_csrf" value="21640d50-c7d3-4d73-bd4c-e4ab4fbba49a">
+				<span class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+					<input type="button" value="BACK" id="cancel_button" class="yellow_button">
+				</span>
+				<span class="col-md-3 col-sm-6 col-xs-12">
+					<input type="button" value="CONTINUE" id="offer_continue_btn" class="blue_button">
+				</span>
+			</footer>
+		</div>
+		<div class="shippingDetails">
+	    	<div class="tradeFlow_shippingDetails">
+	    		<div class="trade_flow_wrap">
+					 <div class="tradeIcons">
+	        			##<div class= "offerIcon img_icon"></div>
+	        	  		<img src="#springUrl("/assets/static/images/offerDetailsCompleted.png")" alt="BHP Back Office">
+	        			<h5><span class="tick">&nbsp;&nbsp;&nbsp;&nbsp;</span>Offer Details</h5>
+	        		</div>
+	       			 <div class="tradeIcons">
+	        			##<div class= "shippingIcon img_icon"></div>
+	              		<img src="#springUrl("/assets/static/images/shippingDetails.png")" alt="BHP Back Office">
+	        			<h5>Shipping Details</h5>
+	        		</div>
+	        		<div class="tradeIcons">
+	        			##<div class= "orderIcon img_icon"></div>
+	              		<img src="#springUrl("/assets/static/images/orderSummaryDisabled.png")" alt="BHP Back Office">
+	        			<h5>Order Summary</h5>
+	        		</div>
+			        <span class="start_arrow"></span>
+			        <span class="end_arrow"></span>
+	        	</div>
+		    </div>
+        
+        <div class="multiple_Shipping hidden"></div>
+        <div class="shipping_box">
+        <div class="shipping_box_wrap">
+        <header class="shipping-head">
+				<h5 class="box_id">Enter Details </h5>
+			</header>
+			<ul style="padding-bottom: 5px;" class="shipping_details_box">
+			<li class="col-md-6 col-sm-6 col-xs-12">
+				<label for="sourceLocation" class="col-sm-6">Source Location</label>
+				<input type="text" name="sourceLocation" class="srcLoc form-control col-sm-6" value="$!{srcLocId}" autocomplete="off" disabled>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="destinationLocation" class="col-sm-6">Destination Location</label>
+	            <select name="location" id="destinationLocation" class="form-control col-sm-6">
+	            	#foreach ($metalIterator in $metal.entrySet())
+					<option value = $metalIterator.key >$metalIterator.value</option>
+					 #end
+                </select>
+            </li>
+            <li class="delivery-textarea col-md-6 col-sm-6 col-xs-12 text-div">
+            	<label for="deliveryAddress" class="col-sm-6">Delivery Address</label>
+            	<textarea name="deliveryAddress" maxlength="100" class="form-control col-sm-6"></textarea>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="freightCompany" class="col-sm-6">Freight Company</label>
+	            <select name="freightCompany" id="freightCompany" class="form-control col-sm-6">
+	            	#foreach ($metalIterator in $metal.entrySet())
+					<option value = $metalIterator.key >$metalIterator.value</option>
+					 #end
+                </select>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+				<label for="freightPremium" class="col-sm-6">Freight Premium ($)</label>
+				<input type="text" name="freightPremium" class="form-control col-sm-6" maxlength="6" value="" autocomplete="off">
+            </li>
+        </ul>
+        </div>
+        </div>
+        
+        <footer class="trade_footer">
+				<input type="hidden" name="_csrf" value="21640d50-c7d3-4d73-bd4c-e4ab4fbba49a">
+				<span class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+					<input type="button" value="BACK" id="shipping_back_btn" class="yellow_button">
+				</span>
+				<span class="col-md-3 col-sm-6 col-xs-12">
+					<input type="button" value="ADD FREIGHT COST" id="shipping_continue_btn" class="blue_button">
+				</span>
+		</footer>
+		</div>
+	
+		<div class="orderSummary offer_wrapper">
+		    <div class="tradeFlow_orderSummary">
+		    	<div class="trade_flow_wrap">
+			        <div class="tradeIcons">
+	        			##<div class= "offerIcon img_icon"></div>
+	        	  		<img src="#springUrl("/assets/static/images/offerDetailsCompleted.png")" alt="BHP Back Office">
+	        			<h5><span class="tick">&nbsp;&nbsp;&nbsp;&nbsp;</span>Offer Details</h5>
+	        		</div>
+	       			 <div class="tradeIcons" id="ship_success_div">
+	        			##<div class= "shippingIcon img_icon"></div>
+	              		<img src="#springUrl("/assets/static/images/shippingDetailsCompleted.png")" alt="BHP Back Office">
+	        			<h5><span class="tick" id="ship-completed-tick">&nbsp;&nbsp;&nbsp;&nbsp;</span>Shipping Details</h5>
+	        		</div>
+	        		<div class="tradeIcons ship_failr" id="ship_failr_div">
+	        			##<div class= "shippingIcon img_icon"></div>
+	              		<img src="#springUrl("/assets/static/images/shippingDetailsGreyGreen.png")" alt="BHP Back Office">
+	        			<h5 style="color:#989898;"><span class="cross_error">&nbsp;&nbsp;&nbsp;&nbsp;</span>&nbsp;Shipping Details</h5>
+	        		</div>
+	        		<div class="tradeIcons">
+	        			##<div class= "orderIcon img_icon"></div>
+	              		<img src="#springUrl("/assets/static/images/orderSummary.png")" alt="BHP Back Office">
+	        			<h5>Order Summary</h5>
+	        		</div>
+			        <span class="start_arrow"></span>
+			        <span class="end_arrow"></span>
+		        </div>
+		    </div>
+		    #set ($count = 0)
+		    #foreach ($offer in $offerList)
+		    <div class = "summaryWrap">
+		    	<ul class = "summaryListing">
+		    		#set($count = $count+1 )
+					<li class="col-md-12 col-sm-12 col-xs-12">Offer ${count}</li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Offer ID</label><h3 class="offerId">$!offer.offerId</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Metal</label><h3>$offer.offerMaster.commodity.metal.metal</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Inventory</label><h3>$offer.offerMaster.commodity.metal.inventory</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Brand</label><h3>$offer.offerMaster.commodity.commodityBrand.code</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Type</label><h3>$offer.offerMaster.commodity.commodityType.code</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Purity</label><h3>$offer.offerMaster.commodity.metal.purity</h3></li>
+					<li class="src col-md-4 col-sm-4 col-xs-12"><label>Source Location</label><h3>$offer.offerMaster.city.description</h3></li>
+					<li class="premium_field col-md-4 col-sm-4 col-xs-12"><label>Premium ($/Ounce)</label><h3>$MathUtil.addCommasToNumber($offer.offerMaster.premium)</h3></li>
+					<li class="col-md-4 col-sm-4 col-xs-12"><label>Availability</label><h3>$DateUtil.toddMMyyyy($offer.offerMaster.availability)</h3></li>
+					<li class="expr col-md-4 col-sm-4 col-xs-12"><label>Expiry</label><h3>$DateUtil.toddMMyyyyHHmm($offer.offerMaster.expiry)</h3></li>
+					<li class="trade-qty col-md-4 col-sm-4 col-xs-12"><label>Quantity</label><h3 id="qty${count}"></h3></li>
+					<li class="post_hidden col-md-4 col-sm-4 col-xs-12"><label></label><h3></h3></li>
+		    		<input class="input_data" type="hidden" value="${offer.id}" data-id="${offer.offerMaster.city.id}">
+				</ul>
+			</div>
+		    #end
+		    <div class="final_SD_wrap">
+			<ul class = "shipping-details-wrap">
+				<li class="SD_head col-md-12 col-sm-12 col-xs-12">Shipping Details</li>
+				<li class="SL col-md-6 col-sm-6 col-xs-12">
+					<label for="sourceLocation" >Source Location</label>
+					<h3></h3>
+	            </li>
+	            <li class="DL col-md-6 col-sm-6 col-xs-12">
+	                <label for="destinationLocation" >Destination Location</label>
+		            <h3></h3>
+	            </li>
+	            <li class="DA delivery-textarea col-md-6 col-sm-6 col-xs-12">
+	            	<label for="deliveryAddress" >Delivery Address</label>
+	            	<textarea name="deliveryAddress" maxlength="100" class="form-control col-sm-6"></textarea>
+	            </li>
+	            <li class="FC col-md-6 col-sm-6 col-xs-12">
+	                <label for="freightCompany" >Freight Company</label>
+		            <h3></h3>
+	            </li>
+	            <li class="FP col-md-6 col-sm-6 col-xs-12">
+					<label for="freightPremium" >Freight Premium ($)</label>
+					<h3></h3>
+	            </li>
+        	</ul>
+        	</div>
+        	<footer class="trade_footer">
+				<input type="hidden" name="_csrf" value="21640d50-c7d3-4d73-bd4c-e4ab4fbba49a">
+				<span class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+					<input type="button" value="BACK" id="order_back_btn" class="yellow_button">
+				</span>
+				<span class="col-md-3 col-sm-6 col-xs-12">
+					<input type="button" value="CONFIRM" id="order_continue_btn" class="blue_button">
+				</span>
+			</footer>
+		</div>
+	</form>
+	<span class="trade-account-popup" data-toggle="modal" data-target="#tradeMarginPopup"></span>
+	#parse("/partials/tradeMarginStatus.vm")
+</div>

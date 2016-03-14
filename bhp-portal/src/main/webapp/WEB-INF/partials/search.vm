@@ -1,0 +1,4 @@
+<div class="advanced_search_bar rel_position">
+	<button class="search_reset_btn btn" style="display:none;">Reset search result</button>
+	<div class="advance_search_button"><span class="search_button_image pull_left"></span><span class="advanced_search_close display_hide">X</span></div>
+</div>

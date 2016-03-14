@@ -1,0 +1,68 @@
+<nav class="nav primary-nav inactive" id="megamenu">
+	<ul class="intl-wrapper">
+	   <li class="active">
+	        <a class="tab" id="taskList" href="javascript:void(0)">
+	            TASKLIST
+	        </a>
+	    </li>
+		<li class = "active">
+	        <a class="tab" id="profile" href="javascript:void(0)">
+	            PROFILE
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="employeeManagement" href="javascript:void(0)">
+	            EMPLOYEE MANAGEMENT
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="finance" href="javascript:void(0)">
+	            FINANCE
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="pjf" href="javascript:void(0)">
+	             PREJOINING FORMALITIES
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="paySlips" href="javascript:void(0)" onclick="return false;">
+	            PAYSLIPS
+	        </a>
+	    </li>
+	</ul>
+</nav>
+<nav class="hidden_nav_tabs hidden_nav_hide">
+	<ul>
+		<li class = "active active_li menu-li">
+	        <a class="tab" id="dashboard" href="javascript:void(0)">
+	            DASHBOARD
+	        </a>
+	    </li>
+		<li>
+	        <a class="tab" id="confirmedOffers" href="javascript:void(0)">
+	            CONFIRMED OFFERS
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="unConfirmedOffers" href="javascript:void(0)">
+	            UNCONFIRMED OFFERS
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="rfq" href="javascript:void(0)">
+	            REQUEST FOR QUOTE
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="DO" href="javascript:void(0)">
+	            DIRECT OFFERS
+	        </a>
+	    </li>
+	    <li>
+	        <a class="tab" id="trade" href="javascript:void(0)" onclick="return false;">
+	            TRADES
+	        </a>
+	    </li>
+	</ul>
+</nav>

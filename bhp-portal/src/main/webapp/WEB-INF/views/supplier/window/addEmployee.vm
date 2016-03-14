@@ -1,0 +1,43 @@
+	 <header>
+	     <div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_inner_style">
+<h4>Add New Employee</h4>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_inner_style">
+<div id="clock1">
+</div>
+</div>
+</div>
+    </header>
+<div class="window" id="popup_add_new_offer">
+    <header class="addNew-head">
+        <h5>Enter Details</h5>
+    </header>
+    <form class="addNew-form" action="#springUrl("/supplier/addEmployee")" method="POST"  enctype="application/x-www-form-urlencoded" id="add_new_offer">
+    <input type="hidden" name ="offerTab" id="offerTab" >
+    <input type="hidden" name="id" id="offerId"></input>
+    <input type="hidden" name="offerId" id="offerTableId"></input>
+        <ul>
+           <li class="col-md-6 col-sm-6 col-xs-12">
+				<label for="name" class="col-sm-6">Name</label>
+				<input type="text" name="name" class="number form-control col-sm-6">
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+				<label for="designation" class="col-sm-6">Designation</label>
+				<input type="text" name="designation" class="number form-control col-sm-6">
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+				<label for="email" class="col-sm-6">Email</label>
+				<input type="text" name="email" class="number form-control col-sm-6">
+            </li>
+            <li class="footer-btn col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+                <button type="button" class="add_button yellow_button" id="cancel_button">CANCEL</button>
+            </li>
+            <li class="col-md-3 col-sm-4 col-xs-12">
+                <button type="button" class="add_button blue_button" id="add_employee_button">ADD</button>
+            </li>
+        </ul>
+        <input type ="hidden" name = "timezone" class = "instance-timezone" />
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"  id = "csrf_tkn" />
+    </form>
+</div>

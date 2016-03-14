@@ -1,0 +1,68 @@
+<header>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_inner_style">
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_inner_style">
+<div id="clock1">
+</div>
+</div>
+</div>
+    </header>
+<div class="window" id="window_custom_cpm">
+    <header class="addNew-head">
+        <h5>Customize CPM</h5>
+    </header>
+    <form class="addNew-form" action="" id="manage_cpm">
+        <ul>
+        	<li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="accId" class="col-sm-6">Account ID</label>
+	            <input type="text" name="account" class="form-control col-sm-6" id="premium_account"
+                  readonly="true" value="${premiumCpm.accountCode}" 
+                 data-attr="${premiumCpm.accountCode}" data-premiumCpmId="${premiumCpm.id}">
+              </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="accId">Description</label>
+	            <textarea class="col-sm-6" id="account_desc" readonly="true">$premiumCpm.accountDesc</textarea>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="accId" class="col-sm-6">Group ID</label>
+				<input type="text" name="account" class="number form-control col-sm-6" id="premium_group"
+                 maxlength="6" readonly="true" value="${premiumCpm.premiumGroup.groupId}" data-attr="${premiumCpm.premiumGroup.id}" autocomplete="off">           
+			</li>
+           <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="metal" class="col-sm-6">Metal</label>
+	            <select name="metal" id="premium_metal" class="form-control col-sm-6" disabled>
+	            #foreach ($metalIterator in $metal)
+	             #if($premiumCpm.premiumGroup.metal.id == $eachGroup.id)
+						<option value = $metalIterator selected>$metalIterator</option>
+					#else
+						<option value = $metalIterator >$metalIterator</option>
+					#end
+				#end
+                </select>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="accId" class="col-sm-6">Premium</label>
+	            <input type="text" name="premium" class="number form-control col-sm-6" 
+	            id="group_premium" value="${premiumCpm.premiumGroup.premium}" autocomplete="off">
+            </li>
+        </ul>
+        <input type="hidden" name="" value=""  id = "" />
+        <input type="hidden" name="senseCheckVal" value="$senseCheckVal"  id = "sense_check" />
+        <div class="col-sm-12 col-md-12">
+        <center>
+        <span class="col-md-1 col-sm-12 col-xs-12">
+		</span>
+        <span class="col-md-3 col-sm-6 col-xs-12">
+			<input type="button" value="CANCEL" id="cancel_button" class="yellow_button">
+		</span>
+		<span class="col-md-3 col-sm-6 col-xs-12">
+			<input type="button" value="APPLY TO ALL" id="apply_to_all" class="blue_button">
+		</span>
+		<span class="col-md-3 col-sm-6 col-xs-12">
+			<input type="button" value="APPLY TO OFFER" id="apply_to_offer" class="blue_button">
+		</span>
+		</center>
+		</div>
+    </form>
+</div>

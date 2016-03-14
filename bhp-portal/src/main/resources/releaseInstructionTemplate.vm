@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center><h2>RELEASE INSTRUCTION</h2></center>
+<br />
+<br />
+#if($freightCompanyName)
+<p>Please release the metal in the below trade to the Shipping Agent $freightCompanyName :</p>
+#end
+<br />
+<br />
+<h3>Trade Details</h3>
+<br />
+<div style="width:100%; margin:auto; overflow: auto; border: 1px solid #eee;">
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">Trade ID</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$tradeId</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em; ">Trade Date</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$tradeDate</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em; ">Offer</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$offers</div>
+	</div>
+		<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">Physical Collection date</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$physicalCollectionDate</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em; ">Metal</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$metal</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em; ">Quantity (KG)</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$quantity</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em; ">Purity</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$purity</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Premium ($/Ounce)</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$premium</div>
+	</div>
+		<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Net Premium ($)</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$netPremium</div>
+	</div>
+	<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;  border-bottom: none; font-size: 1.17em;">Currency</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; border-bottom: none; font-size: 1.17em;">$currency</div>
+	</div>
+		<div style="overflow: auto; clear: both;">
+		<div style="width:35%; display: inline-block; float: left; text-align: left; border: 1px solid #000; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; font-size: 1.17em;">Freight Company</div>
+		<div style="width:35%; display: inline-block; float: left; text-align: right; border: 1px solid #000; border-left: none; padding:8px  2px; box-sizing:border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; font-size: 1.17em;">$freightCompanyName</div>
+	</div>
+	
+	
+</div>
+	<br />
+	<br />
+	$releaseInstruction
+	<br />
+	<br />
+Thank you,
+<br />
+INTLFCStone
+</body>
+</html>

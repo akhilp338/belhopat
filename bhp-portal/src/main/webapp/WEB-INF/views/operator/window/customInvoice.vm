@@ -1,0 +1,26 @@
+<div class="hidden_nav_tab_button">
+<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<h5 id="header_notification_page" data-tradeId="$trade.id">Trades >> Checklist Trade ID:$trade.tradeId >> Custom Invoice Version History</h5>
+</div>
+<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+<span id="clock1">
+</span>
+</div>
+</div>
+<div class="dealerTable col-sm-12 col-md-12 custom_header" id = "dealerTable">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listNotification" >
+    <thead>
+		<tr>
+		    <th class="dt-head-center">Version No.</th>
+	        <th class="dt-head-center" id="table_header">Document</th>
+	        <th class="dt-head-center">Time & Date</th>
+	        <th class="dt-head-center">User ID</th>
+	        <th class="dt-head-center" style="max-width: 300px">Comment</th>
+    	</tr>
+    </thead>
+</table>
+</div>

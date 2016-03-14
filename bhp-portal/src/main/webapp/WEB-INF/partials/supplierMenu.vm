@@ -1,0 +1,31 @@
+<div class="menu-icons">
+    <ul class="col-md-8">
+        <li id="edit_button" class="edit_disabled_button col-md-2 col-sm-2 col-xs-4">
+            <span></span>
+            <p>Edit</p>
+        </li>
+         <li class="col-md-2 col-sm-2 col-xs-4 edit_enabled_button">
+            <span></span>
+            <p>Edit</p>
+        </li>
+        <li id="deleteBtn" class="delete_disabled_button col-md-2 col-sm-2 col-xs-4">
+            <span></span> 
+            <p>Delete</p>
+        </li>
+        <li class="col-md-2 col-sm-2 col-xs-4 delete_enabled_button">
+            <span></span> 
+            <p>Delete</p>
+        </li>
+        
+        <li id="addNewBtn" class="col-md-2 col-sm-2 col-xs-4">
+            <span></span> 
+            <p>Add new</p>
+        </li>
+    </ul>
+</div>
+
+<form method="POST" class="uploadRfq" action="uploadFile" enctype="multipart/form-data">
+<div class="file-upload-override-div" id="files_container">  
+	<input type="file" id="hiddenUploadButton" name="file" style="display:none;">
+</div>
+</form>

@@ -1,0 +1,19 @@
+<div class="modal inmodal" id="tradeMarginPopup" tabindex="-1" role="dialog"  aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content animated fadeIn">
+            <div class="modal-header">
+                <button class="btn btn-warning btn-circle" type="button" data-dismiss="modal"><i class="fa fa-times"></i></button>
+                <h3 class="modal-title">Margin Status</h3>
+            </div>
+            <div class="modal-body">
+                <div class="account-status">
+                                	<p>Insufficient Margin on your Account.</p>
+                                	<p>Please amend quantity of fund in your account accordingly.</p>
+                                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary block" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

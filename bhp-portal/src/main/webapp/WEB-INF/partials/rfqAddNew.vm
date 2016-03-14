@@ -1,0 +1,96 @@
+<div class="popup-box" id="popup_add_new_offer">
+    <header class="addNew-head">
+        <h4></h4>
+        <span class="close-btn">
+        	<img src="assets/static/images/Close.png">
+        </span>
+    </header>
+    <form class="addNew-form" action="addNewOffer" method="POST" id="add_new_offer">
+    <input type="hidden" name ="offerTab" id="offerTab" >
+    <input type="hidden" name="id" id="offerId"></input>
+        <ul>
+           <li>
+                <label for="metal">Metal</label>
+	            <select name="metal">
+	            	#foreach ($metalIterator in $metal.entrySet())
+					<option value = $metalIterator.key >$metalIterator.value</option>
+					 #end
+                </select>
+                <span class="error"></span>
+            </li>
+            <li>
+                <label for="type">Type</label>
+                 <select name="type">
+                 <option value="0">SELECT</option>
+					#foreach ($typeIterator in $type.entrySet())
+					<option value=$typeIterator.key>$typeIterator.value</option>
+					 #end
+				 </select>
+				 <span class="error"></span>
+            </li>
+            <li>
+                <label for="brand">Brand</label>
+	             <select name="brand">
+                  <option value="0">SELECT</option>
+					#foreach ($brandIterator in $brand.entrySet())
+					<option value=$brandIterator.key>$brandIterator.value</option>
+					 #end
+				 </select>
+				 <span class="error"></span>
+            </li>
+            <li>
+                <label for="inventory">Inventory</label>
+	             <select name="inventory">
+	             <option value="0">SELECT</option>
+	            	#foreach ($inventoryIterator in $inventory.entrySet())
+					<option value = $inventoryIterator.key >$inventoryIterator.value</option>
+					 #end
+                </select>
+                <span class="error"></span>
+            </li>
+            <li>
+                <label for="purity">Purity</label>
+                <select name="purity">
+                <option value="0">SELECT</option>
+                	#foreach ($purityIterator in $purity.entrySet())
+					<option value=$purityIterator.key>$purityIterator.value</option>
+					 #end
+                </select>
+                <span class="error"></span>
+            </li>
+            <li>
+				<label for="quantity">Quantity</label>
+				<input type="text" name="quantity" class="number" maxlength="6">
+				<span class="error"></span>
+            </li>
+            <li>
+                <label for="sourceLocation">Delivery Location</label>
+                <select name="deliveryLocation">
+                <option value="0">SELECT</option>
+                	#foreach ($sourceLocationIterator in $sourceLocation.entrySet())
+					<option value=$sourceLocationIterator.key>$sourceLocationIterator.value</option>
+					 #end
+                </select>
+                <span class="error"></span>
+            </li>
+            
+            <li>
+                <label for="availability">Availability</label>
+                <input name="availability" class="date_picker" autocomplete="off" placeholder="dd/mm/yy"></input>
+                <span class="error"></span>
+            </li>
+            <li class="delivery-textarea">
+            	<label for="deliveryAddress">Delivery Address</label>
+            	<textarea rows="4" cols="50"></textarea>
+            </li>
+            <li class="expiry">
+                <label for="expiry">Expiry</label>
+                <input name="expiry" class="date_time_picker" type="text" autocomplete="off"></input>
+                <span class="error"></span>
+            </li>
+        </ul>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"  id = "csrf_tkn" />
+        <button type="button" class="add_button yellow_button" id="cancel_button">CANCEL</button>
+        <button type="button" class="add_button blue_button" id="add_offer_button">ADD</button>
+    </form>
+</div>

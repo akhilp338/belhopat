@@ -1,0 +1,35 @@
+<html>
+<style>
+table th td {
+   border: 1px solid black;
+}
+</style>
+<body>
+<span>Hi,</span>
+<p>$message</p>
+<div>
+ #if ($offer)
+<table style="border-collapse: collapse;">
+     <tbody>
+         <tr style="border:1px  solid black; background:#a8a8a8"><td style="border:1px  solid black">DRFQ ID</td><td style="border:1px  solid black">METAL</td><td style="border:1px  solid black">INVENTORY</td><td  style="border:1px  solid black">BRAND</td><td style="border:1px  solid black">TYPE</td><td style="border:1px  solid black">PURITY</td><td style="border:1px  solid black">QUANTITY</td><td style="border:1px  solid black">AVAILABILITY</td><td style="border:1px  solid black">EXPIRY</td><td  style="border:1px  solid black">PREMIUM</td></tr>
+      
+ 		<tr style="border:1px  solid black" ><td style="border:1px  solid black" >$offer.offerId</td><td style="border:1px  solid black" >$offer.offerMaster.commodity.metal.metal</td><td style="border:1px  solid black" >$offer.offerMaster.commodity.metal.inventory</td><td style="border:1px  solid black">$offer.offerMaster.commodity.commodityBrand.code</td><td style="border:1px  solid black">$offer.offerMaster.commodity.commodityType.code</td><td style="border:1px  solid black">$offer.offerMaster.commodity.metal.purity</td><td style="border:1px  solid black">$offer.offerMaster.quantity</td><td  style="border:1px  solid black" >$offer.offerMaster.availability</td><td  style="border:1px  solid black">$offer.offerMaster.expiry , (in GMT)</td><td  style="border:1px  solid black">$offer.offerMaster.premium</td></tr>
+</tbody>
+    </table>
+     #else
+         <table style="border-collapse: collapse;">
+     	<tbody>
+         	<tr style="border:1px  solid black; background:#a8a8a8"><td style="border:1px  solid black">RFQ ID</td><td style="border:1px  solid black">METAL</td><td style="border:1px  solid black">INVENTORY</td><td  style="border:1px  solid black">BRAND</td><td style="border:1px  solid black">TYPE</td><td style="border:1px  solid black">PURITY</td><td style="border:1px  solid black">QUANTITY</td><td style="border:1px  solid black">DELIVERY LOCATION</td><td style="border:1px  solid black">AVAILABILITY</td><td style="border:1px  solid black">EXPIRY</td></tr>
+        #foreach( $offer in $offers )
+        #set($availabilityDateString = $offer.offerMaster.availability.toString())
+		#set($expiryDateString = $offer.offerMaster.expiry.toString())
+         <tr style="border:1px  solid black" ><td style="border:1px  solid black" >$offer.offerId</td><td style="border:1px  solid black" >$offer.offerMaster.commodity.metal.metal</td><td style="border:1px  solid black" >$offer.offerMaster.commodity.metal.inventory </td><td style="border:1px  solid black">$offer.offerMaster.commodity.commodityBrand.code</td><td style="border:1px  solid black">$offer.offerMaster.commodity.commodityType.code</td><td style="border:1px  solid black">$offer.offerMaster.commodity.metal.purity</td><td style="border:1px  solid black">$offer.offerMaster.quantity</td><td  style="border:1px  solid black" >$offer.offerMaster.city.description</td><td  style="border:1px  solid black" >$availabilityDateString.substring(0,10)</td><td  style="border:1px  solid black">$expiryDateString.substring(0,19) (in GMT)</td></tr>
+		#end
+         </tbody>
+    </table>
+    
+    #end
+</div>
+
+</body>
+</html>

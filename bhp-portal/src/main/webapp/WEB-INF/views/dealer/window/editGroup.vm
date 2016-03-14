@@ -1,0 +1,40 @@
+<div class="window window_add_group" id="popup_add_new_offer">
+    <header class="addNew-head">
+        <h5>Enter Details</h5>
+    </header>
+    <form class="addNew-form" id="manage_group">
+    <input type="hidden" name ="offerTab" id="offerTab" >
+    <input type="hidden" name="id" id="groupId"></input>
+        <ul class="add_group_ul"  style="padding-top: 30px;">
+                <li class="col-md-6 col-sm-6 col-xs-12">
+				<label for="groupId" class="col-sm-6">Group ID</label>
+				<input type="text" name="groupId" class="form-control col-sm-6 groupId" maxlength="50" value="$Group.groupId">
+                <input type="hidden" id="groupid-prev" value="$Group.groupId"/>
+              </li>
+           <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="metal" class="col-sm-6">Metal</label>
+	            <select name="metal" id="offerMetal" class="form-control col-sm-6">
+	            	#foreach ($metalIterator in $metal)
+	            	#if($Group.metal.metal==$metalIterator)
+	            		<option value = $metalIterator selected="selected">$metalIterator</option>
+	            	#else
+					<option value = $metalIterator >$metalIterator</option>
+					#end
+					 #end
+                </select>
+            </li>
+            <li class="col-md-6 col-sm-6 col-xs-12">
+                <label for="premium" class="col-sm-6">Premium (%)</label>
+                <input type="text" name="premium" class="form-control col-sm-6 premium" maxlength="6" value="$Group.premium">
+            </li>
+             <li class="footer-btn col-md-3 col-md-offset-3 col-sm-4 col-sm-offset-2 col-xs-12">
+               <button type="button" class="add_button yellow_button" id="cancel_button">CANCEL</button>
+            </li>
+            <li class="col-md-3 col-sm-4 col-xs-12">
+                <button type="button" class="add_button blue_button" id="add_group_button">SAVE EDIT</button>
+            </li>
+        </ul>
+        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"  id = "csrf_tkn" />
+        <input type="hidden" name="senseCheckVal" value="$senseCheckVal"  id = "sense_check" />
+    </form>
+</div>

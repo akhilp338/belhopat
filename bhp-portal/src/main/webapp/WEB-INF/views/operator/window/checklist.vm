@@ -1,0 +1,40 @@
+<div class="hidden_nav_tab_button">
+  <img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header window-checklist">
+  <div class="col-xs-6 col-md-6 col-sm-6 header_style">
+     <h4 id="checklist_header" data-tradeId="$trade.id">Checklist-Trade ID:$trade.tradeId</h4>
+  </div>
+  <div class="col-xs-6 col-md-6 col-sm-6 header_style">
+     <span id="clock1">
+     </span>
+  </div>
+</div>
+<input type="hidden" name="operatorType" id="operator_type" value="$operatorType"/>
+<nav class="nav secondary-nav inactive" id="sub_megamenu" style="margin-bottom:30px;">
+	<ul class="intl-wrapper sub_tab_wrap">
+	    <li class = "active" id="DT">
+	        <a class="tab"  href="javascript:void(0)">
+	            Dates and Tasks
+	        </a>
+	    </li>
+	    <li id="OI">
+	        <a class="tab"  href="javascript:void(0)">
+	            Outgoing Instructions
+	        </a>
+	    </li>
+	    <li id="DOCZ">
+	        <a class="tab"  href="javascript:void(0)">
+	            Documents
+	        </a>
+	    </li>
+	    <li id="MAIL">
+	        <a class="tab"  href="javascript:void(0)">
+	            Email
+	        </a>
+	    </li>
+	</ul>
+	<div class="under_line_div"></div>
+</nav>
+<div class="inner_container">
+</div>

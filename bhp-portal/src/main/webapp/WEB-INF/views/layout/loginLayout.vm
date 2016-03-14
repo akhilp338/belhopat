@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<meta HTTP-EQUIV="REFRESH" content="csrf_timeout_in_seconds">
+<html>
+<head>
+
+ 	<title></title>
+	
+    <link rel="shortcut icon" href="/bhp-back-office/assets/static/images/intl_icon.png" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/bootstrap.min.css")">
+	<link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/font-awesome.css")">
+	<link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/animate.css")">
+	<link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/main.css")">
+	<link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/newLogin.css")">
+</head>
+<body class="intl_bg">
+	$screen_content
+    
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-1.11.3.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/bootstrap.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.validate.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-validate.bootstrap-tooltip.min.js")"></script>
+	<script type="text/javascript" src="#springUrl("/assets/js/modules/login.js")"></script>
+</body>
+</html>

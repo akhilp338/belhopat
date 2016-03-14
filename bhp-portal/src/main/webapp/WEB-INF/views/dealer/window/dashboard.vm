@@ -1,0 +1,30 @@
+<div class="hidden_nav_tab_button">
+	<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+	<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+	Dashboard
+	</div>
+	<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+		<span id="clock1"></span>
+	</div>
+</div>
+<nav class="nav secondary-nav inactive" id="sub_megamenu" style="margin-bottom:30px;overflow:visible;display:none;">
+	<ul class="intl-wrapper sub_tab_wrap" style="width: 30%;">
+	    <li id="SD" style="display:none;">
+	        <a class="tab"  href="javascript:void(0)">
+	          Set Dates
+	        </a>
+	    </li>
+	    <li class = "active dash_tab" id="TT">
+	        <a class="tab"  href="javascript:void(0)">
+	         Track Tasks
+	        </a>
+	         <span id="trackTaskNotify" class="custom-badge badge-notify"></span>
+	    </li>
+	</ul>
+	<div class="under_line_div"></div>
+</nav>
+<div class="inner_container">
+
+</div>

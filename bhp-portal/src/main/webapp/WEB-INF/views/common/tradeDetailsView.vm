@@ -1,0 +1,84 @@
+<div class="hidden_nav_tab_button">
+	<img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header">
+	<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+	Trade Details
+	</div>
+	<div class="col-xs-6 col-md-6 col-sm-6 header_style">
+		<span id="clock1"></span>
+	</div>
+</div>
+<div class="window" id="window-trade-details">
+	<form class="addNew-form">
+		<div class="offer_wrapper">
+		
+			#if($loggedUser.userType!='S')
+				#set( $premium = $trade.customerPremium)
+			#else
+				#set( $premium = $trade.supplierPremium)
+			#end
+			$premium
+			#set( $physicalPremium = $trade.eqOzs * $premium )
+			<ul style="padding:0px;" class="clear-both populate-div col-md-12 col-sm-12 col-xs-12">
+				<li class="col-md-12 col-sm-12 col-xs-12">$instanceOfferTrade
+					#if($loggedUser.userType=='S')
+						<span id="uploaded_docs_link" class="enabled_table_link">Uploaded Documents</span>
+					#end
+				</li>
+				#if($loggedUser.userType=='D')
+					#if( $loggedUser.instance.id == $trade.instance.id )
+						<li class="col-md-4 col-sm-6 col-xs-12"><label class="acc_id_label">Customer Account ID</label><h3 class="cus_acc_id_val">$trade.accountCode</h3></li>
+					#else
+						<li class="col-md-4 col-sm-6 col-xs-12"><label class="acc_id_label">Trading Counterpart</label><h3 class="cus_acc_id_val">$trade.instance.code</h3></li>
+					#end
+					#if( $loggedUser.instance.id == $trade.offer.offerMaster.instance.id )
+						<li class="col-md-4 col-sm-6 col-xs-12"><label class="acc_id_label">Supplier Account ID</label><h3 class="cus_acc_id_val">$trade.offer.offerMaster.accountCode</h3></li>
+					#else
+						<li class="col-md-4 col-sm-6 col-xs-12"><label class="acc_id_label">Trading Counterpart</label><h3 class="cus_acc_id_val">$trade.offer.accountCode</h3></li>
+					#end
+					
+				#else
+					<li class="col-md-4 col-sm-6 col-xs-12"><label>Trading Counterpart</label><h3>$loggedUser.instance.code</h3></li>
+				#end
+				
+##				#elseif ($loggedUser.userType=='S' )
+##					#if( $loggedUser.instance.id == $trade.instance.id ) 
+##					<li class="col-md-4 col-sm-6 col-xs-12"><label>Trading Counterpart</label><h3>$loggedUser.instance.code</h3></li>
+##					#else
+##					<li class="col-md-4 col-sm-6 col-xs-12"><label>Trading Counterpart</label><h3>$trade.instance.code</h3></li>
+##					#end
+##				#elseif ($loggedUser.userType=='C' )
+##					#if( $loggedUser.instance.id == $trade.offer.offerMaster.instance.id && $loggedUser.userType=='S' )
+##					<li class="col-md-4 col-sm-6 col-xs-12"><label>Trading Counterpart</label><h3>$loggedUser.instance.code</h3></li>
+##					#else
+##					<li class="col-md-4 col-sm-6 col-xs-12"><label>Trading Counterpart</label><h3>$trade.offer.instance.code</h3></li>
+##					#end
+##				#end
+				
+				<li class="col-md-4 col-sm-6 col-xs-12"><label>Premium ($/Ounce)</label><h3>$MathUtil.addCommasToNumber($premium)</h3></li>
+				<li class="col-md-4 col-sm-6 col-xs-12"><label>Quantity</label><h3>$trade.offer.offerMaster.quantity</h3></li>
+				<li class="col-md-4 col-sm-6 col-xs-12"><label>Trade Date</label><h3>$DateUtil.toddMMyyyy($trade.tradeMaster.tradeDate)</h3></li>
+				<li class="col-md-4 col-sm-6 col-xs-12"><label>Availability</label><h3>$DateUtil.toddMMyyyy($trade.offer.offerMaster.availability)</h3></li>
+				<li class="col-md-4 col-sm-6 col-xs-12"><label>Offer Expiry</label><h3>$DateUtil.toddMMyyyyHHmm($trade.offer.offerMaster.expiry)</h3></li>
+				<li class="col-md-4 col-sm-6 col-xs-12"><label>Physical Premium ($)</label><h3>$MathUtil.addCommasToNumber($physicalPremium)</h3></li>
+				<li class="col-md-4 col-sm-6 col-xs-12"><label>Source Location</label><h3>$trade.offer.offerMaster.city.description</h3></li>
+			</ul>
+			
+			#if(($loggedUser.userType!='S') && $!$trade.freightCompany )
+			<ul style="width:100%;">
+				<li class="col-md-12 col-sm-12 col-xs-12">Shipping Details</li>
+				<li class="col-md-4 col-sm-12 col-xs-12"><label>Freight Premium ($)</label><h3>$trade.freightPremium</h3></li>
+				<li class="col-md-4 col-sm-12 col-xs-12"><label>Freight Company</label><h3>$trade.freightCompany.description</h3></li>
+				<li class="col-md-4 col-sm-6 col-xs-12"><label>Delivery Location</label><h3>$!trade.city.description</h3></li>
+				<li class="col-md-6 col-sm-12 col-xs-12"><label>Delivery Address</label><textarea readonly>$!trade.deliveryAddress</textarea></li>			
+			</ul>
+			#end
+			<ul style="width:100%;">
+				#set( $netPremium  =$physicalPremium + $!trade.freightPremium )
+				<li class="col-md-12 col-sm-12 col-xs-12">Net Premium ($): $MathUtil.addCommasToNumber($netPremium)</li>
+			</ul>
+			<button type="button" class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4  yellow_button" id="cancel_button">CLOSE</button>
+		</div>
+	</form>
+</div>

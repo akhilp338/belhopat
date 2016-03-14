@@ -1,0 +1,30 @@
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+<div class="col-md-12 col-sm-12 col-xs-12 zero-l-padder zero-r-padder">
+      <div class="form-group col-md-4 col-sm-12 col-xs-12 padding-limiter select_aligner"  style="float:right;margin-bottom:16px;">
+            <label for="" class="col-md-2 col-sm-2 col-xs-4 padding-limiter"></label>
+            <div class="input-group col-md-10 col-sm-8 col-xs-10">
+                <select id="cpmStatus" class="form-control col-sm-12 slelct_style">
+					#foreach ($eachStatus in $cpmStatus)
+						<option value = $eachStatus.id >$eachStatus.details</option>
+					#end
+      			</select>
+            </div>
+      </div>
+</div>
+<div class="dealerTable col-sm-12 col-md-12 custom_header">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listcpm">
+    <thead>
+    <tr>
+        <th class="dt-head-center"></th>
+        <th class="dt-head-center">Account ID</th>
+        <th class="dt-head-center">Account Description</th>
+        <th class="dt-head-center">Group ID</th>
+        <th class="dt-head-center">Metal</th>
+        <th class="dt-head-center">Premium (%)</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>

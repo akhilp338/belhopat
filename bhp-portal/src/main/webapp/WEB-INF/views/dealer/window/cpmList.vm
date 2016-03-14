@@ -1,0 +1,78 @@
+#parse("/partials/search.vm")
+#parse("/partials/advancedSearch.vm")
+<div class="col-md-12 col-sm-12 col-xs-12 zero-l-padder zero-r-padder">
+<div class="menu-icons">
+    <ul>
+        <li id="addNewBtn" class="dealer-menu col-md-2 col-sm-4 col-xs-4">
+            <span></span> 
+            <p>Add new</p>
+        </li>
+        <li id="edit_button" class="edit_disabled_button dealer-menu col-md-2 col-sm-4 col-xs-4">
+            <span></span>
+            <p>Edit</p>
+        </li>
+        <li class="dealer-menu col-md-2 edit_enabled_button col-sm-4 col-xs-4">
+            <span></span> 
+            <p>Edit</p>
+        </li>
+        <li id="deleteBtn" class="delete_disabled_button dealer-menu col-md-2 col-sm-4 col-xs-4">
+            <span></span> 
+            <p>Delete</p>
+        </li>
+        <li class="dealer-menu col-md-2 delete_enabled_button col-sm-4 col-xs-4">
+            <span></span> 
+            <p>Delete</p>
+        </li>
+        <li class="export-btn_disabled_button dealer-menu col-md-2 col-sm-4 col-xs-4" id="export-btn">
+	       <span></span>
+	       <p>Export</p>
+        </li>
+        <li class="export-btn_enabled_button dealer-menu col-md-2 col-sm-4 col-xs-4">
+	       <span></span>
+	       <p>Export</p>
+        </li>
+        <li class="dealer-menu col-md-2 customize-btn_disabled_button col-sm-4 col-xs-4" id="customize-btn">
+	       <span></span>
+	       <p>Customize</p>
+        </li>
+        <li class="dealer-menu col-md-2 customize-btn_enabled_button col-sm-4 col-xs-4">
+	       <span></span>
+	       <p>Customize</p>
+        </li>
+        <li class="dealer-menu col-md-2 view-btn_disabled_button col-sm-4 col-xs-4" id="view-btn">
+	       <span></span>
+	       <p>View</p>
+        </li>
+        <li class="dealer-menu col-md-2 view-btn_enabled_button col-sm-4 col-xs-4">
+	       <span></span>
+	       <p>View</p>
+        </li>
+    </ul>
+           <div class="form-group col-md-4 col-sm-12 col-xs-12 padding-limiter select_aligner">
+            <label for="" class="col-md-2 col-sm-2 col-xs-4 padding-limiter"></label>
+            <div class="input-group col-md-10 col-sm-8 col-xs-10">
+                <select id="cpmStatus" class="form-control col-sm-12 slelct_style">
+					#foreach ($eachStatus in $cpmStatus)
+						<option value = $eachStatus.id >$eachStatus.details</option>
+					#end
+      			</select>
+            </div>
+        </div>
+</div>
+</div>
+<div class="dealerTable col-sm-12 col-md-12 custom_header">
+	<table class="table table-bordered table-hover responsive no-wrap"
+       id="listcpm">
+    <thead>
+    <tr>
+        <th class="dt-head-center"></th>
+        <th class="dt-head-center">Account ID</th>
+        <th class="dt-head-center">Account Description</th>
+        <th class="dt-head-center">Group ID</th>
+        <th class="dt-head-center">Metal</th>
+        <th class="dt-head-center">Premium (%)</th>
+    </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+</div>

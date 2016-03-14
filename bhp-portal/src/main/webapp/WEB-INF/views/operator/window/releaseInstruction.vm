@@ -1,0 +1,112 @@
+<div class="hidden_nav_tab_button">
+   <img class="" src="#springUrl("/assets/static/images/menu_mobile.png")" alt="menu">
+</div>
+<div class="col-xs-12 col-md-12 col-sm-12 custom_header window-checklist">
+   <div class="col-xs-8 col-md-8 col-sm-8 header_style">
+      <h4>Customs Invoice</h4>
+      <h6 style="margin:20px 0px 0px;">Trades >> Checklist Trade ID:$trade.tradeId >> Customs Invoice</h6>
+   </div>
+   <div class="col-xs-4 col-md-4 col-sm-4 header_style">
+      <span id="clock1">
+      </span>
+   </div>
+</div>
+<div class="window checklist-window" id="release-instruction">
+   <form class="addNew-form">
+   <div class="offer_wrapper offer_inner_wrapper">
+      <span class="error-span"></span>
+      <ul class="clear-both populate-div">
+         <li class="col-md-12 col-sm-12 col-xs-12">Details</li>
+         <li class="col-md-6 col-sm-12 col-xs-12">
+            <label>Trade ID</label>
+            <p>$trade.tradeId</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12">
+            <label>Offer ID</label>
+            <p>$trade.tradeOffers[0].offer.offerId</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12 pcd">
+            <label>Physical Collection Date</label>
+            <div class="input-group date pull-right bootstrap_datepicker"  id="bootstrap_PCDPicker">    
+            #if($trade.tradeOffers[0].tradeTask.physicalCollectionDate)
+               <input id="pcd_picker" name="bootstrap_PCDPicker" class="form-control col-sm-6" type="text"  autocomplete="off" value = "$DateUtil.toddMMyyyy($trade.tradeOffers[0].tradeTask.physicalCollectionDate)"></input>
+              #else
+               <input id="pcd_picker" name="bootstrap_PCDPicker" class="form-control col-sm-6" type="text"  autocomplete="off"></input>
+               #end
+               <span class="input-group-addon">
+               <span class="glyphicon glyphicon-calendar"></span>
+               </span>
+            </div>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Metal</label>
+         	<p>$trade.tradeOffers[0].offer.offerMaster.commodity.metal.metal</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Quantity</label>
+         	<p>$trade.quantity</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Purity</label>
+         	<p>$trade.tradeOffers[0].offer.offerMaster.commodity.metal.purity</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Price</label>
+         	<p>$trade.tradeOffers[0].offer.offerMaster.premium</p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Currency</label>
+         	<p></p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Freight Company</label>
+         	<p></p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Freight Premium</label>
+         	<p></p>
+         </li>
+         <li class="col-md-6 col-sm-12 col-xs-12"><label>Destination</label>
+         	<p></p>
+         </li>
+      </ul>
+      <span></span>
+      <p>
+         Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+         Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+         <br>
+         The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+      </p>
+   </div>
+   <footer class="post_form_footer">
+      <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+      <span class="col-md-3 col-md-offset-3 col-sm-6 col-xs-12">
+      <input type="button" value="CANCEL" id="releaseInstructionReject" class="yellow_button">
+      </span>
+      <span class="col-md-3 col-sm-6 col-xs-12">
+      <input type="button" value="SAVE AND SEND" id="releaseInstructionPreSubmit" class="blue_button"  data-toggle="modal" data-target="#invoice_popup" >
+      </span>
+   </footer>
+   </form>
+</div>
+##invoice popup
+
+<div class="modal inmodal" id="invoice_popup" tabindex="-1" role="dialog"  aria-hidden="true">
+   <div class="modal-dialog">
+       <div class="modal-content animated fadeIn">
+           <div class="modal-header">
+               <h3 class="modal-title trade-id">SAVE AND SEND</h3>
+           </div>
+           <div class="modal-body">
+               Add comment for the changes made in the Customs Invoice
+               <br>comment
+               <textarea id="customerInvoiceComment"></textarea>
+               <br>
+               <input id="freightCompany" type="radio" name="user" value = "FC">Freight Company
+               <input id="customer" type="radio" name="user" value = "customer">Customer 
+               <input id="frightComAndCus" type="radio" name="user" value = "Both">Both
+               <div class="modal-footer">
+                  <span class="col-md-4 col-md-offset-2 col-sm-6 col-xs-12">
+			      	<input type="button" value="CANCEL" id="releaseInstructionReject" class="yellow_button" data-dismiss="modal">
+			      </span>
+			      <span class="col-md-4 col-sm-6 col-xs-12">
+			      	<input type="button" value="SAVE AND SEND" id="releaseInstructionSubmit" class="blue_button" >
+			      </span>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>

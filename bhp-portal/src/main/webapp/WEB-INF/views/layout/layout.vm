@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- default header name is X-CSRF-TOKEN -->
+	<meta name="_csrf" content="${_csrf.token}"/>
+	<meta name="_csrf_header" content="${_csrf.headerName}"/>
+
+    <title>BHP Back Office</title>
+    <link rel="shortcut icon" href="/bhp-back-office/assets/static/images/BelhopatLogo.gif" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/jquery.dataTables.min.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/jquery-ui.min.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/lib/jquery.simple-dtpicker.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/main.css")">
+    <link rel="stylesheet" type="text/css" href="#springUrl("/assets/static/css/supplier.css")">
+</head>
+<body>
+    <div>
+    <header role="nav" class="header-container">
+        <div class="wrapper">
+            <a href="/" class="logo"><img src="#springUrl("/assets/static/images/logo.png")" alt="BHP Back Office"></a>
+
+            <a href="#megamenu" class="nav-toggle nav-toggle-menu icon-menu"><span class="is-vishidden">Menu</span></a>
+            <a href="#search" class="nav-toggle nav-toggle-search icon-search"><span class="is-vishidden">Search</span></a>
+
+            <a href='/bhp-back-office/logout' class="logout-link">LOGOUT</a>
+			<span class="logout-button">
+				<a href='/bhp-back-office/j_spring_security_logout'><img src="assets/static/images/logout.png"></a>
+			</span>
+            <nav class="nav secondary-nav">
+                <div class="account-wrap">
+                    <span class="account-id">$accountId</span>
+                    <span class="instance-id" >$!instanceId</span>
+                </div>
+            </nav>
+        </div>
+         <nav class="nav primary-nav inactive" id="megamenu">
+            <ul class="wrapper">
+                <li>
+                    <a class="tab" id="confirmedOffers" href="javascript:void(0)">
+                        CONFIRMED OFFERS
+                    </a>
+                </li>
+                <li>
+                    <a class="tab" id="unconfirmedOffers" href="javascript:void(0)">
+                        UNCONFIRMED OFFERS
+                    </a>
+                </li>
+                <li class="disabled_buttons">
+                    <a class="" href="/Main-Channels/Commodities/">
+                        REQUEST FOR QUOTE
+                    </a>
+                </li>
+                <li class="disabled_buttons">
+                    <a class="" href="/Main-Channels/Commodities/">
+                        DIRECT OFFERS
+                    </a>
+                </li>
+                <li class="disabled_buttons">
+                    <a class="" href="/Main-Channels/Commodities/">
+                        TRADE
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    </div>
+    <div class="container wrapper">
+        $screen_content
+    </div>
+    <footer class="page_footer">
+        <span>
+            ©2016 Belhopat Technology Services. All Rights Reserved
+        </span>
+        <ul class="follow_us_social_links">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </footer>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-1.11.3.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery-ui.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.simple-dtpicker.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.dataTables.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.plugin.min.js")"></script> 
+    <script type="text/javascript" src="#springUrl("/assets/static/lib/jquery.countdown.min.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/js/main.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/js/modules/common.js")"></script>
+    <script type="text/javascript" src="#springUrl("/assets/js/modules/supplier/supplier.js")"></script>
+     <script type="text/javascript">
+           var page = 'supplier';
+ 	</script>
+
+</body>
+</html>

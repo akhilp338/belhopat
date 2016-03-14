@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<toolbox>
+	<xhtml>true</xhtml>
+	<tool>
+		<key>MathTool</key>
+		<scope>application</scope>
+		<class>org.apache.velocity.tools.generic.MathTool</class>											
+	</tool>
+	<tool>
+		<key>DateUtil</key>
+		<scope>application</scope>
+		<class>com.intl.util.date.DateUtil</class>											
+	</tool>
+	<tool>
+		<key>MathUtil</key>
+		<scope>application</scope>
+		<class>com.intl.util.math.MathUtil</class>											
+	</tool>
+	<tool>
+		<key>StringUtils</key>
+		<scope>application</scope>
+		<class>org.apache.velocity.util.StringUtils</class>											
+	</tool>
+	<tool>
+		<key>StringUtils</key>
+		<scope>application</scope>
+		<class>org.apache.commons.lang3.StringUtils</class>											
+	</tool>
+</toolbox>
